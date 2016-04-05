@@ -1,6 +1,10 @@
+/vendor
 assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
+/config/db.php
+/config/security.local.php
+.idea/*
