@@ -12,7 +12,7 @@
 ## Installation
 ### Run migrations
 
-Please run the following command to run all required migrations in proper way:
+Please run the following commands to run all required migrations in proper way:
 ```bash
 ./yii migrate/up  --migrationPath=@vendor/dektrium/yii2-user/migrations
 ./yii migrate/up
