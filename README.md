@@ -15,5 +15,12 @@
 Please run the following commands to run all required migrations in proper way:
 ```bash
 ./yii migrate/up  --migrationPath=@vendor/dektrium/yii2-user/migrations
+./yii migrate/up --migrationPath=@yii/rbac/migrations
 ./yii migrate/up
 ```
+
+## License
+
+HomeFinance is released under the MIT License. See the bundled [LICENSE](LICENSE) for details.
+
+Copyright (c) 2015 Rafalsky.com
