@@ -15,6 +15,7 @@
         "yiisoft/yii2-bootstrap": "^2.0.0",
         "yiisoft/yii2-swiftmailer": "^2.0.0",
         "dektrium/yii2-user": "^v0.9.5",
+        "dektrium/yii2-rbac": "dev-master",
         "schmunk42/yii2-giiant": "^0.7.1",
         "kartik-v/yii2-widget-sidenav": "^v1.0.0"
     },
