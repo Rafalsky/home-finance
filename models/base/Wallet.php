@@ -1,16 +1,17 @@
 <?php
 
 /*
- * This file is part of the HomeFinanceV2 project.
- *
- * (c) Rafalsky.com <http://github.com/Rafalsky/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+* This file is part of the HomeFinanceV2 project.
+*
+* (c) Rafalsky.com <http://github.com/Rafalsky/>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace app\models\base;
 
+use app\models\User;
 use yii\db\ActiveRecord;
 
 /**
@@ -21,6 +22,8 @@ use yii\db\ActiveRecord;
  * @property string $name
  * @property string $created_at
  * @property string $updated_at
+ *
+ * @property \app\models\User $user
  * @property string $aliasModel
  */
 abstract class Wallet extends ActiveRecord
@@ -54,9 +57,17 @@ abstract class Wallet extends ActiveRecord
     public function rules()
     {
         return [
+            [['user_id', 'name', 'created_at'], 'required'],
             [['user_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name'], 'string', 'max' => 255]
+            [['name'], 'string', 'max' => 255],
+            [
+                ['user_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => User::className(),
+                'targetAttribute' => ['user_id' => 'id']
+            ]
         ];
     }
 
@@ -89,5 +100,13 @@ abstract class Wallet extends ActiveRecord
                 'updated_at' => \Yii::t('app', 'Updated At'),
             ]
         );
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }
