@@ -1,5 +1,5 @@
 # HomeFinance
-[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 [![Code Climate](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/gpa.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance)
 [![Test Coverage](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/coverage.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance/coverage)
