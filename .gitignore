@@ -1,3 +1,4 @@
+/config/params.php
 /vendor
 assets/*
 !assets/.gitignore
