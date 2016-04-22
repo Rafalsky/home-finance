@@ -1,16 +1,16 @@
 {
     "name": "rafalsky/home-finance",
-    "description": "Home Finance Manager",
+    "description": "home finance manager",
     "keywords": ["home finance manager"],
     "type": "project",
-    "license": "X11",
+    "license": "x11",
     "support": {
-        "issues": "https://github.com/Rafalsky/home-finance/issues",
-        "source": "https://github.com/Rafalsky/home-finance"
+        "issues": "https://github.com/rafalsky/home-finance/issues",
+        "source": "https://github.com/rafalsky/home-finance"
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.5.0",
         "yiisoft/yii2": "^2.0.0",
         "yiisoft/yii2-bootstrap": "^2.0.0",
         "yiisoft/yii2-swiftmailer": "^2.0.0",
