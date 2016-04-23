@@ -11,8 +11,6 @@
 
 namespace app\models\base;
 
-use app\models\Product;
-use app\models\Receipt;
 use yii\db\ActiveRecord;
 
 /**
@@ -122,7 +120,7 @@ abstract class ReceiptProduct extends ActiveRecord
      */
     public function getProduct()
     {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
+        return $this->hasOne(\app\models\Product::className(), ['id' => 'product_id']);
     }
 
     /**
@@ -130,6 +128,6 @@ abstract class ReceiptProduct extends ActiveRecord
      */
     public function getReceipt()
     {
-        return $this->hasOne(Receipt::className(), ['id' => 'receipt_id']);
+        return $this->hasOne(\app\models\Receipt::className(), ['id' => 'receipt_id']);
     }
 }
