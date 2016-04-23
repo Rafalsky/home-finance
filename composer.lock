@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05d4f81dc5c0ddb97dee01708d73c59f",
-    "content-hash": "9b55896c289ef3640aa0d21acc7be796",
+    "hash": "43d38b64614231dca58650f27b0afb75",
+    "content-hash": "b172587c417e989ec4f41454075d5af5",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -463,20 +463,20 @@
         },
         {
             "name": "dmstr/yii2-bootstrap",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-bootstrap.git",
-                "reference": "96d556196d7dccb79e9dc465b8bc228c883c1111"
+                "reference": "df2afef6509390e6d754c16b72f3c5a980169e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-bootstrap/zipball/96d556196d7dccb79e9dc465b8bc228c883c1111",
-                "reference": "96d556196d7dccb79e9dc465b8bc228c883c1111",
+                "url": "https://api.github.com/repos/dmstr/yii2-bootstrap/zipball/df2afef6509390e6d754c16b72f3c5a980169e19",
+                "reference": "df2afef6509390e6d754c16b72f3c5a980169e19",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "2.0.*"
+                "yiisoft/yii2-bootstrap": "^2.0.6"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -500,7 +500,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2015-02-10 03:13:45"
+            "time": "2016-04-22 18:33:17"
         },
         {
             "name": "dmstr/yii2-db",
@@ -632,16 +632,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.8.3",
+            "version": "v1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "2d74f0102272189d5e3f672a2549485fae77b7e8"
+                "reference": "3115b09aeb15a5e06f38dc16860baf153d9bf70e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/2d74f0102272189d5e3f672a2549485fae77b7e8",
-                "reference": "2d74f0102272189d5e3f672a2549485fae77b7e8",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/3115b09aeb15a5e06f38dc16860baf153d9bf70e",
+                "reference": "3115b09aeb15a5e06f38dc16860baf153d9bf70e",
                 "shasum": ""
             },
             "require": {
@@ -679,7 +679,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-04-09 18:21:14"
+            "time": "2016-04-11 09:07:40"
         },
         {
             "name": "kartik-v/yii2-widget-select2",
@@ -823,16 +823,16 @@
         },
         {
             "name": "schmunk42/yii2-giiant",
-            "version": "0.7.1",
+            "version": "0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-giiant.git",
-                "reference": "8930e42d38c2c9aac056c791f11a58f46e68079f"
+                "reference": "da1bb5b40aa4b4e13ff542ce7f7b3d142a02fb29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/8930e42d38c2c9aac056c791f11a58f46e68079f",
-                "reference": "8930e42d38c2c9aac056c791f11a58f46e68079f",
+                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/da1bb5b40aa4b4e13ff542ce7f7b3d142a02fb29",
+                "reference": "da1bb5b40aa4b4e13ff542ce7f7b3d142a02fb29",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +874,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-03-09 15:43:57"
+            "time": "2016-04-12 23:22:21"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1601,7 +1601,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.5.0"
     },
     "platform-dev": []
 }
