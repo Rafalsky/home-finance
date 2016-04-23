@@ -61,7 +61,7 @@ $config = [
     ],
     'modules' => [
         'rbac' => [
-            'class' => 'dektrium\rbac\Module',
+            'class' => dektrium\rbac\Module::class,
         ],
         'wallet' => [
             'class' => app\modules\wallet\Module::class,
