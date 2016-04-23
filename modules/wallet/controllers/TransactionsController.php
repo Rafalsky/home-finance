@@ -11,6 +11,7 @@
 namespace app\modules\wallet\controllers;
 
 use app\models;
+use yii\web\NotFoundHttpException;
 
 class TransactionsController extends DefaultModuleController
 {
@@ -25,5 +26,13 @@ class TransactionsController extends DefaultModuleController
         return $this->render('addReceipt', [
             'receipt' => new models\Receipt
         ]);
+    }
+
+    public function actionAddNewRow()
+    {
+        if (\Yii::$app->request->isPost && $number = \Yii::$app->request->post('rowNumber')) {
+            return $this->renderPartial('_productTableRow', ['number' => $number]);
+        }
+        throw new NotFoundHttpException;
     }
 }

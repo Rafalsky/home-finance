@@ -11,8 +11,9 @@
 use yii\bootstrap\ActiveForm;
 use yii\jui\DatePicker;
 
+/** @var app\models\Receipt $receipt */
+\app\assets\wallet\transactions\receipt\Form::register($this);
 ?>
-<?php /** @var app\models\Receipt $receipt */ ?>
 <div id="edit-receipt">
     <?php /** @var ActiveForm $form */ ?>
     <?php $form = ActiveForm::begin([
@@ -118,22 +119,3 @@ use yii\jui\DatePicker;
     </div>
     <?php ActiveForm::end(); ?>
 </div>
-<script>
-    $receiptTable = $('table#receipt-table');
-    $receiptTable.on('change', 'input.product-name', function() {
-        $.ajax({
-            url: '<?= \Yii::$app->urlManager->createUrl('add-new-row'); ?>/number/' + $receiptTable.find('tr').length,
-            success: function(data) {
-                $('table#receipt-table input.product-name').last().closest('tr').after(data);
-            }
-        });
-    });
-    $receiptTable.on('change', 'input.product-total-price', function() {
-        var sum = 0;
-        $('input.product-total-price').each(function() {
-            var number = $(this).val().replace(/,/g, '.');
-            if (!isNaN(number)) sum = Number(sum) + Number(number);
-        });
-        $('#totalPrice').html(parseFloat(Math.round(sum * 100) / 100).toFixed(2));
-    });
-</script>
