@@ -31,16 +31,20 @@ class CacheController extends Controller
 {
     /**
      * @return string
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
         $dataProvider = new ArrayDataProvider(['allModels'=>$this->findCaches()]);
-        return $this->render('index', ['dataProvider'=>$dataProvider]);
+        return $this->render('index', [
+            'dataProvider'=>$dataProvider
+        ]);
     }
 
     /**
      * @param $id
      * @return \yii\web\Response
+     * @throws \yii\base\InvalidConfigException
      * @throws HttpException
      */
     public function actionFlushCache($id)
@@ -58,6 +62,7 @@ class CacheController extends Controller
      * @param $id
      * @param $key
      * @return \yii\web\Response
+     * @throws \yii\base\InvalidConfigException
      * @throws HttpException
      */
     public function actionFlushCacheKey($id, $key)

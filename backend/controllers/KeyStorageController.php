@@ -11,7 +11,6 @@
 
 namespace backend\controllers;
 
-use Yii;
 use common\models\KeyStorageItem;
 use backend\models\search\KeyStorageItemSearch;
 use yii\web\Controller;
@@ -38,11 +37,12 @@ class KeyStorageController extends Controller
     /**
      * Lists all KeyStorageItem models.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
         $searchModel = new KeyStorageItemSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
         $dataProvider->sort = [
             'defaultOrder'=>['key'=>SORT_DESC]
         ];
@@ -56,12 +56,13 @@ class KeyStorageController extends Controller
      * Creates a new KeyStorageItem model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionCreate()
     {
         $model = new KeyStorageItem();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
@@ -75,12 +76,14 @@ class KeyStorageController extends Controller
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
+     * @throws \yii\base\InvalidParamException
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
@@ -94,6 +97,7 @@ class KeyStorageController extends Controller
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
+     * @throws \Exception
      */
     public function actionDelete($id)
     {

@@ -11,10 +11,8 @@
 
 namespace backend\controllers;
 
-use Yii;
 use backend\models\SystemLog;
 use backend\models\search\SystemLogSearch;
-use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -40,13 +38,14 @@ class LogController extends Controller
     /**
      * Lists all SystemLog models.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
         $searchModel = new SystemLogSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
 
-        if (strcasecmp(Yii::$app->request->method, 'delete') == 0) {
+        if (strcasecmp(\Yii::$app->request->method, 'delete') === 0) {
             SystemLog::deleteAll($dataProvider->query->where);
             return $this->refresh();
         }
@@ -64,6 +63,8 @@ class LogController extends Controller
      * Displays a single SystemLog model.
      * @param integer $id
      * @return mixed
+     * @throws \yii\web\NotFoundHttpException
+     * @throws \yii\base\InvalidParamException
      */
     public function actionView($id)
     {
@@ -77,6 +78,7 @@ class LogController extends Controller
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
+     * @throws \Exception
      */
     public function actionDelete($id)
     {

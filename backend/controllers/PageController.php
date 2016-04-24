@@ -11,7 +11,6 @@
 
 namespace backend\controllers;
 
-use Yii;
 use common\models\Page;
 use backend\models\search\PageSearch;
 use yii\web\Controller;
@@ -38,11 +37,12 @@ class PageController extends Controller
     /**
      * Lists all Page models.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
         $searchModel = new PageSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -54,12 +54,13 @@ class PageController extends Controller
      * Creates a new Page model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionCreate()
     {
         $model = new Page();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
@@ -73,12 +74,14 @@ class PageController extends Controller
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
+     * @throws \yii\base\InvalidParamException
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
@@ -92,6 +95,7 @@ class PageController extends Controller
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
+     * @throws \Exception
      */
     public function actionDelete($id)
     {

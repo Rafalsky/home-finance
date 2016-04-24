@@ -11,9 +11,9 @@
 
 namespace backend\controllers;
 
-use Yii;
 use common\models\FileStorageItem;
 use backend\models\search\FileStorageItemSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -60,15 +60,16 @@ class FileStorageController extends Controller
     /**
      * Lists all FileStorageItem models.
      * @return mixed
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
         $searchModel = new FileStorageItemSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
         $dataProvider->sort = [
             'defaultOrder'=>['created_at'=>SORT_DESC]
         ];
-        $components = \yii\helpers\ArrayHelper::map(
+        $components = ArrayHelper::map(
             FileStorageItem::find()->select('component')->distinct()->all(),
             'component',
             'component'
@@ -87,6 +88,8 @@ class FileStorageController extends Controller
      * Displays a single FileStorageItem model.
      * @param integer $id
      * @return mixed
+     * @throws \yii\web\NotFoundHttpException
+     * @throws \yii\base\InvalidParamException
      */
     public function actionView($id)
     {
@@ -100,6 +103,7 @@ class FileStorageController extends Controller
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
+     * @throws \Exception
      */
     public function actionDelete($id)
     {
