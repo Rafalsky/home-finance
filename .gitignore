@@ -4,3 +4,14 @@
 /config/db.php
 /config/security.local.php
 .idea/
+# Env
+/.env
+/vhost.conf
+
+# phpunit
+phpunit.phar
+/phpunit.xml
+
+# Vagrant
+/.vagrant
+/vagrant.yaml
