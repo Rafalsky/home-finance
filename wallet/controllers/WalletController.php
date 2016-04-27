@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\wallet\controllers;
+namespace wallet\controllers;
 
 class WalletController extends DefaultModuleController
 {

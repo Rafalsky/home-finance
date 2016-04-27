@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\wallet\controllers;
+namespace wallet\controllers;
 
-use \app\controllers\AuthController;
-use app\models\User;
+use \common\controllers\AuthController;
+use \common\models\User;
 
 abstract class DefaultModuleController extends AuthController
 {
@@ -24,6 +24,8 @@ abstract class DefaultModuleController extends AuthController
         }
         return true;
     }
+
+    // protected
 
     protected function isWalletRequired()
     {

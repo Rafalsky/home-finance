@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\wallet\controllers;
+namespace wallet\controllers;
 
-use app\models\Wallet;
+use common\models\Wallet;
 
 class ManageController extends DefaultModuleController
 {
     public function actionFirst()
     {
-        $this->layout = 'empty';
+        $this->layout = 'common';
         $this->view->title = \Yii::t('wallet', 'Create your first wallet');
         $model = new Wallet(['scenario' => Wallet::SCENARIO_CREATE]);
         if (\Yii::$app->request->isPost) {

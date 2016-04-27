@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\wallet\controllers;
+namespace wallet\controllers;
 
-use app\models;
+use common\models\Receipt;
 use yii\web\NotFoundHttpException;
 
 class TransactionsController extends DefaultModuleController
@@ -24,7 +24,7 @@ class TransactionsController extends DefaultModuleController
     {
         $this->view->title =  \Yii::t('wallet', 'Add new receipt');
         return $this->render('addReceipt', [
-            'receipt' => new models\Receipt
+            'receipt' => new Receipt
         ]);
     }
 
