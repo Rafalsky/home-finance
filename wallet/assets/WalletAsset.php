@@ -1,5 +1,6 @@
 <?php
-/*
+
+/**
  * This file is part of the HomeFinanceV2 project.
  *
  * (c) Rafalsky.com <http://github.com/Rafalsky/>
@@ -8,20 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace app\assets;
+namespace wallet\assets;
 
 use yii\web\AssetBundle;
-use yii\web\YiiAsset;
-use yii\bootstrap\BootstrapAsset;
 
-abstract class BaseAssetBundle extends AssetBundle
+class WalletAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    public $js = [
+
+    public $css = [
+        'css/style.css'
     ];
+    public $js = [
+        'js/app.js'
+    ];
+
     public $depends = [
-        YiiAsset::class,
-        BootstrapAsset::class,
+        \yii\web\YiiAsset::class,
+        \common\assets\AdminLte::class,
+        \common\assets\Html5shiv::class
     ];
 }

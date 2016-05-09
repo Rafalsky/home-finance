@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the HomeFinanceV2 project.
  *
@@ -8,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace app\assets\wallet\transactions\receipt;
+namespace wallet\assets\transactions\receipt;
 
-use app\assets\AppAsset;
-use app\assets\BaseAssetBundle;
+use wallet\assets\AppAsset;
+use wallet\assets\BaseAssetBundle;
 
 class Form extends BaseAssetBundle
 {
