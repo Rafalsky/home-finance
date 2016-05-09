@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  *  This file is part of the HomeFinanceV2 project.
  *
  *  (c) Rafalsky.com <http://github.com/Rafalsky/>

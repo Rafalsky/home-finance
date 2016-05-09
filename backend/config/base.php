@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  *  This file is part of the HomeFinanceV2 project.
  *
  *  (c) Rafalsky.com <http://github.com/Rafalsky/>
@@ -13,7 +13,7 @@ return [
     'id' => 'backend',
     'basePath' => dirname(__DIR__),
     'components' => [
-        'urlManager' => require(__DIR__.'/_urlManager.php'),
+        'urlManager' => require(__DIR__ . '/_urlManager.php'),
         'frontendCache' => require(Yii::getAlias('@frontend/config/_cache.php'))
     ],
 ];
