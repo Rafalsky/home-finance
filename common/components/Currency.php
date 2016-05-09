@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\components;
+namespace common\components;
 
 use yii\base\Object;
 

@@ -9,11 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\controllers;
+namespace common\controllers;
 
-use yii\web\Controller;
-
-abstract class AuthController extends Controller
+abstract class AuthController extends BaseController
 {
     public function beforeAction($action)
     {

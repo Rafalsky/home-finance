@@ -14,7 +14,7 @@ use \yii\bootstrap\ActiveForm;
 ?>
 
 <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
+    <div class="col-lg-2">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
@@ -27,7 +27,7 @@ use \yii\bootstrap\ActiveForm;
 
                 <?= $form->field($model, 'name')->input('text'); ?>
 
-                <?= $form->field($model, 'currency')->dropDownList((new \app\components\Currency())->getList()); ?>
+                <?= $form->field($model, 'currency')->dropDownList((new \common\components\Currency())->getList()); ?>
 
                 <?= Html::submitButton(Yii::t('app', 'Create'), ['class' => 'btn btn-success btn-block']) ?>
 

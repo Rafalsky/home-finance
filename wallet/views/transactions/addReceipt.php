@@ -11,8 +11,8 @@
 use yii\bootstrap\ActiveForm;
 use yii\jui\DatePicker;
 
-/** @var app\models\Receipt $receipt */
-\app\assets\wallet\transactions\receipt\Form::register($this);
+/** @var common\models\Receipt $receipt */
+wallet\assets\transactions\receipt\Form::register($this);
 ?>
 <div id="edit-receipt">
     <?php /** @var ActiveForm $form */ ?>
@@ -33,7 +33,7 @@ use yii\jui\DatePicker;
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(app\models\Shop::find()->all(), ['prompt' => \Yii::t('backend', 'Select shop')]); ?>
+                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::find()->all(), ['prompt' => \Yii::t('backend', 'Select shop')]); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -93,7 +93,7 @@ use yii\jui\DatePicker;
                                 </thead>
                                 <tbody>
                                 <?php $number = 0; ?>
-                                <?php foreach($receipt->receiptProducts as $receiptProduct): ?>
+                                <?php foreach ($receipt->receiptProducts as $receiptProduct): ?>
                                     <?= $this->render('_productTableRow', ['number' => ++$number, 'receiptProduct' => $receiptProduct]); ?>
                                 <?php endforeach; ?>
                                 <?= $this->render('_productTableRow', ['number' => ++$number]); ?>
