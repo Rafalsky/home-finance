@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use \app\models\Receipt;
+use \common\models\Receipt;
 
 /**
  * @var Receipt $receipt
@@ -26,7 +26,7 @@ use \app\models\Receipt;
             </tr>
             </thead>
             <tbody>
-            <?php foreach(Receipt::find()->all() as $receipt): ?>
+            <?php foreach (Receipt::find()->all() as $receipt) : ?>
                 <tr class="gradeX" data-url="<?= Yii::$app->urlManager->createUrl(['/wallet/transactions/receipt', ['id' => $receipt->id]]); ?>">
                     <td><?= $receipt->id; ?></td>
                     <td><?= $receipt->shop->name; ?></td>
@@ -41,7 +41,9 @@ use \app\models\Receipt;
 <div class="row">
     <div class="col-sm-6">
         <div class="m-b-30">
-            <a href="<?= Yii::$app->urlManager->createUrl(['/wallet/transactions/receipt/new']); ?>" class="btn btn-primary waves-effect waves-light"><?= Yii::t('backend', 'Add'); ?> <i class="fa fa-plus"></i></a>
+            <a href="<?= Yii::$app->urlManager->createUrl(['/wallet/transactions/receipt/new']); ?>" class="btn btn-primary waves-effect waves-light">
+                <?= Yii::t('backend', 'Add'); ?> <i class="fa fa-plus"></i>
+            </a>
         </div>
     </div>
 </div>

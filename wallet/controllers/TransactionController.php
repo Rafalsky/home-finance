@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the HomeFinanceV2 project.
  *
@@ -13,7 +14,7 @@ namespace wallet\controllers;
 use common\models\Receipt;
 use yii\web\NotFoundHttpException;
 
-class TransactionsController extends DefaultModuleController
+class TransactionController extends DefaultModuleController
 {
     public function actionList()
     {
