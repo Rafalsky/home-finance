@@ -18,4 +18,12 @@ use \common\models\base\Shop as BaseShop;
  */
 class Shop extends BaseShop
 {
+    public static function getAllAvailable()
+    {
+        $shops = [];
+        foreach (\Yii::$app->db->createCommand('SELECT `id`, `name` FROM shop')->queryAll() as $shop) {
+            $shops[$shop['id']] = $shop['name'];
+        }
+        return $shops;
+    }
 }

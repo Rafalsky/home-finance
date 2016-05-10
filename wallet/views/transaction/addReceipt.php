@@ -33,7 +33,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::find()->all(), ['prompt' => \Yii::t('backend', 'Select shop')]); ?>
+                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('backend', 'Select shop')]); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -93,7 +93,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                                 </thead>
                                 <tbody>
                                 <?php $number = 0; ?>
-                                <?php foreach ($receipt->receiptProducts as $receiptProduct): ?>
+                                <?php foreach ($receipt->receiptProducts as $receiptProduct) : ?>
                                     <?= $this->render('_productTableRow', ['number' => ++$number, 'receiptProduct' => $receiptProduct]); ?>
                                 <?php endforeach; ?>
                                 <?= $this->render('_productTableRow', ['number' => ++$number]); ?>
@@ -113,7 +113,9 @@ wallet\assets\transactions\receipt\Form::register($this);
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?= \Yii::$app->urlManager->createUrl('/backend/transactions/list'); ?>" class="btn btn-danger"><?= \Yii::t('backend', 'Back'); ?></a>
+            <a href="<?= \Yii::$app->urlManager->createUrl('/backend/transactions/list'); ?>" class="btn btn-danger">
+                <?= \Yii::t('backend', 'Back'); ?>
+            </a>
             <button type="submit" class="btn-submit btn btn-success pull-right"><?= \Yii::t('backend', 'Update') ?></button>
         </div>
     </div>
