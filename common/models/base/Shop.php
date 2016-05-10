@@ -11,8 +11,8 @@
 
 namespace common\models\base;
 
-use app\models\Company;
-use app\models\Product;
+use common\models\Company;
+use common\models\Product;
 
 /**
  * This is the base-model class for table "shop".

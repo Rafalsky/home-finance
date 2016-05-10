@@ -11,9 +11,9 @@
 
 namespace common\models\base;
 
-use app\models\ProductPrice;
-use app\models\ReceiptProduct;
-use app\models\Shop;
+use common\models\ProductPrice;
+use common\models\ReceiptProduct;
+use common\models\Shop;
 
 /**
  * This is the base-model class for table "receipt".
