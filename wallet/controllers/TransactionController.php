@@ -29,7 +29,7 @@ class TransactionController extends DefaultModuleController
         ]);
     }
 
-    public function actionAddNewRow()
+    public function actionNewRow()
     {
         if (\Yii::$app->request->isPost && $number = \Yii::$app->request->post('rowNumber')) {
             return $this->renderPartial('_productTableRow', ['number' => $number]);

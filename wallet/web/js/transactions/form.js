@@ -2,7 +2,7 @@ $receiptTable = $('table#receipt-table');
 $receiptTable.on('change', 'input.product-name', function() {
   $.ajax({
     type: 'POST',
-    url: '/transactions/add-new-row/',
+    url: '/transaction/new-row/',
     data: {
       rowNumber: $receiptTable.find('tr').length
     },
