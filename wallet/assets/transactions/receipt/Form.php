@@ -21,6 +21,6 @@ class Form extends BaseAssetBundle
     ];
 
     public $js = [
-        'js/wallet/transactions/form.min.js'
+        'js/transactions/form.min.js'
     ];
 }
