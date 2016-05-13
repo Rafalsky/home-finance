@@ -58,23 +58,9 @@ $config = [
             'rules' => [
             ],
         ],
-    ],
-    'modules' => [
-        'rbac' => [
-            'class' => dektrium\rbac\Module::class,
-        ],
-        'wallet' => [
-            'class' => app\modules\wallet\Module::class,
-        ],
         'user' => [
-            'class' => dektrium\user\Module::class,
-            // you will configure your module inside this file
-            // or if need different configuration for frontend and backend you may
-            // configure in needed configs
-        ],
-        'installation' => [
-            'class' => 'app\modules\installation',
-        ],
+            'class' => yii\web\User::class,
+        ]
     ],
     'params' => $params,
 ];
