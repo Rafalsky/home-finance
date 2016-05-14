@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="text-block-update">
 
-    <?php echo $this->render('_form', [
+    <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 

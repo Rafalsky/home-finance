@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="widget-menu-update">
 
-    <?php echo $this->render('_form', [
+    <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 

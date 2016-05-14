@@ -14,17 +14,17 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="widget-carousel-update">
 
-    <?php echo $this->render('_form', [
+    <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
     <p>
-        <?php echo Html::a(Yii::t('backend', 'Create {modelClass}', [
+        <?= Html::a(Yii::t('backend', 'Create {modelClass}', [
             'modelClass' => 'Widget Carousel Item',
         ]), ['/widget-carousel-item/create', 'carousel_id'=>$model->id], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php echo GridView::widget([
+    <?= GridView::widget([
         'dataProvider' => $carouselItemsProvider,
         'columns' => [
             'order',

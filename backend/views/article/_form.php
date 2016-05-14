@@ -15,19 +15,19 @@ use yii\bootstrap\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?php echo $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?php echo $form->field($model, 'slug')
+    <?= $form->field($model, 'slug')
         ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
         ->textInput(['maxlength' => true]) ?>
 
-    <?php echo $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(
+    <?= $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(
             $categories,
             'id',
             'title'
         ), ['prompt'=>'']) ?>
 
-    <?php echo $form->field($model, 'body')->widget(
+    <?= $form->field($model, 'body')->widget(
         \yii\imperavi\Widget::className(),
         [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
@@ -42,7 +42,7 @@ use yii\bootstrap\ActiveForm;
         ]
     ) ?>
 
-    <?php echo $form->field($model, 'thumbnail')->widget(
+    <?= $form->field($model, 'thumbnail')->widget(
         Upload::className(),
         [
             'url' => ['/file-storage/upload'],
@@ -50,7 +50,7 @@ use yii\bootstrap\ActiveForm;
         ]);
     ?>
 
-    <?php echo $form->field($model, 'attachments')->widget(
+    <?= $form->field($model, 'attachments')->widget(
         Upload::className(),
         [
             'url' => ['/file-storage/upload'],
@@ -60,11 +60,11 @@ use yii\bootstrap\ActiveForm;
         ]);
     ?>
 
-    <?php echo $form->field($model, 'view')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'view')->textInput(['maxlength' => true]) ?>
 
-    <?php echo $form->field($model, 'status')->checkbox() ?>
+    <?= $form->field($model, 'status')->checkbox() ?>
 
-    <?php echo $form->field($model, 'published_at')->widget(
+    <?= $form->field($model, 'published_at')->widget(
         DateTimeWidget::className(),
         [
             'phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ'
@@ -72,7 +72,7 @@ use yii\bootstrap\ActiveForm;
     ) ?>
 
     <div class="form-group">
-        <?php echo Html::submitButton(
+        <?= Html::submitButton(
             $model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'),
             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

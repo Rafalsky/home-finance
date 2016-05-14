@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="widget-carousel-create">
 
-    <?php echo $this->render('_form', [
+    <?= $this->render('_form', [
         'model' => $model
     ]) ?>
 
