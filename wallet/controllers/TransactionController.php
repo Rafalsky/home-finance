@@ -24,8 +24,10 @@ class TransactionController extends DefaultModuleController
     public function actionAddReceipt()
     {
         $this->view->title =  \Yii::t('wallet', 'Add new receipt');
+        $model = new Receipt();
+        $model = $this->updateWithPostRequest($model);
         return $this->render('addReceipt', [
-            'receipt' => new Receipt
+            'receipt' => $model
         ]);
     }
 
