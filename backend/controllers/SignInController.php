@@ -16,14 +16,11 @@ use backend\models\AccountForm;
 use Intervention\Image\ImageManagerStatic;
 use trntv\filekit\actions\DeleteAction;
 use trntv\filekit\actions\UploadAction;
-use Yii;
 use yii\filters\VerbFilter;
-use yii\imagine\Image;
 use yii\web\Controller;
 
 class SignInController extends Controller
 {
-
     public $defaultAction = 'login';
 
     public function behaviors()
@@ -57,16 +54,15 @@ class SignInController extends Controller
         ];
     }
 
-
     public function actionLogin()
     {
         $this->layout = 'base';
-        if (!Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
             return $this->render('login', [
@@ -77,17 +73,17 @@ class SignInController extends Controller
 
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+        \Yii::$app->user->logout();
         return $this->goHome();
     }
 
     public function actionProfile()
     {
-        $model = Yii::$app->user->identity->userProfile;
+        $model = \Yii::$app->user->identity->userProfile;
         if ($model->load($_POST) && $model->save()) {
-            Yii::$app->session->setFlash('alert', [
+            \Yii::$app->session->setFlash('alert', [
                 'options'=>['class' => 'alert-success'],
-                'body'=>Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
+                'body' => \Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
             ]);
             return $this->refresh();
         }
@@ -96,7 +92,7 @@ class SignInController extends Controller
 
     public function actionAccount()
     {
-        $user = Yii::$app->user->identity;
+        $user = \Yii::$app->user->identity;
         $model = new AccountForm();
         $model->username = $user->username;
         $model->email = $user->email;
@@ -107,9 +103,9 @@ class SignInController extends Controller
                 $user->setPassword($model->password);
             }
             $user->save();
-            Yii::$app->session->setFlash('alert', [
+            \Yii::$app->session->setFlash('alert', [
                 'options'=>['class' => 'alert-success'],
-                'body'=>Yii::t('backend', 'Your account has been successfully saved')
+                'body' => \Yii::t('backend', 'Your account has been successfully saved')
             ]);
             return $this->refresh();
         }

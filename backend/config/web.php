@@ -10,7 +10,7 @@
  */
 
 $config = [
-    'homeUrl'=>Yii::getAlias('@backendUrl'),
+    'homeUrl' => Yii::getAlias('@backendUrl'),
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute' => 'timeline-event/index',
     'controllerMap' => [
@@ -36,14 +36,14 @@ $config = [
             'cookieValidationKey' => env('BACKEND_COOKIE_VALIDATION_KEY')
         ],
         'user' => [
-            'class' => 'yii\web\User',
-            'identityClass' => 'common\models\User',
+            'class' => \yii\web\User::class,
+            'identityClass' => \common\models\User::class,
             'loginUrl' => ['sign-in/login'],
             'enableAutoLogin' => true,
             'as afterLogin' => \common\behaviors\LoginTimestampBehavior::class
         ],
     ],
-    'modules'=>[
+    'modules' => [
         'i18n' => [
             'class' => \backend\modules\i18n\Module::class,
             'defaultRoute' => 'i18n-message/index'
