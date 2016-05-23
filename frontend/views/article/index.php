@@ -9,6 +9,6 @@ $this->title = Yii::t('frontend', 'Articles')
         'pager'=>[
             'hideOnSinglePage'=>true,
         ],
-        'itemView'=>'_item'
+        'itemView' => '_item'
     ])?>
 </div>

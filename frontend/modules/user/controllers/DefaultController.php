@@ -81,7 +81,7 @@ class DefaultController extends Controller
             $locale = $model->getModel('profile')->locale;
             \Yii::$app->session->setFlash('forceUpdateLocale');
             \Yii::$app->session->setFlash('alert', [
-                'options' => ['class'=>'alert-success'],
+                'options' => ['class' => 'alert-success'],
                 'body' => \Yii::t('frontend', 'Your account has been successfully saved', [], $locale)
             ]);
             return $this->refresh();

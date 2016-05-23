@@ -19,7 +19,7 @@ use yii\bootstrap\ActiveForm;
         ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
         ->textInput(['maxlength' => 1024]) ?>
 
-    <?= $form->field($model, 'parent_id')->dropDownList($categories, ['prompt'=>'']) ?>
+    <?= $form->field($model, 'parent_id')->dropDownList($categories, ['prompt' => '']) ?>
 
     <?= $form->field($model, 'status')->checkbox() ?>
 

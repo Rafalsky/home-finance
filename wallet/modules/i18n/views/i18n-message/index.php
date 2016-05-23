@@ -27,16 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             [
-                'attribute'=>'language',
+                'attribute' => 'language',
                 'filter'=> $languages
             ],
             [
-                'attribute'=>'category',
+                'attribute' => 'category',
                 'filter'=> $categories
             ],
             'sourceMessage',
             'translation:ntext',
-            ['class' => 'yii\grid\ActionColumn', 'template'=>'{update} {delete}'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{update} {delete}'],
         ],
     ]); ?>
 

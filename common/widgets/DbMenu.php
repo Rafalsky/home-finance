@@ -21,7 +21,7 @@ use yii\widgets\Menu;
  * Class DbMenu
  * Usage:
  * echo common\widgets\DbMenu::widget([
- *      'key'=>'stored-menu-key',
+ *      'key' => 'stored-menu-key',
  *      ... other options from \yii\widgets\Menu
  * ])
  * @package common\widgets

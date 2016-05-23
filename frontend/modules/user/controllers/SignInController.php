@@ -135,7 +135,7 @@ class SignInController extends \yii\web\Controller
                             'frontend',
                             'Your account has been successfully created. Check your email for further instructions.'
                         ),
-                        'options' => ['class'=>'alert-success']
+                        'options' => ['class' => 'alert-success']
                     ]);
                 } else {
                     \Yii::$app->getUser()->login($user);
@@ -169,7 +169,7 @@ class SignInController extends \yii\web\Controller
         \Yii::$app->getUser()->login($user);
         \Yii::$app->getSession()->setFlash('alert', [
             'body' => \Yii::t('frontend', 'Your account has been successfully activated.'),
-            'options' => ['class'=>'alert-success']
+            'options' => ['class' => 'alert-success']
         ]);
 
         return $this->goHome();
@@ -186,14 +186,14 @@ class SignInController extends \yii\web\Controller
             if ($model->sendEmail()) {
                 \Yii::$app->getSession()->setFlash('alert', [
                     'body' => \Yii::t('frontend', 'Check your email for further instructions.'),
-                    'options'=>['class'=>'alert-success']
+                    'options'=>['class' => 'alert-success']
                 ]);
 
                 return $this->goHome();
             } else {
                 \Yii::$app->getSession()->setFlash('alert', [
                     'body' => \Yii::t('frontend', 'Sorry, we are unable to reset password for email provided.'),
-                    'options'=>['class'=>'alert-danger']
+                    'options'=>['class' => 'alert-danger']
                 ]);
             }
         }
@@ -220,7 +220,7 @@ class SignInController extends \yii\web\Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
             \Yii::$app->getSession()->setFlash('alert', [
                 'body'=> \Yii::t('frontend', 'New password was saved.'),
-                'options'=>['class'=>'alert-success']
+                'options'=>['class' => 'alert-success']
             ]);
             return $this->goHome();
         }
@@ -271,7 +271,7 @@ class SignInController extends \yii\web\Controller
                     \Yii::$app->session->setFlash(
                         'alert',
                         [
-                            'options' => ['class'=>'alert-success'],
+                            'options' => ['class' => 'alert-success'],
                             'body' => \Yii::t('frontend', 'Welcome to {app-name}. Email with your login information was sent to your email.', [
                                 'app-name' => \Yii::$app->name
                             ])
@@ -284,7 +284,7 @@ class SignInController extends \yii\web\Controller
                     \Yii::$app->session->setFlash(
                         'alert',
                         [
-                            'options'=>['class'=>'alert-danger'],
+                            'options'=>['class' => 'alert-danger'],
                             'body' => \Yii::t('frontend', 'We already have a user with email {email}', [
                                 'email'=>$user->email
                             ])
@@ -294,7 +294,7 @@ class SignInController extends \yii\web\Controller
                     \Yii::$app->session->setFlash(
                         'alert',
                         [
-                            'options' => ['class'=>'alert-danger'],
+                            'options' => ['class' => 'alert-danger'],
                             'body' => \Yii::t('frontend', 'Error while oauth process.')
                         ]
                     );

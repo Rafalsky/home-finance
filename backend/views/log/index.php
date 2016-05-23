@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="system-log-index">
 
     <p>
-        <?= Html::a(Yii::t('backend', 'Clear'), false, ['class' => 'btn btn-danger', 'data-method'=>'delete']) ?>
+        <?= Html::a(Yii::t('backend', 'Clear'), false, ['class' => 'btn btn-danger', 'data-method' => 'delete']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute'=>'level',
+                'attribute' => 'level',
                 'value'=>function ($model) {
                     return \yii\log\Logger::getLevelName($model->level);
                 },
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template'=>'{view}{delete}'
+                'template' => '{view}{delete}'
             ]
         ]
     ]); ?>

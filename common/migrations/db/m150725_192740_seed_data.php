@@ -83,26 +83,26 @@ class m150725_192740_seed_data extends Migration
         ]);
 
         $this->insert('{{%widget_menu}}', [
-            'key'=>'frontend-index',
-            'title'=>'Frontend index menu',
+            'key' => 'frontend-index',
+            'title' => 'Frontend index menu',
             'items'=>json_encode([
                 [
-                    'label'=>'Get started with Yii2',
-                    'url'=>'http://www.yiiframework.com',
-                    'options'=>['tag'=>'span'],
-                    'template'=>'<a href="{url}" class="btn btn-lg btn-success">{label}</a>'
+                    'label' => 'Get started with Yii2',
+                    'url' => 'http://www.yiiframework.com',
+                    'options'=>['tag' => 'span'],
+                    'template' => '<a href="{url}" class="btn btn-lg btn-success">{label}</a>'
                 ],
                 [
-                    'label'=>'Yii2 Starter Kit on GitHub',
-                    'url'=>'https://github.com/trntv/yii2-starter-kit',
-                    'options'=>['tag'=>'span'],
-                    'template'=>'<a href="{url}" class="btn btn-lg btn-primary">{label}</a>'
+                    'label' => 'Yii2 Starter Kit on GitHub',
+                    'url' => 'https://github.com/trntv/yii2-starter-kit',
+                    'options'=>['tag' => 'span'],
+                    'template' => '<a href="{url}" class="btn btn-lg btn-primary">{label}</a>'
                 ],
                 [
-                    'label'=>'Find a bug?',
-                    'url'=>'https://github.com/trntv/yii2-starter-kit/issues',
-                    'options'=>['tag'=>'span'],
-                    'template'=>'<a href="{url}" class="btn btn-lg btn-danger">{label}</a>'
+                    'label' => 'Find a bug?',
+                    'url' => 'https://github.com/trntv/yii2-starter-kit/issues',
+                    'options'=>['tag' => 'span'],
+                    'template' => '<a href="{url}" class="btn btn-lg btn-danger">{label}</a>'
                 ]
 
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
@@ -170,11 +170,11 @@ class m150725_192740_seed_data extends Migration
         ]);
 
         $this->delete('{{%widget_text}}', [
-            'key'=>'backend_welcome'
+            'key' => 'backend_welcome'
         ]);
 
         $this->delete('{{%widget_menu}}', [
-            'key'=>'frontend-index'
+            'key' => 'frontend-index'
         ]);
 
         $this->delete('{{%article_category}}', [

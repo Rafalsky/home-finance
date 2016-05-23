@@ -69,13 +69,13 @@ $bundle = WalletAsset::register($this);
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <?= Html::a(Yii::t('wallet', 'Profile'), ['/sign-in/profile'], ['class'=>'btn btn-default btn-flat']); ?>
+                                        <?= Html::a(Yii::t('wallet', 'Profile'), ['/sign-in/profile'], ['class' => 'btn btn-default btn-flat']); ?>
                                     </div>
                                     <div class="pull-left">
-                                        <?= Html::a(Yii::t('wallet', 'Account'), ['/sign-in/account'], ['class'=>'btn btn-default btn-flat']); ?>
+                                        <?= Html::a(Yii::t('wallet', 'Account'), ['/sign-in/account'], ['class' => 'btn btn-default btn-flat']); ?>
                                     </div>
                                     <div class="pull-right">
-                                        <?= Html::a(Yii::t('wallet', 'Logout'), ['/sign-in/logout'], ['class'=>'btn btn-default btn-flat', 'data-method' => 'post']); ?>
+                                        <?= Html::a(Yii::t('wallet', 'Logout'), ['/sign-in/logout'], ['class' => 'btn btn-default btn-flat', 'data-method' => 'post']); ?>
                                     </div>
                                 </li>
                             </ul>
@@ -110,7 +110,7 @@ $bundle = WalletAsset::register($this);
                 </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <?= Menu::widget([
-                    'options'=>['class'=>'sidebar-menu'],
+                    'options'=>['class' => 'sidebar-menu'],
                     'linkTemplate' => '<a href="{url}">{icon}<span>{label}</span>{right-icon}{badge}</a>',
                     'submenuTemplate'=>"\n<ul class=\"treeview-menu\">\n{items}\n</ul>\n",
                     'activateParents'=>true,
@@ -122,47 +122,47 @@ $bundle = WalletAsset::register($this);
                         [
                             'label'=>Yii::t('wallet', 'Reports'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'Main Report'),
-                                    'url'=>['/page/index'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'url'=>['/page/index'], 'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'My netto value'),
                                     'url'=>['/report/my-netto-value'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
                         [
                             'label'=>Yii::t('wallet', 'Shops'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'List'),
-                                    'url'=>['/shop/list'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'url'=>['/shop/list'], 'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'Add'),
                                     'url'=>['/shop/add'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
                         [
                             'label'=>Yii::t('wallet', 'Transactions'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label' => Yii::t('wallet', 'Receipts List'),
                                     'url'=>['/transaction/list'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label' => Yii::t('wallet', 'Add Receipt'),
@@ -184,72 +184,72 @@ $bundle = WalletAsset::register($this);
                         [
                             'label'=>Yii::t('wallet', 'Products'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'Main Report'),
                                     'url'=>['/page/index'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'My netto value'),
                                     'url'=>['/report/my-netto-value'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
                         [
                             'label'=>Yii::t('wallet', 'Fixed cost'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'Main Report'),
                                     'url'=>['/page/index'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'My netto value'),
                                     'url'=>['/report/my-netto-value'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
                         [
                             'label'=>Yii::t('wallet', 'Assets'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'Main Report'),
                                     'url'=>['/page/index'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'My netto value'),
                                     'url'=>['/report/my-netto-value'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
                         [
                             'label'=>Yii::t('wallet', 'Liabilities'),
                             'url' => '#',
-                            'icon'=>'<i class="fa fa-edit"></i>',
-                            'options'=>['class'=>'treeview'],
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options'=>['class' => 'treeview'],
                             'items'=>[
                                 [
                                     'label'=>Yii::t('wallet', 'Main Report'),
                                     'url'=>['/page/index'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
                                     'label'=>Yii::t('wallet', 'My netto value'),
                                     'url'=>['/report/my-netto-value'],
-                                    'icon'=>'<i class="fa fa-angle-double-right"></i>'
+                                    'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]
                         ],
@@ -271,7 +271,7 @@ $bundle = WalletAsset::register($this);
                 </h1>
 
                 <?= Breadcrumbs::widget([
-                    'tag'=>'ol',
+                    'tag' => 'ol',
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) ?>
             </section>

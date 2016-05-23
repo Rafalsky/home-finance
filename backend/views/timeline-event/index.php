@@ -7,7 +7,7 @@
  */
 $this->title = Yii::t('backend', 'Application timeline');
 $icons = [
-    'user'=>'<i class="fa fa-user bg-blue"></i>'
+    'user' => '<i class="fa fa-user bg-blue"></i>'
 ];
 ?>
 <?php \yii\widgets\Pjax::begin() ?>

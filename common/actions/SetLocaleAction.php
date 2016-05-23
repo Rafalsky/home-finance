@@ -27,11 +27,11 @@ use yii\web\Cookie;
  *   {
  *       return [
  *           'set-locale'=>[
- *               'class'=>'common\actions\SetLocaleAction',
+ *               'class' => 'common\actions\SetLocaleAction',
  *               'locales'=>[
  *                   'en-US', 'ru-RU', 'ua-UA'
  *               ],
- *               'localeCookieName'=>'_locale',
+ *               'localeCookieName' => '_locale',
  *               'callback'=>function($action){
  *                   return $this->controller->redirect(/.. some url ../)
  *               }

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="system-log-view">
 
     <p>
-        <?= Html::a(Yii::t('backend', 'Delete'), ['delete', 'id'=>$model->id], ['class' => 'btn btn-danger', 'data'=>['method'=>'post']]) ?>
+        <?= Html::a(Yii::t('backend', 'Delete'), ['delete', 'id'=>$model->id], ['class' => 'btn btn-danger', 'data'=>['method' => 'post']]) ?>
     </p>
 
     <?= DetailView::widget([
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'prefix:ntext',
             [
-                'attribute'=>'message',
-                'format'=>'raw',
-                'value'=>Html::tag('pre', $model->message, ['style'=>'white-space: pre-wrap'])
+                'attribute' => 'message',
+                'format' => 'raw',
+                'value'=>Html::tag('pre', $model->message, ['style' => 'white-space: pre-wrap'])
             ],
         ],
     ]) ?>

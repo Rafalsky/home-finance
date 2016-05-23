@@ -51,13 +51,13 @@ class SiteController extends Controller
             if ($model->contact(\Yii::$app->params['adminEmail'])) {
                 \Yii::$app->getSession()->setFlash('alert', [
                     'body' => \Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'),
-                    'options' => ['class'=>'alert-success']
+                    'options' => ['class' => 'alert-success']
                 ]);
                 return $this->refresh();
             } else {
                 \Yii::$app->getSession()->setFlash('alert', [
                     'body' => \Yii::t('frontend', 'There was an error sending email.'),
-                    'options' => ['class'=>'alert-danger']
+                    'options' => ['class' => 'alert-danger']
                 ]);
             }
         }

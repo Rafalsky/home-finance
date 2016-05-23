@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'key',
             [
                 'class'=>\common\grid\EnumColumn::className(),
-                'attribute'=>'status',
+                'attribute' => 'status',
                 'enum'=>[
                     Yii::t('backend', 'Disabled'),
                     Yii::t('backend', 'Enabled')
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template'=>'{update} {delete}'
+                'template' => '{update} {delete}'
             ],
         ],
     ]); ?>

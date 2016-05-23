@@ -25,7 +25,7 @@ use yii\bootstrap\ActiveForm;
             $categories,
             'id',
             'title'
-        ), ['prompt'=>'']) ?>
+        ), ['prompt' => '']) ?>
 
     <?= $form->field($model, 'body')->widget(
         \yii\imperavi\Widget::className(),

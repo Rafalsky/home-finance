@@ -21,6 +21,6 @@ class Html5shiv extends AssetBundle
     ];
 
     public $jsOptions = [
-        'condition'=>'lt IE 9'
+        'condition' => 'lt IE 9'
     ];
 }

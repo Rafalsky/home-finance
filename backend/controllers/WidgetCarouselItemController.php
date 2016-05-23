@@ -59,7 +59,7 @@ class WidgetCarouselItemController extends Controller
         $model->carousel_id =  $carousel->id;
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
-                Yii::$app->getSession()->setFlash('alert', ['options'=>['class'=>'alert-success'], 'body'=>Yii::t('backend', 'Carousel slide was successfully saved')]);
+                Yii::$app->getSession()->setFlash('alert', ['options'=>['class' => 'alert-success'], 'body'=>Yii::t('backend', 'Carousel slide was successfully saved')]);
                 return $this->redirect(['/widget-carousel/update', 'id' => $model->carousel_id]);
             }
         }
@@ -80,7 +80,7 @@ class WidgetCarouselItemController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('alert', ['options'=>['class'=>'alert-success'], 'body'=>Yii::t('backend', 'Carousel slide was successfully saved')]);
+            Yii::$app->getSession()->setFlash('alert', ['options'=>['class' => 'alert-success'], 'body'=>Yii::t('backend', 'Carousel slide was successfully saved')]);
             return $this->redirect(['/widget-carousel/update', 'id' => $model->carousel_id]);
         }
         return $this->render('update', [

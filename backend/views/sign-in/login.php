@@ -20,7 +20,7 @@ $this->params['body-class'] = 'login-page';
         <div class="body">
             <?= $form->field($model, 'username') ?>
             <?= $form->field($model, 'password')->passwordInput() ?>
-            <?= $form->field($model, 'rememberMe')->checkbox(['class'=>'simple']) ?>
+            <?= $form->field($model, 'rememberMe')->checkbox(['class' => 'simple']) ?>
         </div>
         <div class="footer">
             <?= Html::submitButton(Yii::t('backend', 'Sign me in'), [
