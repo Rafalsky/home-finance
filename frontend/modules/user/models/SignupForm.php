@@ -94,7 +94,7 @@ class SignupForm extends Model
             $user->setPassword($this->password);
             if (!$user->save()) {
                 throw new Exception("User couldn't be  saved");
-            };
+            }
             $user->afterSignup();
             if ($shouldBeActivated) {
                 $token = UserToken::create(
