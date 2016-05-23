@@ -1,0 +1,67 @@
+<?php
+
+/**
+ *  This file is part of the HomeFinanceV2 project.
+ *
+ *  (c) Rafalsky.com <http://github.com/Rafalsky/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+return [
+    'Activation email' => 'Email aktywacyjny',
+    'This email has already been taken.' => 'Ten email jest już zajęty',
+    'Your account has been successfully activated.' => 'Twoje konto zostało aktywowane',
+    'Your account has been successfully created. Check your email for further instructions.' => 'Twoje konto zostało utworzone. Sprawdź swoją skrzynkę pocztową po dalsze instrukcje',
+    'Your activation link: {url}' => 'Twój kod aktywacyjny {url}',
+    'About' => '',
+    'Account Settings' => 'Ustawienia konta',
+    'Articles' => 'Artykuły',
+    'Attachments' => 'Załączniki',
+    'Backend' => '',
+    'Body' => '',
+    'Check your email for further instructions.' => 'Sprawdź swój email po dalsze instrukcje',
+    'Confirm Password' => 'Potwierdź hasło',
+    'Contact' => 'Kontakt',
+    'E-mail' => '',
+    'Email' => '',
+    'Error while oauth process.' => 'Błąd podczas autoryzacji',
+    'Female' => 'Kobieta',
+    'Home' => '',
+    'If you forgot your password you can reset it <a href="{link}">here</a>' => '',
+    'Incorrect username or password.' => 'Nieprawidłowa nazwa użytkownika lub hasło',
+    'Language' => 'Język',
+    'Log in with' => 'Zaloguj się przez',
+    'Login' => '',
+    'Logout' => 'Wyloguj',
+    'Male' => 'Mężczyzna',
+    'Name' => '',
+    'Need an account? Sign up.' => 'Potrzebujesz konta? Zarejestruj się',
+    'New password was saved.' => 'Nowe hasło zostało zapisane',
+    'Page not found' => 'Strony nie znaleziono',
+    'Password' => 'Hasło',
+    'Password reset for {name}' => '',
+    'Profile settings' => 'Ustawienia profilu',
+    'Remember Me' => 'Zapamiętaj mnie',
+    'Request password reset' => 'Zresetuj hasło',
+    'Reset password' => 'Zresetuj hasło',
+    'Settings' => 'Ustawienia',
+    'Sign up with' => 'Zarejestruj się za pomocą',
+    'Signup' => 'Zarejestruj',
+    'Sorry, we are unable to reset password for email provided.' => '',
+    'Subject' => '',
+    'Submit' => '',
+    'Thank you for contacting us. We will respond to you as soon as possible.' => '',
+    'There was an error sending email.' => '',
+    'This email address has already been taken.' => '',
+    'This username has already been taken.' => '',
+    'Update' => 'Aktualizuj',
+    'User Settings' => '',
+    'Username' => 'Nazwa użytkownika',
+    'Username or email' => 'Nazwa użytkownika lub email',
+    'Verification Code' => 'Kod weryfikacyjny',
+    'We already have a user with email {email}' => '',
+    'Welcome to {app-name}. Email with your login information was sent to your email.' => '',
+    'Your account has been successfully saved' => '',
+    '{app-name} | Your login information' => '',
+];
