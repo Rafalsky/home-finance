@@ -51,18 +51,18 @@ class m150725_192740_seed_data extends Migration
         ]);
 
         $this->insert('{{%user_profile}}', [
-            'user_id'=>1,
-            'locale'=>Yii::$app->sourceLanguage,
+            'user_id' => 1,
+            'locale' => Yii::$app->sourceLanguage,
             'firstname' => 'John',
             'lastname' => 'Doe'
         ]);
         $this->insert('{{%user_profile}}', [
-            'user_id'=>2,
-            'locale'=>Yii::$app->sourceLanguage
+            'user_id' => 2,
+            'locale' => Yii::$app->sourceLanguage
         ]);
         $this->insert('{{%user_profile}}', [
-            'user_id'=>3,
-            'locale'=>Yii::$app->sourceLanguage
+            'user_id' => 3,
+            'locale' => Yii::$app->sourceLanguage
         ]);
 
         $this->insert('{{%page}}', [
@@ -110,29 +110,10 @@ class m150725_192740_seed_data extends Migration
         ]);
 
         $this->insert('{{%widget_text}}', [
-            'key'=>'backend_welcome',
-            'title'=>'Welcome to backend',
-            'body'=>'<p>Welcome to Yii2 Starter Kit Dashboard</p>',
+            'key' => 'backend_welcome',
+            'title' => 'Welcome to backend',
+            'body' => '<p>Welcome to Home Finance Dashboard</p>',
             'status'=>1,
-            'created_at'=> time(),
-            'updated_at'=> time(),
-        ]);
-
-        $this->insert('{{%widget_text}}', [
-            'key'=>'ads-example',
-            'title'=>'Google Ads Example Block',
-            'body'=>'<div class="lead">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9505937224921657"
-                     data-ad-slot="2264361777"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>',
-            'status'=>0,
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
@@ -163,7 +144,6 @@ class m150725_192740_seed_data extends Migration
             'value' => 'disabled',
             'comment' => 'Set it to "true" to turn on maintenance mode'
         ]);
-
     }
 
     public function safeDown()

@@ -14,7 +14,7 @@ $config = [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'extensions' => require(__DIR__ . '/../../vendor/yiisoft/extensions.php'),
     'sourceLanguage' => 'en-US',
-    'language' => 'en-US',
+    'language' => 'pl-PL',
     'bootstrap' => ['log'],
     'components' => [
 
@@ -160,11 +160,12 @@ $config = [
         'adminEmail' => env('ADMIN_EMAIL'),
         'robotEmail' => env('ROBOT_EMAIL'),
         'availableLocales' => [
+            'pl-PL' => 'Polski (PL)',
             'en-US' => 'English (US)',
-            'ru-RU' => 'Русский (РФ)',
-            'uk-UA' => 'Українська (Україна)',
-            'es' => 'Español',
-            'zh-CN' => '简体中文',
+            //'ru-RU' => 'Русский (РФ)',
+            //'uk-UA' => 'Українська (Україна)',
+            //'es' => 'Español',
+            //'zh-CN' => '简体中文',
         ],
     ],
 ];
