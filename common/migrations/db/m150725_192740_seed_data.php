@@ -137,21 +137,6 @@ class m150725_192740_seed_data extends Migration
             'updated_at'=> time(),
         ]);
 
-        $this->insert('{{%widget_carousel}}', [
-            'id'=>1,
-            'key'=>'index',
-            'status'=>\common\models\WidgetCarousel::STATUS_ACTIVE
-        ]);
-
-        $this->insert('{{%widget_carousel_item}}', [
-            'carousel_id'=>1,
-            'base_url' => Yii::getAlias('@frontendUrl'),
-            'path'=>'img/yii2-starter-kit.gif',
-            'type'=>'image/gif',
-            'url'=>'/',
-            'status'=>1
-        ]);
-
         $this->insert('{{%key_storage_item}}', [
             'key' => 'backend.theme-skin',
             'value' => 'skin-blue',
