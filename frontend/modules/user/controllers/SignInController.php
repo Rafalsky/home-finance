@@ -140,7 +140,7 @@ class SignInController extends \yii\web\Controller
                 } else {
                     \Yii::$app->getUser()->login($user);
                 }
-                return \Yii::$app->getResponse()->redirect(\Yii::getAlias('@backendUrl'));
+                return \Yii::$app->getResponse()->redirect(\Yii::getAlias('@walletUrl'));
             }
         }
 

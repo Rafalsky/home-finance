@@ -30,11 +30,6 @@ $config = [
         'authClientCollection' => [
             'class' => yii\authclient\Collection::class,
             'clients' => [
-                'github' => [
-                    'class' => yii\authclient\clients\GitHub::class,
-                    'clientId' => env('GITHUB_CLIENT_ID'),
-                    'clientSecret' => env('GITHUB_CLIENT_SECRET')
-                ],
                 'facebook' => [
                     'class' => 'yii\authclient\clients\Facebook',
                     'clientId' => env('FACEBOOK_CLIENT_ID'),
