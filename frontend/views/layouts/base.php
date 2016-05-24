@@ -51,7 +51,7 @@ $this->beginContent('@frontend/views/layouts/_clear.php')
                 'items'=>array_map(function ($code) {
                     return [
                         'label' => Yii::$app->params['availableLocales'][$code],
-                        'url' => ['/site/set-locale', 'locale'=>$code],
+                        'url' => ['/site/set-locale', 'locale' => $code],
                         'active' => Yii::$app->language === $code
                     ];
                 }, array_keys(Yii::$app->params['availableLocales']))

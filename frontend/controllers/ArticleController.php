@@ -44,13 +44,13 @@ class ArticleController extends Controller
      */
     public function actionView($slug)
     {
-        $model = Article::find()->published()->andWhere(['slug'=>$slug])->one();
+        $model = Article::find()->published()->andWhere(['slug' => $slug])->one();
         if (!$model) {
             throw new NotFoundHttpException;
         }
 
         $viewFile = $model->view ?: 'view';
-        return $this->render($viewFile, ['model'=>$model]);
+        return $this->render($viewFile, ['model' => $model]);
     }
 
     /**

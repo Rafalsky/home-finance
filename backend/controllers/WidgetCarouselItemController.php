@@ -98,7 +98,7 @@ class WidgetCarouselItemController extends Controller
     {
         $model = $this->findModel($id);
         if ($model->delete()) {
-            return $this->redirect(['/widget-carousel/update', 'id'=>$model->carousel_id]);
+            return $this->redirect(['/widget-carousel/update', 'id' => $model->carousel_id]);
         };
     }
 

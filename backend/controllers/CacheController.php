@@ -15,11 +15,9 @@
 
 namespace backend\controllers;
 
-use Yii;
 use yii\caching\Cache;
 use yii\caching\TagDependency;
 use yii\data\ArrayDataProvider;
-use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\HttpException;
 
@@ -35,9 +33,9 @@ class CacheController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ArrayDataProvider(['allModels'=>$this->findCaches()]);
+        $dataProvider = new ArrayDataProvider(['allModels' => $this->findCaches()]);
         return $this->render('index', [
-            'dataProvider'=>$dataProvider
+            'dataProvider' => $dataProvider
         ]);
     }
 
@@ -50,11 +48,11 @@ class CacheController extends Controller
     public function actionFlushCache($id)
     {
         if ($this->getCache($id)->flush()) {
-            Yii::$app->session->setFlash('alert', [
-                'body'=>\Yii::t('backend', 'Cache has been successfully flushed'),
-                'options'=>['class' => 'alert-success']
+            \Yii::$app->session->setFlash('alert', [
+                'body' => \Yii::t('backend', 'Cache has been successfully flushed'),
+                'options' => ['class' => 'alert-success']
             ]);
-        };
+        }
         return $this->redirect(['index']);
     }
 
@@ -68,9 +66,9 @@ class CacheController extends Controller
     public function actionFlushCacheKey($id, $key)
     {
         if ($this->getCache($id)->delete($key)) {
-            Yii::$app->session->setFlash('alert', [
-                'body'=>\Yii::t('backend', 'Cache entry has been successfully deleted'),
-                'options'=>['class' => 'alert-success']
+            \Yii::$app->session->setFlash('alert', [
+                'body' => \Yii::t('backend', 'Cache entry has been successfully deleted'),
+                'options' => ['class' => 'alert-success']
             ]);
         };
         return $this->redirect(['index']);
@@ -80,14 +78,15 @@ class CacheController extends Controller
      * @param $id
      * @param $tag
      * @return \yii\web\Response
+     * @throws \yii\base\InvalidConfigException
      * @throws HttpException
      */
     public function actionFlushCacheTag($id, $tag)
     {
         TagDependency::invalidate($this->getCache($id), $tag);
-        Yii::$app->session->setFlash('alert', [
-            'body'=>\Yii::t('backend', 'TagDependency was invalidated'),
-            'options'=>['class' => 'alert-success']
+        \Yii::$app->session->setFlash('alert', [
+            'body' => \Yii::t('backend', 'TagDependency was invalidated'),
+            'options' => ['class' => 'alert-success']
         ]);
         return $this->redirect(['index']);
     }
@@ -103,7 +102,7 @@ class CacheController extends Controller
         if (!in_array($id, array_keys($this->findCaches()))) {
             throw new HttpException(400, 'Given cache name is not a name of cache component');
         }
-        return Yii::$app->get($id);
+        return \Yii::$app->get($id);
     }
 
     /**
@@ -114,7 +113,7 @@ class CacheController extends Controller
     private function findCaches(array $cachesNames = [])
     {
         $caches = [];
-        $components = Yii::$app->getComponents();
+        $components = \Yii::$app->getComponents();
         $findAll = ($cachesNames == []);
 
         foreach ($components as $name => $component) {
@@ -123,11 +122,11 @@ class CacheController extends Controller
             }
 
             if ($component instanceof Cache) {
-                $caches[$name] = ['name'=>$name, 'class'=>get_class($component)];
+                $caches[$name] = ['name' => $name, 'class'=>get_class($component)];
             } elseif (is_array($component) && isset($component['class']) && $this->isCacheClass($component['class'])) {
-                $caches[$name] = ['name'=>$name, 'class'=>$component['class']];
+                $caches[$name] = ['name' => $name, 'class' => $component['class']];
             } elseif (is_string($component) && $this->isCacheClass($component)) {
-                $caches[$name] = ['name'=>$name, 'class'=>$component];
+                $caches[$name] = ['name' => $name, 'class' => $component];
             }
         }
 

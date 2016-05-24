@@ -241,7 +241,7 @@ class SignInController extends \yii\web\Controller
         // use BaseClient::normalizeUserAttributeMap to provide consistency for user attribute`s names
         $attributes = $client->getUserAttributes();
         $user = User::find()->where([
-                'oauth_client'=>$client->getName(),
+                'oauth_client' => $client->getName(),
                 'oauth_client_user_id'=>ArrayHelper::getValue($attributes, 'id')
             ])
             ->one();
@@ -263,7 +263,7 @@ class SignInController extends \yii\web\Controller
                 $user->afterSignup($profileData);
                 $sentSuccess = \Yii::$app->commandBus->handle(new SendEmailCommand([
                     'view' => 'oauth_welcome',
-                    'params' => ['user'=>$user, 'password'=>$password],
+                    'params' => ['user' => $user, 'password' => $password],
                     'subject' => \Yii::t('frontend', '{app-name} | Your login information', ['app-name' => \Yii::$app->name]),
                     'to' => $user->email
                 ]));
@@ -280,13 +280,13 @@ class SignInController extends \yii\web\Controller
                 }
             } else {
                 // We already have a user with this email. Do what you want in such case
-                if ($user->email && User::find()->where(['email'=>$user->email])->count()) {
+                if ($user->email && User::find()->where(['email' => $user->email])->count()) {
                     \Yii::$app->session->setFlash(
                         'alert',
                         [
                             'options'=>['class' => 'alert-danger'],
                             'body' => \Yii::t('frontend', 'We already have a user with email {email}', [
-                                'email'=>$user->email
+                                'email' => $user->email
                             ])
                         ]
                     );

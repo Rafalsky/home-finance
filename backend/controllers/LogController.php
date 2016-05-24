@@ -50,7 +50,7 @@ class LogController extends Controller
             return $this->refresh();
         }
         $dataProvider->sort = [
-            'defaultOrder'=>['log_time'=>SORT_DESC]
+            'defaultOrder' => ['log_time'=>SORT_DESC]
         ];
 
         return $this->render('index', [
@@ -78,6 +78,8 @@ class LogController extends Controller
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
+     * @throws \yii\db\StaleObjectException
+     * @throws \yii\web\NotFoundHttpException
      * @throws \Exception
      */
     public function actionDelete($id)

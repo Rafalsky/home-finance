@@ -36,7 +36,6 @@ class FileStorageController extends Controller
         ];
     }
 
-
     public function actions()
     {
         return [

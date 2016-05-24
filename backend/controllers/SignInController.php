@@ -82,12 +82,12 @@ class SignInController extends Controller
         $model = \Yii::$app->user->identity->userProfile;
         if ($model->load($_POST) && $model->save()) {
             \Yii::$app->session->setFlash('alert', [
-                'options'=>['class' => 'alert-success'],
+                'options' => ['class' => 'alert-success'],
                 'body' => \Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
             ]);
             return $this->refresh();
         }
-        return $this->render('profile', ['model'=>$model]);
+        return $this->render('profile', ['model' => $model]);
     }
 
     public function actionAccount()
@@ -109,6 +109,6 @@ class SignInController extends Controller
             ]);
             return $this->refresh();
         }
-        return $this->render('account', ['model'=>$model]);
+        return $this->render('account', ['model' => $model]);
     }
 }

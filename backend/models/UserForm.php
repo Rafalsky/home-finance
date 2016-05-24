@@ -39,7 +39,7 @@ class UserForm extends Model
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => User::className(), 'filter' => function ($query) {
                 if (!$this->getModel()->isNewRecord) {
-                    $query->andWhere(['not', ['id'=>$this->getModel()->id]]);
+                    $query->andWhere(['not', ['id' => $this->getModel()->id]]);
                 }
             }],
             ['username', 'string', 'min' => 2, 'max' => 255],
@@ -49,7 +49,7 @@ class UserForm extends Model
             ['email', 'email'],
             ['email', 'unique', 'targetClass'=> User::className(), 'filter' => function ($query) {
                 if (!$this->getModel()->isNewRecord) {
-                    $query->andWhere(['not', ['id'=>$this->getModel()->id]]);
+                    $query->andWhere(['not', ['id' => $this->getModel()->id]]);
                 }
             }],
 

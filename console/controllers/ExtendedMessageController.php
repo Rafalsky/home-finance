@@ -207,7 +207,7 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
         Console::output('Reading messages from database');
         $sourceMessages = $q->select(['*'])->from($sourceMessageTable)->all();
         foreach ($config['languages'] as $language) {
-            $translations = $q->select(['*'])->from($messageTable)->where(['language'=>$language])->indexBy('id')->all();
+            $translations = $q->select(['*'])->from($messageTable)->where(['language' => $language])->indexBy('id')->all();
             foreach ($sourceMessages as $row) {
                 $translation = ArrayHelper::getValue($translations, $row['id']);
                 $messages[$language][$row['category']][$row['message']] = $translation ? $translation['translation'] : null;
@@ -264,7 +264,7 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
                         $insertedSourceMessages[$category][$lastId] = $m;
                     }
                     $db->createCommand()
-                        ->insert($messageTable, ['id' => $lastId, 'language' => $language, 'translation'=>$translation])->execute();
+                        ->insert($messageTable, ['id' => $lastId, 'language' => $language, 'translation' => $translation])->execute();
                 }
                 Console::endProgress();
             }
