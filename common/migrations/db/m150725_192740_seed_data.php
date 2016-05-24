@@ -87,20 +87,20 @@ class m150725_192740_seed_data extends Migration
             'title' => 'Frontend index menu',
             'items'=>json_encode([
                 [
-                    'label' => 'Get started with Yii2',
-                    'url' => 'http://www.yiiframework.com',
+                    'label' => 'Get started!',
+                    'url' => 'https://home-finance.pl/user/sign-in/signup',
                     'options'=>['tag' => 'span'],
                     'template' => '<a href="{url}" class="btn btn-lg btn-success">{label}</a>'
                 ],
                 [
-                    'label' => 'Yii2 Starter Kit on GitHub',
-                    'url' => 'https://github.com/trntv/yii2-starter-kit',
+                    'label' => 'Home Finance on GitHub',
+                    'url' => 'https://github.com/Rafalsky/home-finance',
                     'options'=>['tag' => 'span'],
                     'template' => '<a href="{url}" class="btn btn-lg btn-primary">{label}</a>'
                 ],
                 [
                     'label' => 'Find a bug?',
-                    'url' => 'https://github.com/trntv/yii2-starter-kit/issues',
+                    'url' => 'https://github.com/Rafalsky/home-finance/issues',
                     'options'=>['tag' => 'span'],
                     'template' => '<a href="{url}" class="btn btn-lg btn-danger">{label}</a>'
                 ]

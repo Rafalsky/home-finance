@@ -41,7 +41,7 @@ class SignInController extends \yii\web\Controller
     {
         return [
             'oauth' => [
-                'class' => 'yii\authclient\AuthAction',
+                'class' => \yii\authclient\AuthAction::class,
                 'successCallback' => [$this, 'successOAuthCallback']
             ]
         ];
@@ -140,7 +140,7 @@ class SignInController extends \yii\web\Controller
                 } else {
                     \Yii::$app->getUser()->login($user);
                 }
-                return $this->goHome();
+                return \Yii::$app->getResponse()->redirect(\Yii::getAlias('@backendUrl'));
             }
         }
 
