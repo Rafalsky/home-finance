@@ -11,7 +11,9 @@
 
 namespace wallet\controllers;
 
-class WalletController extends DefaultModuleController
+use yii\web\Controller;
+
+class WalletController extends Controller
 {
     public function actionIndex()
     {

@@ -15,10 +15,6 @@ abstract class AuthController extends BaseController
 {
     public function beforeAction($action)
     {
-        if (\Yii::$app->user->isGuest) {
-            $this->redirect(['/user/login']);
-            \Yii::$app->end();
-        }
         return parent::beforeAction($action);
     }
 }

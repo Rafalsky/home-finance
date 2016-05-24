@@ -15,6 +15,7 @@ use yii\web\Controller;
 
 class SiteController extends Controller
 {
+    public $layout = 'base';
     /**
      * @inheritdoc
      */
@@ -22,7 +23,7 @@ class SiteController extends Controller
     {
         return [
             'error' => [
-                'class' => 'yii\web\ErrorAction',
+                'class' => \yii\web\ErrorAction::class,
             ]
         ];
     }

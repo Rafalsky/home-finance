@@ -13,7 +13,7 @@ $config = [
     'homeUrl' => \Yii::getAlias('@walletUrl'),
     'controllerNamespace' => 'wallet\controllers',
     'defaultRoute' => 'wallet/index',
-    'controllerMap'=>[
+    'controllerMap' => [
         'file-manager-elfinder' => [
             'class' => \mihaildev\elfinder\Controller::class,
             'access' => ['manager'],
@@ -71,22 +71,11 @@ $config = [
                 'actions' => ['error']
             ],
             [
-                'controllers' => ['debug/default'],
                 'allow' => true,
-                'roles' => ['?'],
+                'roles' => ['@'],
             ],
             [
-                'controllers' => ['user'],
-                'allow' => true,
-                'roles' => ['administrator'],
-            ],
-            [
-                'controllers' => ['user'],
-                'allow' => false,
-            ],
-            [
-                'allow' => true,
-                'roles' => ['manager'],
+                'allow' => false
             ]
         ]
     ]

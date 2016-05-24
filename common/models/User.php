@@ -108,8 +108,7 @@ class User extends ActiveRecord implements IdentityInterface
             ]
         );
     }
-
-
+    
     /**
      * @inheritdoc
      */
@@ -230,6 +229,7 @@ class User extends ActiveRecord implements IdentityInterface
      *
      * @param string $password password to validate
      * @return boolean if password provided is valid for current user
+     * @throws \yii\base\InvalidParamException
      */
     public function validatePassword($password)
     {
@@ -240,6 +240,7 @@ class User extends ActiveRecord implements IdentityInterface
      * Generates password hash from password and sets it to the model
      *
      * @param string $password
+     * @throws \yii\base\Exception
      */
     public function setPassword($password)
     {
