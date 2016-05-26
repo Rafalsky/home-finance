@@ -22,7 +22,7 @@ abstract class DefaultModuleController extends Controller
             $this->redirect(['/manage/first']);
             \Yii::$app->end();
         }
-        return true;
+        return parent::beforeAction($action);
     }
 
     // protected
