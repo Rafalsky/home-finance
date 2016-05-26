@@ -33,7 +33,7 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'request' => [
-            'cookieValidationKey' => env('BACKEND_COOKIE_VALIDATION_KEY')
+            'cookieValidationKey' => env('COOKIE_VALIDATION_KEY')
         ],
         'user' => [
             'class' => \yii\web\User::class,

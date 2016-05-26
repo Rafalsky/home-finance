@@ -13,6 +13,7 @@
 
 namespace common\actions;
 
+use cheatsheet\Time;
 use yii\base\Action;
 use yii\base\InvalidParamException;
 use yii\web\Cookie;
@@ -81,7 +82,7 @@ class SetLocaleAction extends Action
         $cookie = new Cookie([
             'name' => $this->localeCookieName,
             'value' => $locale,
-            'expire' => $this->cookieExpire ?: time() + 60 * 60 * 24 * 365,
+            'expire' => $this->cookieExpire ?: time() + Time::SECONDS_IN_A_YEAR,
             'domain' => $this->cookieDomain ?: '',
         ]);
         \Yii::$app->getResponse()->getCookies()->add($cookie);

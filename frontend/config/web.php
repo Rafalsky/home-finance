@@ -54,7 +54,7 @@ $config = [
             }
         ],
         'request' => [
-            'cookieValidationKey' => env('FRONTEND_COOKIE_VALIDATION_KEY')
+            'cookieValidationKey' => env('COOKIE_VALIDATION_KEY')
         ],
         'user' => [
             'class' => 'yii\web\User',

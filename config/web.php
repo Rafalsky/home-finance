@@ -22,31 +22,31 @@ $config = [
         'i18n' => [
             'translations' => [
                 '*' => [
-                    'class' => yii\i18n\PhpMessageSource::class
+                    'class' => \yii\i18n\PhpMessageSource::class
                 ],
             ],
         ],
         'authManager' => [
-            'class' => yii\rbac\DbManager::class,
+            'class' => \yii\rbac\DbManager::class,
         ],
         'request' => [
             'cookieValidationKey' => $security['cookieValidationKey']
         ],
         'cache' => [
-            'class' => yii\caching\FileCache::class,
+            'class' => \yii\caching\FileCache::class,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => yii\swiftmailer\Mailer::class,
+            'class' => \yii\swiftmailer\Mailer::class,
             'useFileTransport' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => yii\log\FileTarget::class,
+                    'class' => \yii\log\FileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],
@@ -60,6 +60,12 @@ $config = [
         ],
         'user' => [
             'class' => yii\web\User::class,
+            'enableAutoLogin' => true,
+            'identityCookie' => [
+                'name' => '_homeFinancePL',
+                'domain' => '.home-finance.pl',
+                'path' => '/',
+            ]
         ]
     ],
     'params' => $params,
@@ -69,12 +75,12 @@ if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
-        'class' => yii\debug\Module::class,
+        'class' => \yii\debug\Module::class,
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
-        'class' => yii\gii\Module::class,
+        'class' => \yii\gii\Module::class,
     ];
 }
 
