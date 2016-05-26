@@ -11,10 +11,10 @@
 
 namespace wallet\controllers;
 
-use \common\controllers\AuthController;
 use \common\models\User;
+use yii\web\Controller;
 
-abstract class DefaultModuleController extends AuthController
+abstract class DefaultModuleController extends Controller
 {
     public function beforeAction($action)
     {
