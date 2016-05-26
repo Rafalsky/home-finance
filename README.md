@@ -5,6 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/coverage.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance/coverage)
 [![Issue Count](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/issue_count.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance)
 
+[![Build Status](https://travis-ci.org/Rafalsky/home-finance.svg?branch=master)](https://travis-ci.org/Rafalsky/home-finance)
+
 ## Code standards
 
 ### Code Sniffer
