@@ -17,7 +17,7 @@ $config = [
     'modules' => [
         'user' => [
             'class' => frontend\modules\user\Module::class,
-            //'shouldBeActivated' => true
+            'shouldBeActivated' => true
         ],
         'api' => [
             'class' => frontend\modules\api\Module::class,
