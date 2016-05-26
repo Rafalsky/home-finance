@@ -6,6 +6,7 @@ php:
   - hhvm
 before_script:
     - composer self-update && composer install
-    - cd tests/kahlan
+    - pwd
+    - cd /tests/kahlan
 
 script: ../../vendor/bin/kahlan --config=kahlan-config.travis.php
