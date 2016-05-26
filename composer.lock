@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "73f3deaaab75c33b1d27c8364ae3771f",
-    "content-hash": "84ab5803d1eb776d9a1baefc1646bc31",
+    "hash": "762f429e1fc22ea704c962a7c80aa97d",
+    "content-hash": "3f2c1a17a11bd3171061d83a30d59851",
     "packages": [
         {
             "name": "asofter/yii2-imperavi-redactor",
@@ -2491,6 +2491,57 @@
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
             }
+        },
+        {
+            "name": "crysalead/kahlan",
+            "version": "2.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crysalead/kahlan.git",
+                "reference": "71d40ea01d98b6afa019384942f7d27810c9ea48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crysalead/kahlan/zipball/71d40ea01d98b6afa019384942f7d27810c9ea48",
+                "reference": "71d40ea01d98b6afa019384942f7d27810c9ea48",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "bin": [
+                "bin/kahlan"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kahlan\\": "src/"
+                },
+                "files": [
+                    "src/init.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CrysaLEAD"
+                }
+            ],
+            "description": "Behavior-Driven Development (BDD) library.",
+            "keywords": [
+                "BDD",
+                "Behavior-Driven Development",
+                "Monkey Patching",
+                "TDD",
+                "mock",
+                "stub",
+                "testing",
+                "unit test"
+            ],
+            "time": "2016-05-10 16:20:10"
         },
         {
             "name": "fzaninotto/faker",

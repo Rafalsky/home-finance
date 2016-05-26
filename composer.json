@@ -54,7 +54,8 @@
         "yiisoft/yii2-gii": "^2.0.0",
         "yiisoft/yii2-faker": "^2.0.0",
         "squizlabs/php_codesniffer": "2.*",
-        "gforces-pl/coding-standard": "dev-master@dev"
+        "gforces-pl/coding-standard": "dev-master@dev",
+        "crysalead/kahlan": "^2.5"
     },
     "config": {
         "process-timeout": 1800
