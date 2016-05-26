@@ -16,9 +16,9 @@
 
 Please run the following commands to run all required migrations in proper way:
 ```bash
-./yii migrate/up  --migrationPath=@vendor/dektrium/yii2-user/migrations
-./yii migrate/up --migrationPath=@yii/rbac/migrations
-./yii migrate/up
+console/yii migrate/up
+console/yii rbac-migrate/up
+
 ```
 
 ## License
