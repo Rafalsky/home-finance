@@ -138,6 +138,13 @@ class SignInController extends \yii\web\Controller
                         'options' => ['class' => 'alert-success']
                     ]);
                 } else {
+                    \Yii::$app->getSession()->setFlash('alert', [
+                        'body' => \Yii::t(
+                            'frontend',
+                            'Your account has been successfully created.'
+                        ),
+                        'options' => ['class' => 'alert-success']
+                    ]);
                     \Yii::$app->getUser()->login($user);
                 }
                 return $this->goHome();
