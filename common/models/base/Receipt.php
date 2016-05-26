@@ -53,9 +53,9 @@ abstract class Receipt extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Receipts');
+            return \Yii::t('common', 'Receipts');
         } else {
-            return \Yii::t('app', 'Receipt');
+            return \Yii::t('common', 'Receipt');
         }
     }
 
@@ -86,16 +86,16 @@ abstract class Receipt extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'shop_id' => \Yii::t('app', 'Shop ID'),
-            'user_id' => \Yii::t('app', 'User ID'),
-            'wallet_id' => \Yii::t('app', 'Wallet ID'),
-            'date' => \Yii::t('app', 'Date'),
-            'is_live' => \Yii::t('app', 'Is Live'),
-            'comment' => \Yii::t('app', 'Comment'),
-            'image' => \Yii::t('app', 'Image'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'shop_id' => \Yii::t('common', 'Shop ID'),
+            'user_id' => \Yii::t('common', 'User ID'),
+            'wallet_id' => \Yii::t('common', 'Wallet ID'),
+            'date' => \Yii::t('common', 'Date'),
+            'is_live' => \Yii::t('common', 'Is Live'),
+            'comment' => \Yii::t('common', 'Comment'),
+            'image' => \Yii::t('common', 'Image'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -107,16 +107,16 @@ abstract class Receipt extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'shop_id' => \Yii::t('app', 'Shop Id'),
-                'user_id' => \Yii::t('app', 'User Id'),
-                'wallet_id' => \Yii::t('app', 'Wallet Id'),
-                'date' => \Yii::t('app', 'Date'),
-                'is_live' => \Yii::t('app', 'Is Live'),
-                'comment' => \Yii::t('app', 'Comment'),
-                'image' => \Yii::t('app', 'Image'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'shop_id' => \Yii::t('common', 'Shop Id'),
+                'user_id' => \Yii::t('common', 'User Id'),
+                'wallet_id' => \Yii::t('common', 'Wallet Id'),
+                'date' => \Yii::t('common', 'Date'),
+                'is_live' => \Yii::t('common', 'Is Live'),
+                'comment' => \Yii::t('common', 'Comment'),
+                'image' => \Yii::t('common', 'Image'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }

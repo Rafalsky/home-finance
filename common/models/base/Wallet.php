@@ -42,9 +42,9 @@ abstract class Wallet extends TimestampedModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Wallets');
+            return \Yii::t('common', 'Wallets');
         } else {
-            return \Yii::t('app', 'Wallet');
+            return \Yii::t('common', 'Wallet');
         }
     }
 
@@ -74,11 +74,11 @@ abstract class Wallet extends TimestampedModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'user_id' => \Yii::t('app', 'User ID'),
-            'name' => \Yii::t('app', 'Name'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'user_id' => \Yii::t('common', 'User ID'),
+            'name' => \Yii::t('common', 'Name'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -90,11 +90,11 @@ abstract class Wallet extends TimestampedModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'user_id' => \Yii::t('app', 'User Id'),
-                'name' => \Yii::t('app', 'Name'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'user_id' => \Yii::t('common', 'User Id'),
+                'name' => \Yii::t('common', 'Name'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }
@@ -104,6 +104,6 @@ abstract class Wallet extends TimestampedModel
      */
     public function getUser()
     {
-        return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
+        return $this->hasOne(\common\models\User::className(), ['id' => 'user_id']);
     }
 }

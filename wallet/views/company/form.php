@@ -17,7 +17,7 @@ use \yii\bootstrap\ActiveForm;
 ?><div class="row">
     <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title"><?= \Yii::t('backend', 'Add new Company'); ?></h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><?= \Yii::t('wallet', 'Add new Company'); ?></h3></div>
             <div class="panel-body">
 
                 <?php $form = ActiveForm::begin([
@@ -36,7 +36,7 @@ use \yii\bootstrap\ActiveForm;
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success pull-right">
-                        <?= \Yii::t('backend', $model->isNewRecord ? 'Add Company' : 'Edit Company'); ?>
+                        <?= \Yii::t('wallet', $model->isNewRecord ? 'Add Company' : 'Edit Company'); ?>
                     </button>
                 </div>
 

@@ -44,9 +44,9 @@ abstract class Company extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Companies');
+            return \Yii::t('common', 'Companies');
         } else {
-            return \Yii::t('app', 'Company');
+            return \Yii::t('common', 'Company');
         }
     }
 
@@ -69,13 +69,13 @@ abstract class Company extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'name' => \Yii::t('app', 'Name'),
-            'logo' => \Yii::t('app', 'Logo'),
-            'about' => \Yii::t('app', 'About'),
-            'nationality' => \Yii::t('app', 'Nationality'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'name' => \Yii::t('common', 'Name'),
+            'logo' => \Yii::t('common', 'Logo'),
+            'about' => \Yii::t('common', 'About'),
+            'nationality' => \Yii::t('common', 'Nationality'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -87,13 +87,13 @@ abstract class Company extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'name' => \Yii::t('app', 'Name'),
-                'logo' => \Yii::t('app', 'Logo'),
-                'about' => \Yii::t('app', 'About'),
-                'nationality' => \Yii::t('app', 'Nationality'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'name' => \Yii::t('common', 'Name'),
+                'logo' => \Yii::t('common', 'Logo'),
+                'about' => \Yii::t('common', 'About'),
+                'nationality' => \Yii::t('common', 'Nationality'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }
@@ -103,6 +103,6 @@ abstract class Company extends BaseModel
      */
     public function getShops()
     {
-        return $this->hasMany(\app\models\Shop::className(), ['company_id' => 'id']);
+        return $this->hasMany(\common\models\Shop::className(), ['company_id' => 'id']);
     }
 }

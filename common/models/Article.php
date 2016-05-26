@@ -13,7 +13,6 @@ namespace common\models;
 
 use common\models\query\ArticleQuery;
 use trntv\filekit\behaviors\UploadBehavior;
-use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
@@ -141,19 +140,19 @@ class Article extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'slug' => Yii::t('common', 'Slug'),
-            'title' => Yii::t('common', 'Title'),
-            'body' => Yii::t('common', 'Body'),
-            'view' => Yii::t('common', 'Article View'),
-            'thumbnail' => Yii::t('common', 'Thumbnail'),
-            'author_id' => Yii::t('common', 'Author'),
-            'updater_id' => Yii::t('common', 'Updater'),
-            'category_id' => Yii::t('common', 'Category'),
-            'status' => Yii::t('common', 'Published'),
-            'published_at' => Yii::t('common', 'Published At'),
-            'created_at' => Yii::t('common', 'Created At'),
-            'updated_at' => Yii::t('common', 'Updated At')
+            'id' => \Yii::t('common', 'ID'),
+            'slug' => \Yii::t('common', 'Slug'),
+            'title' => \Yii::t('common', 'Title'),
+            'body' => \Yii::t('common', 'Body'),
+            'view' => \Yii::t('common', 'Article View'),
+            'thumbnail' => \Yii::t('common', 'Thumbnail'),
+            'author_id' => \Yii::t('common', 'Author'),
+            'updater_id' => \Yii::t('common', 'Updater'),
+            'category_id' => \Yii::t('common', 'Category'),
+            'status' => \Yii::t('common', 'Published'),
+            'published_at' => \Yii::t('common', 'Published At'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At')
         ];
     }
 

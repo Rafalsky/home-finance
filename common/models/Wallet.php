@@ -30,6 +30,13 @@ class Wallet extends BaseWallet
         ]);
     }
 
+    public function attributeLabels()
+    {
+        return ArrayHelper::merge(parent::attributeLabels(), [
+            'currency' => \Yii::t('common', 'Currency'),
+        ]);
+    }
+
     public function beforeValidate()
     {
         $this->user_id = User::current()->id;

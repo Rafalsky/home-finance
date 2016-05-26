@@ -18,7 +18,6 @@
  */
 return [
     'Add' => '',
-    'Add new Company' => '',
     'Add new shop' => '',
     'Address' => '',
     'Back' => '',

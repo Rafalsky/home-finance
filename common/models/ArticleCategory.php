@@ -12,7 +12,6 @@
 namespace common\models;
 
 use common\models\query\ArticleCategoryQuery;
-use Yii;
 use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -60,8 +59,7 @@ class ArticleCategory extends ActiveRecord
             ]
         ];
     }
-
-
+    
     /**
      * @inheritdoc
      */
@@ -83,11 +81,11 @@ class ArticleCategory extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'slug' => Yii::t('common', 'Slug'),
-            'title' => Yii::t('common', 'Title'),
-            'parent_id' => Yii::t('common', 'Parent Category'),
-            'status' => Yii::t('common', 'Active')
+            'id' => \Yii::t('common', 'ID'),
+            'slug' => \Yii::t('common', 'Slug'),
+            'title' => \Yii::t('common', 'Title'),
+            'parent_id' => \Yii::t('common', 'Parent Category'),
+            'status' => \Yii::t('common', 'Active')
         ];
     }
 

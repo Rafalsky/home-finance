@@ -32,12 +32,12 @@ abstract class BaseController extends Controller
 
     protected function getSuccessMessage()
     {
-        return \Yii::t('app', 'Model has been saved');
+        return \Yii::t('common', 'Model has been saved');
     }
 
     protected function getFailedMessage()
     {
-        return \Yii::t('app', 'Error while saving model');
+        return \Yii::t('common', 'Error while saving model');
     }
 
     protected function afterSave()

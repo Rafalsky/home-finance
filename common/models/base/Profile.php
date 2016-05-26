@@ -47,9 +47,9 @@ abstract class Profile extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Profiles');
+            return \Yii::t('common', 'Profiles');
         } else {
-            return \Yii::t('app', 'Profile');
+            return \Yii::t('common', 'Profile');
         }
     }
 
@@ -80,14 +80,14 @@ abstract class Profile extends BaseModel
     public function attributeLabels()
     {
         return [
-            'user_id' => \Yii::t('app', 'User ID'),
-            'name' => \Yii::t('app', 'Name'),
-            'public_email' => \Yii::t('app', 'Public Email'),
-            'gravatar_email' => \Yii::t('app', 'Gravatar Email'),
-            'gravatar_id' => \Yii::t('app', 'Gravatar ID'),
-            'location' => \Yii::t('app', 'Location'),
-            'website' => \Yii::t('app', 'Website'),
-            'bio' => \Yii::t('app', 'Bio'),
+            'user_id' => \Yii::t('common', 'User ID'),
+            'name' => \Yii::t('common', 'Name'),
+            'public_email' => \Yii::t('common', 'Public Email'),
+            'gravatar_email' => \Yii::t('common', 'Gravatar Email'),
+            'gravatar_id' => \Yii::t('common', 'Gravatar ID'),
+            'location' => \Yii::t('common', 'Location'),
+            'website' => \Yii::t('common', 'Website'),
+            'bio' => \Yii::t('common', 'Bio'),
         ];
     }
 
@@ -99,14 +99,14 @@ abstract class Profile extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'user_id' => \Yii::t('app', 'User Id'),
-                'name' => \Yii::t('app', 'Name'),
-                'public_email' => \Yii::t('app', 'Public Email'),
-                'gravatar_email' => \Yii::t('app', 'Gravatar Email'),
-                'gravatar_id' => \Yii::t('app', 'Gravatar Id'),
-                'location' => \Yii::t('app', 'Location'),
-                'website' => \Yii::t('app', 'Website'),
-                'bio' => \Yii::t('app', 'Bio'),
+                'user_id' => \Yii::t('common', 'User Id'),
+                'name' => \Yii::t('common', 'Name'),
+                'public_email' => \Yii::t('common', 'Public Email'),
+                'gravatar_email' => \Yii::t('common', 'Gravatar Email'),
+                'gravatar_id' => \Yii::t('common', 'Gravatar Id'),
+                'location' => \Yii::t('common', 'Location'),
+                'website' => \Yii::t('common', 'Website'),
+                'bio' => \Yii::t('common', 'Bio'),
             ]
         );
     }

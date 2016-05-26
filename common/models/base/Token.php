@@ -43,9 +43,9 @@ abstract class Token extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Tokens');
+            return \Yii::t('common', 'Tokens');
         } else {
-            return \Yii::t('app', 'Token');
+            return \Yii::t('common', 'Token');
         }
     }
 
@@ -80,10 +80,10 @@ abstract class Token extends BaseModel
     public function attributeLabels()
     {
         return [
-            'user_id' => \Yii::t('app', 'User ID'),
-            'code' => \Yii::t('app', 'Code'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'type' => \Yii::t('app', 'Type'),
+            'user_id' => \Yii::t('common', 'User ID'),
+            'code' => \Yii::t('common', 'Code'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'type' => \Yii::t('common', 'Type'),
         ];
     }
 
@@ -95,10 +95,10 @@ abstract class Token extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'user_id' => \Yii::t('app', 'User Id'),
-                'code' => \Yii::t('app', 'Code'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'type' => \Yii::t('app', 'Type'),
+                'user_id' => \Yii::t('common', 'User Id'),
+                'code' => \Yii::t('common', 'Code'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'type' => \Yii::t('common', 'Type'),
             ]
         );
     }

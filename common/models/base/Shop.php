@@ -50,9 +50,9 @@ abstract class Shop extends TimestampedModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Shops');
+            return \Yii::t('common', 'Shops');
         } else {
-            return \Yii::t('app', 'Shop');
+            return \Yii::t('common', 'Shop');
         }
     }
 
@@ -83,14 +83,14 @@ abstract class Shop extends TimestampedModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'company_id' => \Yii::t('app', 'Company ID'),
-            'name' => \Yii::t('app', 'Name'),
-            'address' => \Yii::t('app', 'Address'),
-            'city' => \Yii::t('app', 'City'),
-            'comment' => \Yii::t('app', 'Comment'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'company_id' => \Yii::t('common', 'Company ID'),
+            'name' => \Yii::t('common', 'Name'),
+            'address' => \Yii::t('common', 'Address'),
+            'city' => \Yii::t('common', 'City'),
+            'comment' => \Yii::t('common', 'Comment'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -102,14 +102,14 @@ abstract class Shop extends TimestampedModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'company_id' => \Yii::t('app', 'Company Id'),
-                'name' => \Yii::t('app', 'Name'),
-                'address' => \Yii::t('app', 'Address'),
-                'city' => \Yii::t('app', 'City'),
-                'comment' => \Yii::t('app', 'Comment'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'company_id' => \Yii::t('common', 'Company Id'),
+                'name' => \Yii::t('common', 'Name'),
+                'address' => \Yii::t('common', 'Address'),
+                'city' => \Yii::t('common', 'City'),
+                'comment' => \Yii::t('common', 'Comment'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }

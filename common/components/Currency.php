@@ -17,8 +17,8 @@ class Currency extends Object
     public function getList()
     {
         return [
-            'PLN' => \Yii::t('app', 'Poland Zloty'),
-            'USD' => \Yii::t('app', 'United States Dollar'),
+            'PLN' => \Yii::t('common', 'Poland Zloty'),
+            'USD' => \Yii::t('common', 'United States Dollar'),
         ];
     }
 }

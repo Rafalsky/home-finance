@@ -11,9 +11,9 @@
 
 namespace common\models\base;
 
-use \app\models\Shop;
-use \app\models\ProductPrice;
-use \app\models\ReceiptProduct;
+use \common\models\Shop;
+use \common\models\ProductPrice;
+use \common\models\ReceiptProduct;
 
 /**
  * This is the base-model class for table "product".
@@ -48,9 +48,9 @@ abstract class Product extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Products');
+            return \Yii::t('common', 'Products');
         } else {
-            return \Yii::t('app', 'Product');
+            return \Yii::t('common', 'Product');
         }
     }
 
@@ -80,11 +80,11 @@ abstract class Product extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'shop_id' => \Yii::t('app', 'Shop ID'),
-            'name' => \Yii::t('app', 'Name'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'shop_id' => \Yii::t('common', 'Shop ID'),
+            'name' => \Yii::t('common', 'Name'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -96,11 +96,11 @@ abstract class Product extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'shop_id' => \Yii::t('app', 'Shop Id'),
-                'name' => \Yii::t('app', 'Name'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'shop_id' => \Yii::t('common', 'Shop Id'),
+                'name' => \Yii::t('common', 'Name'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }

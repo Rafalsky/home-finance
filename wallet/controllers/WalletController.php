@@ -11,13 +11,11 @@
 
 namespace wallet\controllers;
 
-use yii\web\Controller;
-
-class WalletController extends Controller
+class WalletController extends DefaultModuleController
 {
     public function actionIndex()
     {
-        $this->view->title = \Yii::t('app', 'Wallet details');
+        $this->view->title = \Yii::t('common', 'Wallet details');
         return $this->render('index');
     }
 }

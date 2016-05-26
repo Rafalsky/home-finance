@@ -45,9 +45,9 @@ abstract class ReceiptProduct extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'ReceiptProducts');
+            return \Yii::t('common', 'ReceiptProducts');
         } else {
-            return \Yii::t('app', 'ReceiptProduct');
+            return \Yii::t('common', 'ReceiptProduct');
         }
     }
 
@@ -84,13 +84,13 @@ abstract class ReceiptProduct extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'receipt_id' => \Yii::t('app', 'Receipt ID'),
-            'product_id' => \Yii::t('app', 'Product ID'),
-            'count' => \Yii::t('app', 'Count'),
-            'total_price' => \Yii::t('app', 'Total Price'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'receipt_id' => \Yii::t('common', 'Receipt ID'),
+            'product_id' => \Yii::t('common', 'Product ID'),
+            'count' => \Yii::t('common', 'Count'),
+            'total_price' => \Yii::t('common', 'Total Price'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -102,13 +102,13 @@ abstract class ReceiptProduct extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'receipt_id' => \Yii::t('app', 'Receipt Id'),
-                'product_id' => \Yii::t('app', 'Product Id'),
-                'count' => \Yii::t('app', 'Count'),
-                'total_price' => \Yii::t('app', 'Total Price'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'receipt_id' => \Yii::t('common', 'Receipt Id'),
+                'product_id' => \Yii::t('common', 'Product Id'),
+                'count' => \Yii::t('common', 'Count'),
+                'total_price' => \Yii::t('common', 'Total Price'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }
@@ -118,7 +118,7 @@ abstract class ReceiptProduct extends BaseModel
      */
     public function getProduct()
     {
-        return $this->hasOne(\app\models\Product::className(), ['id' => 'product_id']);
+        return $this->hasOne(\common\models\Product::className(), ['id' => 'product_id']);
     }
 
     /**
@@ -126,6 +126,6 @@ abstract class ReceiptProduct extends BaseModel
      */
     public function getReceipt()
     {
-        return $this->hasOne(\app\models\Receipt::className(), ['id' => 'receipt_id']);
+        return $this->hasOne(\common\models\Receipt::className(), ['id' => 'receipt_id']);
     }
 }

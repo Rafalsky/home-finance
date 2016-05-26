@@ -48,9 +48,9 @@ abstract class SocialAccount extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'SocialAccounts');
+            return \Yii::t('common', 'SocialAccounts');
         } else {
-            return \Yii::t('app', 'SocialAccount');
+            return \Yii::t('common', 'SocialAccount');
         }
     }
 
@@ -88,15 +88,15 @@ abstract class SocialAccount extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'user_id' => \Yii::t('app', 'User ID'),
-            'provider' => \Yii::t('app', 'Provider'),
-            'client_id' => \Yii::t('app', 'Client ID'),
-            'data' => \Yii::t('app', 'Data'),
-            'code' => \Yii::t('app', 'Code'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'email' => \Yii::t('app', 'Email'),
-            'username' => \Yii::t('app', 'Username'),
+            'id' => \Yii::t('common', 'ID'),
+            'user_id' => \Yii::t('common', 'User ID'),
+            'provider' => \Yii::t('common', 'Provider'),
+            'client_id' => \Yii::t('common', 'Client ID'),
+            'data' => \Yii::t('common', 'Data'),
+            'code' => \Yii::t('common', 'Code'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'email' => \Yii::t('common', 'Email'),
+            'username' => \Yii::t('common', 'Username'),
         ];
     }
 
@@ -108,15 +108,15 @@ abstract class SocialAccount extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'user_id' => \Yii::t('app', 'User Id'),
-                'provider' => \Yii::t('app', 'Provider'),
-                'client_id' => \Yii::t('app', 'Client Id'),
-                'data' => \Yii::t('app', 'Data'),
-                'code' => \Yii::t('app', 'Code'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'email' => \Yii::t('app', 'Email'),
-                'username' => \Yii::t('app', 'Username'),
+                'id' => \Yii::t('common', 'ID'),
+                'user_id' => \Yii::t('common', 'User Id'),
+                'provider' => \Yii::t('common', 'Provider'),
+                'client_id' => \Yii::t('common', 'Client Id'),
+                'data' => \Yii::t('common', 'Data'),
+                'code' => \Yii::t('common', 'Code'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'email' => \Yii::t('common', 'Email'),
+                'username' => \Yii::t('common', 'Username'),
             ]
         );
     }

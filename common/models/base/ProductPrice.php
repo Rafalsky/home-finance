@@ -11,8 +11,8 @@
 
 namespace common\models\base;
 
-use \app\models\Product;
-use \app\models\Receipt;
+use \common\models\Product;
+use \common\models\Receipt;
 
 /**
  * This is the base-model class for table "product_price".
@@ -47,9 +47,9 @@ abstract class ProductPrice extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'ProductPrices');
+            return \Yii::t('common', 'ProductPrices');
         } else {
-            return \Yii::t('app', 'ProductPrice');
+            return \Yii::t('common', 'ProductPrice');
         }
     }
 
@@ -86,12 +86,12 @@ abstract class ProductPrice extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'product_id' => \Yii::t('app', 'Product ID'),
-            'receipt_id' => \Yii::t('app', 'Receipt ID'),
-            'price' => \Yii::t('app', 'Price'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
+            'id' => \Yii::t('common', 'ID'),
+            'product_id' => \Yii::t('common', 'Product ID'),
+            'receipt_id' => \Yii::t('common', 'Receipt ID'),
+            'price' => \Yii::t('common', 'Price'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
@@ -103,12 +103,12 @@ abstract class ProductPrice extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'product_id' => \Yii::t('app', 'Product Id'),
-                'receipt_id' => \Yii::t('app', 'Receipt Id'),
-                'price' => \Yii::t('app', 'Price'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
+                'id' => \Yii::t('common', 'ID'),
+                'product_id' => \Yii::t('common', 'Product Id'),
+                'receipt_id' => \Yii::t('common', 'Receipt Id'),
+                'price' => \Yii::t('common', 'Price'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
             ]
         );
     }

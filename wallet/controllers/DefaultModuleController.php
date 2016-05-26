@@ -19,7 +19,7 @@ abstract class DefaultModuleController extends AuthController
     public function beforeAction($action)
     {
         if (parent::beforeAction($action) && $this->isWalletRequired() && !User::current()->hasWallet()) {
-            $this->redirect(['/wallet/manage/first']);
+            $this->redirect(['/manage/first']);
             \Yii::$app->end();
         }
         return true;

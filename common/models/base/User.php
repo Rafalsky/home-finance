@@ -11,9 +11,9 @@
 
 namespace common\models\base;
 
-use app\models\Profile;
-use app\models\SocialAccount;
-use app\models\Token;
+use common\models\Profile;
+use common\models\SocialAccount;
+use common\models\Token;
 
 /**
  * This is the base-model class for table "user".
@@ -55,9 +55,9 @@ abstract class User extends BaseModel
     public function getAliasModel($plural = false)
     {
         if ($plural) {
-            return \Yii::t('app', 'Users');
+            return \Yii::t('common', 'Users');
         } else {
-            return \Yii::t('app', 'User');
+            return \Yii::t('common', 'User');
         }
     }
 
@@ -84,18 +84,18 @@ abstract class User extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => \Yii::t('app', 'ID'),
-            'username' => \Yii::t('app', 'Username'),
-            'email' => \Yii::t('app', 'Email'),
-            'password_hash' => \Yii::t('app', 'Password Hash'),
-            'auth_key' => \Yii::t('app', 'Auth Key'),
-            'confirmed_at' => \Yii::t('app', 'Confirmed At'),
-            'unconfirmed_email' => \Yii::t('app', 'Unconfirmed Email'),
-            'blocked_at' => \Yii::t('app', 'Blocked At'),
-            'registration_ip' => \Yii::t('app', 'Registration Ip'),
-            'created_at' => \Yii::t('app', 'Created At'),
-            'updated_at' => \Yii::t('app', 'Updated At'),
-            'flags' => \Yii::t('app', 'Flags'),
+            'id' => \Yii::t('common', 'ID'),
+            'username' => \Yii::t('common', 'Username'),
+            'email' => \Yii::t('common', 'Email'),
+            'password_hash' => \Yii::t('common', 'Password Hash'),
+            'auth_key' => \Yii::t('common', 'Auth Key'),
+            'confirmed_at' => \Yii::t('common', 'Confirmed At'),
+            'unconfirmed_email' => \Yii::t('common', 'Unconfirmed Email'),
+            'blocked_at' => \Yii::t('common', 'Blocked At'),
+            'registration_ip' => \Yii::t('common', 'Registration Ip'),
+            'created_at' => \Yii::t('common', 'Created At'),
+            'updated_at' => \Yii::t('common', 'Updated At'),
+            'flags' => \Yii::t('common', 'Flags'),
         ];
     }
 
@@ -107,18 +107,18 @@ abstract class User extends BaseModel
         return array_merge(
             parent::attributeHints(),
             [
-                'id' => \Yii::t('app', 'ID'),
-                'username' => \Yii::t('app', 'Username'),
-                'email' => \Yii::t('app', 'Email'),
-                'password_hash' => \Yii::t('app', 'Password Hash'),
-                'auth_key' => \Yii::t('app', 'Auth Key'),
-                'confirmed_at' => \Yii::t('app', 'Confirmed At'),
-                'unconfirmed_email' => \Yii::t('app', 'Unconfirmed Email'),
-                'blocked_at' => \Yii::t('app', 'Blocked At'),
-                'registration_ip' => \Yii::t('app', 'Registration Ip'),
-                'created_at' => \Yii::t('app', 'Created At'),
-                'updated_at' => \Yii::t('app', 'Updated At'),
-                'flags' => \Yii::t('app', 'Flags'),
+                'id' => \Yii::t('common', 'ID'),
+                'username' => \Yii::t('common', 'Username'),
+                'email' => \Yii::t('common', 'Email'),
+                'password_hash' => \Yii::t('common', 'Password Hash'),
+                'auth_key' => \Yii::t('common', 'Auth Key'),
+                'confirmed_at' => \Yii::t('common', 'Confirmed At'),
+                'unconfirmed_email' => \Yii::t('common', 'Unconfirmed Email'),
+                'blocked_at' => \Yii::t('common', 'Blocked At'),
+                'registration_ip' => \Yii::t('common', 'Registration Ip'),
+                'created_at' => \Yii::t('common', 'Created At'),
+                'updated_at' => \Yii::t('common', 'Updated At'),
+                'flags' => \Yii::t('common', 'Flags'),
             ]
         );
     }

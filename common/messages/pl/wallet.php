@@ -17,13 +17,16 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Add' => 'Dodaj',
+    'Add new Company' => 'Dodaj nową kompanię',
+    'Create' => 'Utwórz',
+    'Create first wallet' => 'Utwór pierwszy portfel',
+    'Toggle navigation' => '',
     'Account' => 'Konto',
-    'Add' => '',
     'Add Receipt' => 'Dodaj paragon',
     'Add new receipt' => 'Dodaj nowy paragon',
     'Assets' => 'Aktywa',
     'Create new wallet' => 'Utwórz nowy portfel',
-    'Create your first wallet' => 'Utwórz swój pierwszy portfel',
     'Export' => 'Export',
     'Fixed cost' => 'Koszty stałe',
     'Hello, {username}' => 'Witaj, {username}',
@@ -43,7 +46,6 @@ return [
     'Remember Me' => 'Zapamiętaj mnie',
     'Reports' => 'Raporty',
     'Shops' => 'Sklepy',
-    'Toggle navigation' => '',
     'Transactions' => 'Transakcje',
     'Username' => 'Nazwa użytkownika',
 ];
