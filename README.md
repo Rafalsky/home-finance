@@ -7,6 +7,8 @@
 
 [![Build Status](https://travis-ci.org/Rafalsky/home-finance.svg?branch=master)](https://travis-ci.org/Rafalsky/home-finance)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Rafalsky/home-finance/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Rafalsky/home-finance/?branch=master)
+
 ## Code standards
 
 ### Code Sniffer
