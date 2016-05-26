@@ -145,7 +145,12 @@ class SignInController extends \yii\web\Controller
                         ),
                         'options' => ['class' => 'alert-success']
                     ]);
-                    \Yii::$app->getUser()->login($user);
+                    if (!\Yii::$app->getUser()->login($user)) {
+                        \Yii::$app->getSession()->setFlash('alert', [
+                            'body' => \Yii::t('frontend', 'Cannot log in registered user'),
+                            'options' => ['class' => 'alert-warning']
+                        ]);
+                    }
                 }
                 return $this->goHome();
             }
