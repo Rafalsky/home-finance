@@ -17,15 +17,17 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Add' => 'Dodaj',
-    'Add new Company' => 'Dodaj nową kompanię',
-    'Create' => 'Utwórz',
-    'Create first wallet' => 'Utwór pierwszy portfel',
+    'Sign In' => 'Zaloguj',
+    'Sign me in' => 'Zaloguj mnie',
     'Toggle navigation' => '',
     'Account' => 'Konto',
+    'Add' => 'Dodaj',
     'Add Receipt' => 'Dodaj paragon',
+    'Add new Company' => 'Dodaj nową kompanię',
     'Add new receipt' => 'Dodaj nowy paragon',
     'Assets' => 'Aktywa',
+    'Create' => 'Utwórz',
+    'Create first wallet' => 'Utwór pierwszy portfel',
     'Create new wallet' => 'Utwórz nowy portfel',
     'Export' => 'Export',
     'Fixed cost' => 'Koszty stałe',

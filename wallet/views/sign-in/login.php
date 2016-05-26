@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \backend\models\LoginForm */
 
-$this->title = Yii::t('backend', 'Sign In');
+$this->title = Yii::t('wallet', 'Sign In');
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['body-class'] = 'login-page';
 ?>
@@ -23,7 +23,7 @@ $this->params['body-class'] = 'login-page';
             <?= $form->field($model, 'rememberMe')->checkbox(['class' => 'simple']) ?>
         </div>
         <div class="footer">
-            <?= Html::submitButton(Yii::t('backend', 'Sign me in'), [
+            <?= Html::submitButton(Yii::t('wallet', 'Sign me in'), [
                 'class' => 'btn btn-primary btn-flat btn-block',
                 'name' => 'login-button'
             ]) ?>
