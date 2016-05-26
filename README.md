@@ -5,6 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/coverage.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance/coverage)
 [![Issue Count](https://codeclimate.com/github/Rafalsky/HomeFinance/badges/issue_count.svg)](https://codeclimate.com/github/Rafalsky/HomeFinance)
 
+[![Build Status](https://travis-ci.org/Rafalsky/home-finance.svg?branch=master)](https://travis-ci.org/Rafalsky/home-finance)
+
 ## Code standards
 
 ### Code Sniffer
@@ -14,9 +16,9 @@
 
 Please run the following commands to run all required migrations in proper way:
 ```bash
-./yii migrate/up  --migrationPath=@vendor/dektrium/yii2-user/migrations
-./yii migrate/up --migrationPath=@yii/rbac/migrations
-./yii migrate/up
+console/yii migrate/up
+console/yii rbac-migrate/up
+
 ```
 
 ## License
