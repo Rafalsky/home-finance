@@ -17,21 +17,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Add' => '',
-    'Add new shop' => '',
-    'Address' => '',
-    'Back' => '',
-    'Comments' => '',
-    'Name' => '',
-    'Product' => '',
-    'Products' => '',
-    'Receipt Details' => '',
-    'Receipt Image' => '',
-    'Select company' => '',
-    'Select shop' => '',
-    'Shop' => '',
-    'Total Price' => '',
-    'Unit Price' => '',
     'Account' => 'Cuenta',
     'Application' => 'Aplicación',
     'Application settings' => 'Configuración de la aplicación',

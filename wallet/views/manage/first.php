@@ -13,14 +13,14 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \backend\models\LoginForm */
+/* @var $model \wallet\models\LoginForm */
 
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['body-class'] = 'login-page';
 ?>
 <div class="login-box">
     <div class="login-logo">
-        <?= Html::encode($this->title) ?>
+        <?= Html::encode($this->title); ?>
     </div><!-- /.login-logo -->
     <div class="header"></div>
     <div class="login-box-body">
@@ -44,7 +44,7 @@ $this->params['body-class'] = 'login-page';
             <?= Html::submitButton(Yii::t('wallet', 'Create'), [
                 'class' => 'btn btn-primary btn-flat btn-block',
                 'name' => 'create-wallet-button'
-            ]) ?>
+            ]); ?>
         </div>
         <?php ActiveForm::end(); ?>
     </div>

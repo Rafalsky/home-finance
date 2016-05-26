@@ -15,7 +15,7 @@ class WalletController extends DefaultModuleController
 {
     public function actionIndex()
     {
-        $this->view->title = \Yii::t('common', 'Wallet details');
+        $this->view->title = \Yii::t('wallet', 'Wallet details');
         return $this->render('index');
     }
 }

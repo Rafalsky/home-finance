@@ -16,7 +16,7 @@ use \yii\bootstrap\ActiveForm;
 ?><div class="row">
     <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title"><?= \Yii::t('backend', 'Add new shop'); ?></h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><?= \Yii::t('wallet', 'Add new shop'); ?></h3></div>
             <div class="panel-body">
 
                 <?php $form = ActiveForm::begin([
@@ -28,7 +28,7 @@ use \yii\bootstrap\ActiveForm;
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?= $form->field($model, 'company_id')->label($model->getAttributeLabel('company'))->dropDownList(common\models\Company::find()->all(), ['prompt' => \Yii::t('backend', 'Select company')]); ?>
+                        <?= $form->field($model, 'company_id')->label($model->getAttributeLabel('company'))->dropDownList(common\models\Company::find()->all(), ['prompt' => \Yii::t('wallet', 'Select company')]); ?>
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,7 +43,7 @@ use \yii\bootstrap\ActiveForm;
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success pull-right">
-                        <?= \Yii::t('backend', $model->isNewRecord ? 'Add Shop' : 'Edit Shop'); ?>
+                        <?= \Yii::t('wallet', $model->isNewRecord ? 'Add Shop' : 'Edit Shop'); ?>
                     </button>
                 </div>
 

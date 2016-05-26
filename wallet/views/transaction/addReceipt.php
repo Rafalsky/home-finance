@@ -28,12 +28,12 @@ wallet\assets\transactions\receipt\Form::register($this);
         <div class="col-lg-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><?= \Yii::t('backend', 'Receipt Details'); ?></h3>
+                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Details'); ?></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('backend', 'Select shop')]); ?>
+                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('wallet', 'Select shop')]); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -45,7 +45,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'comment')->textarea(['placeholder' => \Yii::t('backend', 'Comments')]); ?>
+                            <?= $form->field($receipt, 'comment')->textarea(['placeholder' => \Yii::t('wallet', 'Comments')]); ?>
                         </div>
                     </div>
                 </div>  <!-- End panel-body -->
@@ -54,7 +54,7 @@ wallet\assets\transactions\receipt\Form::register($this);
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><?= \Yii::t('backend', 'Receipt Image'); ?></h3>
+                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
                 </div>
                 <div class="panel-body">
                     <img src="/img/image-placeholder.jpg" alt="" style="width: 100%">
@@ -73,7 +73,7 @@ wallet\assets\transactions\receipt\Form::register($this);
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><?= \Yii::t('backend', 'Products'); ?></h3>
+                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Products'); ?></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -85,10 +85,10 @@ wallet\assets\transactions\receipt\Form::register($this);
                                 <thead>
                                 <tr>
                                     <th style="width: 5%">#</th>
-                                    <th style="width: 50%"><?= Yii::t('backend', 'Product'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('backend', 'Count'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('backend', 'Unit Price'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('backend', 'Total Price'); ?></th>
+                                    <th style="width: 50%"><?= Yii::t('wallet', 'Product'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Count'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Unit Price'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Total Price'); ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -113,10 +113,10 @@ wallet\assets\transactions\receipt\Form::register($this);
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?= \Yii::$app->urlManager->createUrl('/backend/transactions/list'); ?>" class="btn btn-danger">
-                <?= \Yii::t('backend', 'Back'); ?>
+            <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>" class="btn btn-danger">
+                <?= \Yii::t('wallet', 'Back'); ?>
             </a>
-            <button type="submit" class="btn-submit btn btn-success pull-right"><?= \Yii::t('backend', 'Update') ?></button>
+            <button type="submit" class="btn-submit btn btn-success pull-right"><?= \Yii::t('wallet', 'Update'); ?></button>
         </div>
     </div>
     <?php ActiveForm::end(); ?>

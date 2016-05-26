@@ -68,15 +68,15 @@ class FileStorageItem extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'component' => Yii::t('common', 'Component'),
-            'base_url' => Yii::t('common', 'Base Url'),
-            'path' => Yii::t('common', 'Path'),
-            'type' => Yii::t('common', 'Type'),
-            'size' => Yii::t('common', 'Size'),
-            'name' => Yii::t('common', 'Name'),
-            'upload_ip' => Yii::t('common', 'Upload Ip'),
-            'created_at' => Yii::t('common', 'Created At')
+            'id' => \Yii::t('common', 'ID'),
+            'component' => \Yii::t('common', 'Component'),
+            'base_url' => \Yii::t('common', 'Base Url'),
+            'path' => \Yii::t('common', 'Path'),
+            'type' => \Yii::t('common', 'Type'),
+            'size' => \Yii::t('common', 'Size'),
+            'name' => \Yii::t('common', 'Name'),
+            'upload_ip' => \Yii::t('common', 'Upload Ip'),
+            'created_at' => \Yii::t('common', 'Created At')
         ];
     }
 }

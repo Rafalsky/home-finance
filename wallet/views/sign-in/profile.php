@@ -8,32 +8,32 @@ use yii\bootstrap\ActiveForm;
 /* @var $model common\models\UserProfile */
 /* @var $form yii\bootstrap\ActiveForm */
 
-$this->title = Yii::t('backend', 'Edit profile')
+$this->title = Yii::t('wallet', 'Edit profile')
 ?>
 
 <div class="user-profile-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'picture')->widget(\trntv\filekit\widget\Upload::classname(), [
+    <?= $form->field($model, 'picture')->widget(\trntv\filekit\widget\Upload::className(), [
         'url'=>['avatar-upload']
-    ]) ?>
+    ]); ?>
 
-    <?= $form->field($model, 'firstname')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'firstname')->textInput(['maxlength' => 255]); ?>
 
-    <?= $form->field($model, 'middlename')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'middlename')->textInput(['maxlength' => 255]); ?>
 
-    <?= $form->field($model, 'lastname')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'lastname')->textInput(['maxlength' => 255]); ?>
 
-    <?= $form->field($model, 'locale')->dropDownlist(Yii::$app->params['availableLocales']) ?>
+    <?= $form->field($model, 'locale')->dropDownList(Yii::$app->params['availableLocales']); ?>
 
-    <?= $form->field($model, 'gender')->dropDownlist([
-        UserProfile::GENDER_FEMALE => Yii::t('backend', 'Female'),
-        UserProfile::GENDER_MALE => Yii::t('backend', 'Male')
-    ]) ?>
+    <?= $form->field($model, 'gender')->dropDownList([
+        UserProfile::GENDER_FEMALE => \Yii::t('wallet', 'Female'),
+        UserProfile::GENDER_MALE => \Yii::t('wallet', 'Male')
+    ]); ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('backend', 'Update'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(\Yii::t('wallet', 'Update'), ['class' => 'btn btn-primary']); ?>
     </div>
 
     <?php ActiveForm::end(); ?>

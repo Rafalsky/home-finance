@@ -15,7 +15,7 @@
             <div class="panel-body">
                 <div class="m-b-30">
                     <a href="<?= \Yii::$app->urlManager->createUrl(['shop/new']); ?>" class="btn btn-primary waves-effect waves-light">
-                        <?= Yii::t('backend', 'Add'); ?> <i class="fa fa-plus"></i>
+                        <?= \Yii::t('wallet', 'Add'); ?> <i class="fa fa-plus"></i>
                     </a>
                 </div>
             </div>
@@ -27,14 +27,14 @@
         <table class="table table-bordered table-striped navigation-table">
             <thead>
             <tr>
-                <th><?= Yii::t('backend', 'ID'); ?></th>
-                <th><?= Yii::t('backend', 'Name'); ?></th>
-                <th><?= Yii::t('backend', 'Address');?></th>
+                <th><?= \Yii::t('wallet', 'ID'); ?></th>
+                <th><?= \Yii::t('wallet', 'Name'); ?></th>
+                <th><?= \Yii::t('wallet', 'Address');?></th>
             </tr>
             </thead>
             <tbody>
             <?php foreach (\common\models\Shop::find()->all() as $shop) : ?>
-                <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/backend/shops/edit', ['id' => $shop->id]]); ?>">
+                <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/shops/edit', ['id' => $shop->id]]); ?>">
                     <td><?= $shop->id; ?></td>
                     <td><?= $shop->name; ?></td>
                     <td><?= $shop->address; ?></td>

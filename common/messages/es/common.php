@@ -82,7 +82,6 @@ return [
     'Wallet' => '',
     'Wallet ID' => '',
     'Wallet Id' => '',
-    'Wallet details' => '',
     'Wallet successfully saved' => '',
     'Wallets' => '',
     'Website' => '',
