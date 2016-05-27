@@ -115,7 +115,7 @@ abstract class Shop extends TimestampedModel
     }
 
     /**
-     * @return \\Yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
     public function getProducts()
     {
@@ -123,7 +123,7 @@ abstract class Shop extends TimestampedModel
     }
 
     /**
-     * @return \\Yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
     public function getReceipts()
     {
@@ -131,7 +131,7 @@ abstract class Shop extends TimestampedModel
     }
 
     /**
-     * @return \\Yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
     public function getCompany()
     {

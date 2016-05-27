@@ -98,7 +98,7 @@ class WidgetCarouselController extends Controller
      * Deletes an existing WidgetCarousel model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return Response
+     * @return \yii\web\Response
      */
     public function actionDelete($id)
     {

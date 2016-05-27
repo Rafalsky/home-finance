@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'level',
-                'value'=>function ($model) {
+                'value'=>function($model) {
                     return \yii\log\Logger::getLevelName($model->level);
                 },
                 'filter'=>[

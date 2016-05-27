@@ -37,7 +37,7 @@ class WidgetCarousel extends ActiveRecord
                 'class' => CacheInvalidateBehavior::className(),
                 'cacheComponent' => 'frontendCache',
                 'keys' => [
-                    function ($model) {
+                    function($model) {
                         return [
                             self::className(),
                             $model->key

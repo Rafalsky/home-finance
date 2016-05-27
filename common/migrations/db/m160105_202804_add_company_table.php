@@ -22,7 +22,7 @@ class m160105_202804_add_company_table extends Migration
             'logo' => Schema::TYPE_STRING,
             'about' => Schema::TYPE_STRING,
             'nationality' => Schema::TYPE_INTEGER,
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
+            'created_at' => Schema::TYPE_DATETIME.' NOT NULL',
             'updated_at' => Schema::TYPE_DATETIME
         ]);
     }

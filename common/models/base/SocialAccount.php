@@ -122,7 +122,7 @@ abstract class SocialAccount extends BaseModel
     }
 
     /**
-     * @return \\Yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
     public function getUser()
     {

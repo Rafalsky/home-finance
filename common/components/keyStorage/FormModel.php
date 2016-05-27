@@ -116,7 +116,7 @@ class FormModel extends Model
     {
         $rules = [];
         foreach ($this->keys as $attribute => $data) {
-            $attributeRules =  ArrayHelper::getValue($data, 'rules', []);
+            $attributeRules = ArrayHelper::getValue($data, 'rules', []);
             if (!empty($attributeRules)) {
                 foreach ($attributeRules as $rule) {
                     array_unshift($rule, $attribute);
@@ -276,7 +276,7 @@ class FormModel extends Model
         if ($this->hasAttribute($name)) {
             $this->attributes[$name] = $value;
         } else {
-            throw new InvalidParamException(get_class($this) . ' has no attribute named "' . $name . '".');
+            throw new InvalidParamException(get_class($this).' has no attribute named "'.$name.'".');
         }
     }
 }
