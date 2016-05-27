@@ -14,7 +14,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
 NavBar::begin([
-    'brandLabel' => Yii::t('application', Yii::$app->params['applicationName']),
+    'brandLabel' => Yii::$app->params['applicationName'],
     'brandUrl' => Yii::$app->homeUrl,
     'renderInnerContainer' => false,
     'options' => [
