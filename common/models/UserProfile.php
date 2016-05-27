@@ -113,7 +113,7 @@ class UserProfile extends ActiveRecord
     public function getAvatar($default = null)
     {
         return $this->avatar_path
-            ? \Yii::getAlias($this->avatar_base_url . '/' . $this->avatar_path)
+            ? \Yii::getAlias($this->avatar_base_url.'/'.$this->avatar_path)
             : $default;
     }
 }

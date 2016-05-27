@@ -14,13 +14,10 @@ namespace backend\controllers;
 use backend\models\search\WidgetCarouselItemSearch;
 use Yii;
 use common\models\WidgetCarousel;
-use common\models\WidgetCarouselItem;
 use backend\models\search\WidgetCarouselSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\Response;
-use yii\web\UploadedFile;
 
 /**
  * WidgetCarouselController implements the CRUD actions for WidgetCarousel model.
@@ -41,7 +38,7 @@ class WidgetCarouselController extends Controller
 
     /**
      * Lists all WidgetCarousel models.
-     * @return mixed
+     * @return string
      */
     public function actionIndex()
     {
@@ -101,7 +98,7 @@ class WidgetCarouselController extends Controller
      * Deletes an existing WidgetCarousel model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
+     * @return Response
      */
     public function actionDelete($id)
     {

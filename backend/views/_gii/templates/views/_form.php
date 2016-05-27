@@ -41,7 +41,7 @@ use yii\bootstrap\ActiveForm;
 
 <?php foreach ($generator->getColumnNames() as $attribute) {
     if (in_array($attribute, $safeAttributes)) {
-        echo "    <?= " . $generator->generateActiveField($attribute) . " ?>\n\n";
+        echo "    <?= ".$generator->generateActiveField($attribute)." ?>\n\n";
     }
 } ?>
     <div class="form-group">

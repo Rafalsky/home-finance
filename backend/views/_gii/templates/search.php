@@ -12,7 +12,7 @@ use yii\helpers\StringHelper;
 $modelClass = StringHelper::basename($generator->modelClass);
 $searchModelClass = StringHelper::basename($generator->searchModelClass);
 if ($modelClass === $searchModelClass) {
-    $modelAlias = $modelClass . 'Model';
+    $modelAlias = $modelClass.'Model';
 }
 $rules = $generator->generateSearchRules();
 $labels = $generator->generateSearchLabels();
@@ -27,7 +27,7 @@ namespace <?= StringHelper::dirname(ltrim($generator->searchModelClass, '\\')) ?
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use <?= ltrim($generator->modelClass, '\\') . (isset($modelAlias) ? " as $modelAlias" : "") ?>;
+use <?= ltrim($generator->modelClass, '\\').(isset($modelAlias) ? " as $modelAlias" : "") ?>;
 
 /**
  * <?= $searchModelClass ?> represents the model behind the search form about `<?= $generator->modelClass ?>`.

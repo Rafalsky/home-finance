@@ -89,7 +89,7 @@ class AppController extends Controller
             $file = \Yii::getAlias($file);
             Console::output("Generating keys in {$file}");
             $content = file_get_contents($file);
-            $content = preg_replace_callback('/<generated_key>/', function () {
+            $content = preg_replace_callback('/<generated_key>/', function() {
                 $length = 32;
                 $bytes = openssl_random_pseudo_bytes(32, $cryptoStrong);
                 return strtr(substr(base64_encode($bytes), 0, $length), '+/', '_-');

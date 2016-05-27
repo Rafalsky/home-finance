@@ -16,7 +16,6 @@
 namespace backend\controllers;
 
 use probe\Factory;
-use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\Response;
 use Yii;
@@ -32,7 +31,7 @@ class SystemInformationController extends Controller
             if (Yii::$app->request->isAjax) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
                 if ($key = Yii::$app->request->get('data')) {
-                    switch($key){
+                    switch ($key) {
                         case 'cpu_usage':
                             return$provider->getCpuUsage();
                             break;

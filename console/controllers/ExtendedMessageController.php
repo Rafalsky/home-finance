@@ -65,8 +65,8 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
                 $n = 0;
                 $subject = file_get_contents($fileName);
                 $replacedSubject = preg_replace_callback(
-                    '/\b(\\\\)?' . $currentTranslator . '\s*\(\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)")\s*,\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)")\s*[,\)]/s',
-                    function ($matches) use ($newSourceLanguage, $fileName, &$unremoved) {
+                    '/\b(\\\\)?'.$currentTranslator.'\s*\(\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)")\s*,\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)")\s*[,\)]/s',
+                    function($matches) use ($newSourceLanguage, $fileName, &$unremoved) {
                         $category = substr($matches[2], 1, -1);
                         $message = $matches[3];
 
@@ -125,7 +125,7 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
             'format' => 'php',
         ], require($inputConfigFile));
 
-        switch($inputConfig['format']){
+        switch ($inputConfig['format']) {
             case 'php':
                 $messages = $this->readFromPhpInput($inputConfig);
                 break;
@@ -153,7 +153,7 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
                 'format' => 'php',
             ], require($outputConfigFile));
 
-            switch($outputConfig['format']){
+            switch ($outputConfig['format']) {
                 case 'php':
                     $this->saveToPhpOutput($messages, $outputConfig);
                     break;
@@ -279,7 +279,7 @@ class ExtendedMessageController extends \yii\console\controllers\MessageControll
     protected function saveToPhpOutput($messages, $config)
     {
         foreach ($messages as $language => $categories) {
-            $dirName = FileHelper::normalizePath(\Yii::getAlias($config['messagePath'] . '/' . $language));
+            $dirName = FileHelper::normalizePath(\Yii::getAlias($config['messagePath'].'/'.$language));
             FileHelper::createDśirectory($dirName);
             Console::output("Language: $language");
             foreach ($categories as $category => $msgs) {

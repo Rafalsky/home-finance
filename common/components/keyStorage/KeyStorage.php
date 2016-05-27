@@ -149,7 +149,7 @@ class KeyStorage extends Component
     public function remove($key)
     {
         unset($this->values[$key]);
-        return call_user_func($this->modelClass . '::deleteAll', ['key' => $key]);
+        return call_user_func($this->modelClass.'::deleteAll', ['key' => $key]);
     }
 
     /**

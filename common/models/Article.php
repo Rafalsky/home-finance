@@ -121,7 +121,7 @@ class Article extends ActiveRecord
             [['title', 'body', 'category_id'], 'required'],
             [['slug'], 'unique'],
             [['body'], 'string'],
-            [['published_at'], 'default', 'value' => function () {
+            [['published_at'], 'default', 'value' => function() {
                 return date(DATE_ISO8601);
             }],
             [['published_at'], 'filter', 'filter' => 'strtotime', 'skipOnEmpty' => true],

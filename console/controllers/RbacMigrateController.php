@@ -25,7 +25,7 @@ class RbacMigrateController extends MigrateController
      */
     protected function createMigration($class)
     {
-        $file = $this->migrationPath . DIRECTORY_SEPARATOR . $class . '.php';
+        $file = $this->migrationPath.DIRECTORY_SEPARATOR.$class.'.php';
         require_once($file);
 
         return new $class();

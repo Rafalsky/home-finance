@@ -39,7 +39,7 @@ class UserController extends Controller
 
     /**
      * Lists all User models.
-     * @return mixed
+     * @return string
      */
     public function actionIndex()
     {
@@ -55,7 +55,7 @@ class UserController extends Controller
     /**
      * Displays a single User model.
      * @param integer $id
-     * @return mixed
+     * @return string
      */
     public function actionView($id)
     {
@@ -106,7 +106,7 @@ class UserController extends Controller
      * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
+     * @return \yii\web\Response
      */
     public function actionDelete($id)
     {

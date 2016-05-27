@@ -14,7 +14,7 @@ $controllerClass = StringHelper::basename($generator->controllerClass);
 $modelClass = StringHelper::basename($generator->modelClass);
 $searchModelClass = StringHelper::basename($generator->searchModelClass);
 if ($modelClass === $searchModelClass) {
-    $searchModelAlias = $searchModelClass . 'Search';
+    $searchModelAlias = $searchModelClass.'Search';
 }
 
 /* @var $class ActiveRecordInterface */
@@ -32,8 +32,8 @@ namespace <?= StringHelper::dirname(ltrim($generator->controllerClass, '\\')) ?>
 use Yii;
 use <?= ltrim($generator->modelClass, '\\') ?>;
 <?php if (!empty($generator->searchModelClass)): ?>
-use <?= ltrim($generator->searchModelClass, '\\') . (isset($searchModelAlias) ? " as $searchModelAlias" : "") ?>;
-<?php else: ?>
+use <?= ltrim($generator->searchModelClass, '\\').(isset($searchModelAlias) ? " as $searchModelAlias" : "") ?>;
+<?php else : ?>
 use yii\data\ActiveDataProvider;
 <?php endif; ?>
 use <?= ltrim($generator->baseControllerClass, '\\') ?>;
@@ -43,7 +43,7 @@ use yii\filters\VerbFilter;
 /**
  * <?= $controllerClass ?> implements the CRUD actions for <?= $modelClass ?> model.
  */
-class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->baseControllerClass) . "\n" ?>
+class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->baseControllerClass)."\n" ?>
 {
     public function behaviors()
     {
@@ -71,7 +71,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-<?php else: ?>
+<?php else {
+    : ?>
         $dataProvider = new ActiveDataProvider([
             'query' => <?= $modelClass ?>::find(),
         ]);
@@ -79,12 +80,14 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
-<?php endif; ?>
+<?php endif;
+}
+?>
     }
 
     /**
      * Displays a single <?= $modelClass ?> model.
-     * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
+     * <?= implode("\n     * ", $actionParamComments)."\n" ?>
      * @return mixed
      */
     public function actionView(<?= $actionParams ?>)
@@ -115,7 +118,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     /**
      * Updates an existing <?= $modelClass ?> model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
+     * <?= implode("\n     * ", $actionParamComments)."\n" ?>
      * @return mixed
      */
     public function actionUpdate(<?= $actionParams ?>)
@@ -134,7 +137,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     /**
      * Deletes an existing <?= $modelClass ?> model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
+     * <?= implode("\n     * ", $actionParamComments)."\n" ?>
      * @return mixed
      */
     public function actionDelete(<?= $actionParams ?>)
@@ -147,7 +150,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     /**
      * Finds the <?= $modelClass ?> model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
+     * <?= implode("\n     * ", $actionParamComments)."\n" ?>
      * @return <?=                   $modelClass ?> the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -161,7 +164,7 @@ if (count($pks) === 1) {
     foreach ($pks as $pk) {
         $condition[] = "'$pk' => \$$pk";
     }
-    $condition = '[' . implode(', ', $condition) . ']';
+    $condition = '['.implode(', ', $condition).']';
 }
 ?>
         if (($model = <?= $modelClass ?>::findOne(<?= $condition ?>)) !== null) {

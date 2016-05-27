@@ -44,7 +44,7 @@ class AccountForm extends Model
             ['username', 'unique',
                 'targetClass' => '\common\models\User',
                 'message' => \Yii::t('frontend', 'This username has already been taken.'),
-                'filter' => function ($query) {
+                'filter' => function($query) {
                     $query->andWhere(['not', ['id' => \Yii::$app->user->getId()]]);
                 }
             ],
@@ -55,7 +55,7 @@ class AccountForm extends Model
             ['email', 'unique',
                 'targetClass' => '\common\models\User',
                 'message' => \Yii::t('frontend', 'This email has already been taken.'),
-                'filter' => function ($query) {
+                'filter' => function($query) {
                     $query->andWhere(['not', ['id' => \Yii::$app->user->getId()]]);
                 }
             ],
@@ -63,7 +63,7 @@ class AccountForm extends Model
             [
                 'password_confirm',
                 'required',
-                'when' => function ($model) {
+                'when' => function($model) {
                     return !empty($model->password);
                 },
                 'whenClient' => new JsExpression("function (attribute, value) {

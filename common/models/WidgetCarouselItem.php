@@ -63,7 +63,7 @@ class WidgetCarouselItem extends ActiveRecord
                 'class' => CacheInvalidateBehavior::className(),
                 'cacheComponent' => 'frontendCache',
                 'keys' => [
-                    function ($model) {
+                    function($model) {
                         return [
                             WidgetCarousel::className(),
                             $model->carousel->key
@@ -120,6 +120,6 @@ class WidgetCarouselItem extends ActiveRecord
      */
     public function getImageUrl()
     {
-        return rtrim($this->base_url, '/') . '/' . ltrim($this->path, '/');
+        return rtrim($this->base_url, '/').'/'.ltrim($this->path, '/');
     }
 }

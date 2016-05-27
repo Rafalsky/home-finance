@@ -112,7 +112,7 @@ abstract class Profile extends BaseModel
     }
 
     /**
-     * @return \\Yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
     public function getUser()
     {
