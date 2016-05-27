@@ -29,7 +29,7 @@
             <tr>
                 <th><?= \Yii::t('wallet', 'ID'); ?></th>
                 <th><?= \Yii::t('wallet', 'Name'); ?></th>
-                <th><?= \Yii::t('wallet', 'Address');?></th>
+                <th><?= \Yii::t('wallet', 'Address'); ?></th>
             </tr>
             </thead>
             <tbody>

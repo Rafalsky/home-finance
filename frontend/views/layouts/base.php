@@ -52,7 +52,7 @@ $this->beginContent('@frontend/views/layouts/_clear.php')
             ],
             [
                 'label' => \Yii::t('frontend', 'Language'),
-                'items' => array_map(function ($code) {
+                'items' => array_map(function($code) {
                     return [
                         'label' => \Yii::$app->params['availableLocales'][$code],
                         'url' => ['/site/set-locale', 'locale' => $code],

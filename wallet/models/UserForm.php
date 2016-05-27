@@ -27,7 +27,7 @@ class UserForm extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => User::className(), 'filter' => function ($query) {
+            ['username', 'unique', 'targetClass' => User::className(), 'filter' => function($query) {
                 if (!$this->getModel()->isNewRecord) {
                     $query->andWhere(['not', ['id' => $this->getModel()->id]]);
                 }
@@ -37,7 +37,7 @@ class UserForm extends Model
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass'=> User::className(), 'filter' => function ($query) {
+            ['email', 'unique', 'targetClass'=> User::className(), 'filter' => function($query) {
                 if (!$this->getModel()->isNewRecord) {
                     $query->andWhere(['not', ['id' => $this->getModel()->id]]);
                 }
@@ -72,7 +72,7 @@ class UserForm extends Model
 
     /**
      * @param User $model
-     * @return mixed
+     * @return User
      */
     public function setModel($model)
     {
@@ -100,7 +100,7 @@ class UserForm extends Model
 
     /**
      * Signs user up.
-     * @return User|null the saved model or null if saving fails
+     * @return boolean|null the saved model or null if saving fails
      * @throws \Exception
      * @throws \yii\base\InvalidParamException
      * @throws Exception

@@ -33,9 +33,12 @@ use Yii;
 use <?= ltrim($generator->modelClass, '\\') ?>;
 <?php if (!empty($generator->searchModelClass)): ?>
 use <?= ltrim($generator->searchModelClass, '\\').(isset($searchModelAlias) ? " as $searchModelAlias" : "") ?>;
-<?php else : ?>
+<?php else {
+    : ?>
 use yii\data\ActiveDataProvider;
-<?php endif; ?>
+<?php endif;
+}
+?>
 use <?= ltrim($generator->baseControllerClass, '\\') ?>;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

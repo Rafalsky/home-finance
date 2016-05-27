@@ -91,7 +91,7 @@ class WidgetMenuController extends Controller
      * Deletes an existing WidgetMenu model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
+     * @return \yii\web\Response
      */
     public function actionDelete($id)
     {

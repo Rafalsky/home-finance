@@ -47,7 +47,7 @@ class Menu extends \yii\widgets\Menu
 
         if (!ArrayHelper::getValue($item, 'badgeOptions.class')) {
             $bg = isset($item['badgeBgClass']) ? $item['badgeBgClass'] : $this->badgeBgClass;
-            $item['badgeOptions']['class'] = $this->badgeClass . ' ' . $bg;
+            $item['badgeOptions']['class'] = $this->badgeClass.' '.$bg;
         }
 
         if (isset($item['items']) && !isset($item['right-icon'])) {

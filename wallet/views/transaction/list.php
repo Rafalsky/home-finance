@@ -22,7 +22,7 @@ use \common\models\Receipt;
                 <th><?= \Yii::t('wallet', 'ID'); ?></th>
                 <th><?= \Yii::t('wallet', 'Shop'); ?></th>
                 <th><?= \Yii::t('wallet', 'Date'); ?></th>
-                <th><?= \Yii::t('wallet', 'Total Price');?></th>
+                <th><?= \Yii::t('wallet', 'Total Price'); ?></th>
             </tr>
             </thead>
             <tbody>
