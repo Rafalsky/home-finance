@@ -91,6 +91,6 @@ class ArticleAttachment extends ActiveRecord
 
     public function getUrl()
     {
-        return $this->base_url . '/' . $this->path;
+        return $this->base_url.'/'.$this->path;
     }
 }

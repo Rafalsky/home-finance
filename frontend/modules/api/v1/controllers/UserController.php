@@ -42,7 +42,7 @@ class UserController extends ActiveController
             'authMethods' => [
                 [
                     'class' => HttpBasicAuth::className(),
-                    'auth' => function ($username, $password) {
+                    'auth' => function($username, $password) {
                         $user = User::findByLogin($username);
                         return $user->validatePassword($password)
                             ? $user

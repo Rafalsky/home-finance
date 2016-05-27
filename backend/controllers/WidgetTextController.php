@@ -37,7 +37,7 @@ class WidgetTextController extends Controller
 
     /**
      * Lists all WidgetText models.
-     * @return mixed
+     * @return string
      */
     public function actionIndex()
     {
@@ -91,7 +91,7 @@ class WidgetTextController extends Controller
      * Deletes an existing WidgetText model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
+     * @return \yii\web\Response
      */
     public function actionDelete($id)
     {

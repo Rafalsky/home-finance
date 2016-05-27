@@ -18,10 +18,10 @@ class m160214_233426_add_product_price_table extends Migration
     {
         $this->createTable('{{%product_price}}', [
             'id' => Schema::TYPE_PK,
-            'product_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'product_id' => Schema::TYPE_INTEGER.' NOT NULL',
             'receipt_id' => Schema::TYPE_INTEGER,
             'price' => 'DECIMAL(10, 2)',
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
+            'created_at' => Schema::TYPE_DATETIME.' NOT NULL',
             'updated_at' => Schema::TYPE_DATETIME
         ]);
         $this->addForeignKey('fk_product_price_product', 'product_price', 'product_id', 'product', 'id', 'CASCADE', 'CASCADE');

@@ -75,7 +75,7 @@ class DbCarousel extends Carousel
                     $items[$k]['caption'] = $item->caption;
                 }
             }
-            \Yii::$app->cache->set($cacheKey, $items, 60*60*24*365);
+            \Yii::$app->cache->set($cacheKey, $items, 60 * 60 * 24 * 365);
         }
         $this->items = $items;
         parent::init();

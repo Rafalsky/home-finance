@@ -87,7 +87,7 @@ class User extends ActiveRecord implements IdentityInterface
                 'attributes' => [
                     ActiveRecord::EVENT_BEFORE_INSERT => 'access_token'
                 ],
-                'value' => function () {
+                'value' => function() {
                     return \Yii::$app->getSecurity()->generateRandomString(40);
                 }
             ]
@@ -249,7 +249,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     /**
      * Returns user statuses list
-     * @return array|mixed
+     * @return string[]
      */
     public static function statuses()
     {

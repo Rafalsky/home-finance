@@ -5,7 +5,7 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
 }
 
 // Bootstraping tests environment
-require(__DIR__ . '/../../tests/bootstrap.php');
+require(__DIR__.'/../../tests/bootstrap.php');
 
 // TEST ENV
 defined('YII_DEBUG') or define('YII_DEBUG', false);
@@ -13,15 +13,15 @@ defined('YII_ENV') or define('YII_ENV', 'test');
 defined('YII_APP_BASE_PATH') or define('YII_APP_BASE_PATH', dirname(dirname(__DIR__)));
 
 // Environment
-require(__DIR__ . '/../../common/env.php');
+require(__DIR__.'/../../common/env.php');
 
 // Yii
-require(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php');
+require(__DIR__.'/../../vendor/yiisoft/yii2/Yii.php');
 
 // Bootstrap application
-require(__DIR__ . '/../../common/config/bootstrap.php');
-require(__DIR__ . '/../config/bootstrap.php');
+require(__DIR__.'/../../common/config/bootstrap.php');
+require(__DIR__.'/../config/bootstrap.php');
 
-$config = require(__DIR__ . '/../../tests/codeception/config/backend/acceptance.php');
+$config = require(__DIR__.'/../../tests/codeception/config/backend/acceptance.php');
 
 (new yii\web\Application($config))->run();

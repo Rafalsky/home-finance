@@ -14,7 +14,6 @@ namespace backend\controllers;
 use common\models\WidgetCarousel;
 use Yii;
 use common\models\WidgetCarouselItem;
-use backend\models\search\WidgetCarouselItemSearch;
 use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
@@ -28,7 +27,7 @@ class WidgetCarouselItemController extends Controller
 
     public function getViewPath()
     {
-        return $this->module->getViewPath() . DIRECTORY_SEPARATOR . 'widget-carousel/item';
+        return $this->module->getViewPath().DIRECTORY_SEPARATOR.'widget-carousel/item';
     }
 
     public function behaviors()
@@ -56,7 +55,7 @@ class WidgetCarouselItemController extends Controller
             throw new HttpException(400);
         }
 
-        $model->carousel_id =  $carousel->id;
+        $model->carousel_id = $carousel->id;
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
                 Yii::$app->getSession()->setFlash('alert', ['options'=>['class' => 'alert-success'], 'body'=>Yii::t('backend', 'Carousel slide was successfully saved')]);
@@ -92,7 +91,7 @@ class WidgetCarouselItemController extends Controller
      * Deletes an existing WidgetCarouselItem model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
+     * @return \yii\web\Response|null
      */
     public function actionDelete($id)
     {

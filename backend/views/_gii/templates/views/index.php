@@ -16,7 +16,7 @@ use yii\helpers\Html;
 use <?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
 
 /* @var $this yii\web\View */
-<?= !empty($generator->searchModelClass) ? "/* @var \$searchModel " . ltrim($generator->searchModelClass, '\\') . " */\n" : '' ?>
+<?= !empty($generator->searchModelClass) ? "/* @var \$searchModel ".ltrim($generator->searchModelClass, '\\')." */\n" : '' ?>
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
@@ -24,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index">
 
-<?php if(!empty($generator->searchModelClass)): ?>
-<?= "    <?php " . ($generator->indexWidgetType === 'grid' ? "// " : "") ?>echo $this->render('_search', ['model' => $searchModel]); ?>
+<?php if (!empty($generator->searchModelClass)): ?>
+<?= "    <?php ".($generator->indexWidgetType === 'grid' ? "// " : "") ?>echo $this->render('_search', ['model' => $searchModel]); ?>
 <?php endif; ?>
 
     <p>
@@ -43,18 +43,18 @@ $count = 0;
 if (($tableSchema = $generator->getTableSchema()) === false) {
     foreach ($generator->getColumnNames() as $name) {
         if (++$count < 6) {
-            echo "            '" . $name . "',\n";
+            echo "            '".$name."',\n";
         } else {
-            echo "            // '" . $name . "',\n";
+            echo "            // '".$name."',\n";
         }
     }
 } else {
     foreach ($tableSchema->columns as $column) {
         $format = $generator->generateColumnFormat($column);
         if (++$count < 6) {
-            echo "            '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
+            echo "            '".$column->name.($format === 'text' ? "" : ":".$format)."',\n";
         } else {
-            echo "            // '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
+            echo "            // '".$column->name.($format === 'text' ? "" : ":".$format)."',\n";
         }
     }
 }
@@ -71,6 +71,8 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
             return Html::a(Html::encode($model-><?= $nameAttribute ?>), ['view', <?= $urlParams ?>]);
         },
     ]) ?>
-<?php endif; ?>
+<?php endif;
+}
+?>
 
 </div>

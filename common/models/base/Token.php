@@ -59,7 +59,7 @@ abstract class Token extends BaseModel
             [['user_id', 'created_at', 'type'], 'integer'],
             [['code'], 'string', 'max' => 32],
             [
-                ['user_id','code', 'type'],
+                ['user_id', 'code', 'type'],
                 'unique',
                 'targetAttribute' => ['user_id', 'code', 'type'],
                 'message' => 'The combination of User ID, Code and Type has already been taken.'

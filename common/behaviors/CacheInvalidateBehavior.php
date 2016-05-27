@@ -112,7 +112,7 @@ class CacheInvalidateBehavior extends Behavior
     {
         TagDependency::invalidate(
             $this->getCache(),
-            array_map(function ($tag) {
+            array_map(function($tag) {
                 if (is_callable($tag)) {
                     $tag = call_user_func($tag, $this->owner);
                 }

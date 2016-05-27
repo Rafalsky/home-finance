@@ -69,7 +69,7 @@ class SignInController extends \yii\web\Controller
                         ],
                         'allow' => false,
                         'roles' => ['@'],
-                        'denyCallback' => function () {
+                        'denyCallback' => function() {
                             return \Yii::$app->controller->redirect(['/user/default/index']);
                         }
                     ],

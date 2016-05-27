@@ -10,8 +10,8 @@
  */
 
 
-$params = require(__DIR__ . '/params.php');
-$security = require(__DIR__ . '/security.local.php');
+$params = require(__DIR__.'/params.php');
+$security = require(__DIR__.'/security.local.php');
 
 $config = [
     'id' => 'HomeFinance',
@@ -51,7 +51,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
+        'db' => require(__DIR__.'/db.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

@@ -8,7 +8,7 @@
                 id="product-id<?= $number; ?>"
                 name="Product[<?= $number; ?>][name]"
                 class="form-control product-name"
-                <?php if(isset($receiptProduct) && is_object($receiptProduct)): ?>
+                <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
                     value="<?= $receiptProduct->product->name; ?>"
                 <?php endif; ?>
             >
@@ -22,7 +22,7 @@
                     id="product-count-<?= $number; ?>"
                     name="Product[<?= $number; ?>][count]"
                     class="form-control product-count"
-                    <?php if(isset($receiptProduct) && is_object($receiptProduct)): ?>
+                    <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
                         value="<?= $receiptProduct->count; ?>"
                     <?php endif; ?>
                 >
@@ -35,7 +35,7 @@
                 id="product-price-<?= $number; ?>"
                 name="Product[<?= $number; ?>][price]"
                 class="form-control product-price"
-                <?php if(isset($receiptProduct) && is_object($receiptProduct)): ?>
+                <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
                     value="<?= $receiptProduct->total_price / $receiptProduct->count; ?>"
                 <?php endif; ?>
             >
@@ -49,7 +49,7 @@
                 id="product-total-price-<?= $number; ?>"
                 name="Product[<?= $number; ?>][totalPrice]"
                 class="form-control product-total-price"
-                <?php if(isset($receiptProduct) && is_object($receiptProduct)): ?>
+                <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
                     value="<?= $receiptProduct->total_price; ?>"
                 <?php endif; ?>
             >

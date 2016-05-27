@@ -11,8 +11,8 @@
 
 $config = [
     'name' => 'Home Finance',
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'extensions' => require(__DIR__ . '/../../vendor/yiisoft/extensions.php'),
+    'vendorPath' => dirname(dirname(__DIR__)).'/vendor',
+    'extensions' => require(__DIR__.'/../../vendor/yiisoft/extensions.php'),
     'sourceLanguage' => 'en-US',
     'language' => 'pl-PL',
     'bootstrap' => ['log'],

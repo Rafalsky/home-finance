@@ -42,7 +42,7 @@ class OwnModelAccessFilter extends ActionFilter
     {
         $modelPk = \Yii::$app->request->getQueryParam($this->modelPkParam);
         if ($modelPk) {
-            $model = call_user_func($this->modelClass . '::findOne', $modelPk);
+            $model = call_user_func($this->modelClass.'::findOne', $modelPk);
             if ($model) {
                 $isAllowed = \Yii::$app->user->can('editOwnModel', [
                     'model' => $model,

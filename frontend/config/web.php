@@ -49,7 +49,7 @@ $config = [
         ],
         'maintenance' => [
             'class' => 'common\components\maintenance\Maintenance',
-            'enabled' => function ($app) {
+            'enabled' => function($app) {
                 return $app->keyStorage->get('frontend.maintenance') === 'enabled';
             }
         ],
