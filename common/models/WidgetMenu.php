@@ -35,7 +35,7 @@ class WidgetMenu extends ActiveRecord
                 'class' => CacheInvalidateBehavior::className(),
                 'cacheComponent' => 'frontendCache',
                 'keys' => [
-                    function ($model) {
+                    function($model) {
                         return [
                             get_class($model),
                             $model->key

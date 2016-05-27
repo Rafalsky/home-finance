@@ -63,7 +63,8 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-<?php else: ?>
+<?php else {
+    : ?>
     <?= "<?= " ?>ListView::widget([
         'dataProvider' => $dataProvider,
         'itemOptions' => ['class' => 'item'],
@@ -72,6 +73,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
         },
     ]) ?>
 <?php endif;
+}
 }
 ?>
 

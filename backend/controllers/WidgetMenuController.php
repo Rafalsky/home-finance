@@ -37,7 +37,7 @@ class WidgetMenuController extends Controller
 
     /**
      * Lists all WidgetMenu models.
-     * @return mixed
+     * @return string
      */
     public function actionIndex()
     {
