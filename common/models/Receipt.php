@@ -12,6 +12,7 @@
 namespace common\models;
 
 use \common\models\base\Receipt as BaseReceipt;
+use yii\db\Exception;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
 
@@ -21,6 +22,11 @@ use yii\helpers\ArrayHelper;
 class Receipt extends BaseReceipt
 {
     public $file;
+
+    public static function findById($id)
+    {
+        return self::find()->where(['id' => $id])->one();
+    }
 
     public static function getMineReceipts()
     {
@@ -73,5 +79,29 @@ class Receipt extends BaseReceipt
     private function setWallet()
     {
         $this->wallet_id = Wallet::current()->id;
+    }
+
+    public function saveProducts($products)
+    {
+        foreach ($products as $product) {
+            if (!$product['name']) {
+                continue;
+            }
+            $productModel = Product::findOrCreate(['shop_id' => $this->shop_id, 'name' => $product['name']]);
+            if (!$productModel->save()) {
+                die(var_dump($productModel->errors));
+                throw new Exception(\Yii::t('backend', 'Cannot save product model'));
+            }
+            ProductPrice::updateIfRequired($productModel->id, $product['price']);
+            $receiptProduct = new ReceiptProduct();
+            $receiptProduct->receipt_id = $this->id;
+            $receiptProduct->product_id = $productModel->id;
+            $receiptProduct->count = $product['count'];
+            $receiptProduct->total_price = $product['totalPrice'];
+            if (!$receiptProduct->save()) {
+                throw new Exception(\Yii::t('backend', 'Cannot save {modelName} model', ['{modelName}' => get_class($receiptProduct)]));
+            }
+        }
+        return true;
     }
 }

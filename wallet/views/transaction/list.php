@@ -8,10 +8,12 @@
  * file that was distributed with this source code.
  */
 use \common\models\Receipt;
+use \wallet\assets\EditableTable;
 
 /**
  * @var Receipt[] $receipts
  */
+EditableTable::register($this);
 ?>
 
 <div class="row">
@@ -44,7 +46,7 @@ use \common\models\Receipt;
             <div class="row">
                 <div class="col-sm-12">
                     <?php if($receipts) : ?>
-                        <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                        <table id="example2" class="table table-bordered table-hover dataTable navigation-table" role="grid" aria-describedby="example2_info">
                             <thead>
                             <tr>
                                 <th><?= \Yii::t('wallet', 'ID'); ?></th>
@@ -55,7 +57,7 @@ use \common\models\Receipt;
                             </thead>
                             <tbody>
                                 <?php foreach ($receipts as $receipt) : ?>
-                                    <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/transaction/receipt', ['id' => $receipt->id]]); ?>">
+                                    <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/transaction/receipt', 'id' => $receipt->id]); ?>">
                                         <td><?= $receipt->id; ?></td>
                                         <td><?= $receipt->shop->name; ?></td>
                                         <td><?= $receipt->date; ?></td>

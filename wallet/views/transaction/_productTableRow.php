@@ -15,8 +15,13 @@
         </div>
     </td>
     <td>
+        <div class="input-group" style="width: 100%">
+            <input type="text" class="form-control product-count">
+        </div>
+    </td>
+    <td>
         <div class="spinner">
-            <div class="input-group" >
+            <div class="input-group">
                 <input
                     type="text"
                     id="product-count-<?= $number; ?>"
@@ -27,7 +32,8 @@
                     <?php endif; ?>
                 >
             </div>
-        </div></td>
+        </div>
+    </td>
     <td>
         <div class="input-group">
             <input
@@ -54,6 +60,11 @@
                 <?php endif; ?>
             >
             <span class="input-group-addon">zł</span>
+        </div>
+    </td>
+    <td>
+        <div class="remove-row">
+            <i class="glyphicon glyphicon-remove red"></i>
         </div>
     </td>
 </tr>

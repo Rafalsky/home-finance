@@ -18,7 +18,7 @@ abstract class BaseController extends Controller
 {
     protected function updateWithPostRequest(BaseModel $model)
     {
-        if (\Yii::$app->request->isPost && $attributes = \Yii::$app->request->post($model->getShortClassName())) {
+        if ($attributes = $this->getModelAttributesFromPost($model)) {
             $model->attributes = $attributes;
             if ($model->save()) {
                 \Yii::$app->session->addFlash('alert', [
@@ -27,9 +27,8 @@ abstract class BaseController extends Controller
                         'class' => 'alert-success'
                     ]
                 ]);
-                $this->afterSave();
+                $this->afterSave($model);
             } else {
-                die(var_dump($model->errors));
                 \Yii::$app->session->addFlash('alert', [
                     'body' => $this->getFailedMessage(),
                     'options' => [
@@ -51,7 +50,18 @@ abstract class BaseController extends Controller
         return \Yii::t('common', 'Error while saving model');
     }
 
-    protected function afterSave()
+    /**
+     * @param BaseModel $model
+     */
+    protected function afterSave($model)
     {
+    }
+
+    protected function getModelAttributesFromPost(BaseModel $model)
+    {
+        if (\Yii::$app->request->isPost) {
+            return \Yii::$app->request->post($model->getShortClassName());
+        }
+        return false;
     }
 }

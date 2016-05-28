@@ -9,6 +9,9 @@
 
 $receiptTable = $('table#receipt-table');
 $receiptTable.on('change', 'input.product-name', function() {
+  if ($('input.product-name').length != $receiptTable.find('tr').length) {
+    return;
+  }
   $.ajax({
     type: 'POST',
     url: '/transaction/new-row/',

@@ -11,10 +11,6 @@
 
 namespace common\models\base;
 
-use \common\models\Shop;
-use \common\models\ProductPrice;
-use \common\models\ReceiptProduct;
-
 /**
  * This is the base-model class for table "product".
  *
@@ -68,7 +64,7 @@ abstract class Product extends BaseModel
                 ['shop_id'],
                 'exist',
                 'skipOnError' => true,
-                'targetClass' =>Shop::className(),
+                'targetClass' => \common\models\Shop::className(),
                 'targetAttribute' => ['shop_id' => 'id']
             ]
         ];
@@ -110,7 +106,7 @@ abstract class Product extends BaseModel
      */
     public function getShop()
     {
-        return $this->hasOne(Shop::className(), ['id' => 'shop_id']);
+        return $this->hasOne(\common\models\Shop::className(), ['id' => 'shop_id']);
     }
 
     /**
@@ -118,7 +114,7 @@ abstract class Product extends BaseModel
      */
     public function getProductPrices()
     {
-        return $this->hasMany(ProductPrice::className(), ['product_id' => 'id']);
+        return $this->hasMany(\common\models\ProductPrice::className(), ['product_id' => 'id']);
     }
 
     /**
@@ -126,6 +122,6 @@ abstract class Product extends BaseModel
      */
     public function getReceiptProducts()
     {
-        return $this->hasMany(ReceiptProduct::className(), ['product_id' => 'id']);
+        return $this->hasMany(\common\models\ReceiptProduct::className(), ['product_id' => 'id']);
     }
 }

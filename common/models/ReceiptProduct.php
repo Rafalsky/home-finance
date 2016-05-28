@@ -12,6 +12,7 @@
 namespace common\models;
 
 use \common\models\base\ReceiptProduct as BaseReceiptProduct;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "receipt_product".
@@ -20,4 +21,18 @@ use \common\models\base\ReceiptProduct as BaseReceiptProduct;
  */
 class ReceiptProduct extends BaseReceiptProduct
 {
+    public function beforeValidate()
+    {
+        $this->updateTimestamps();
+        return parent::beforeValidate();
+    }
+
+    private function updateTimestamps()
+    {
+        if ($this->isNewRecord) {
+            $this->created_at = new Expression('NOW()');
+        } else {
+            $this->updated_at = new Expression('NOW()');
+        }
+    }
 }

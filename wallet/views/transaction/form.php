@@ -85,10 +85,12 @@ wallet\assets\transactions\receipt\Form::register($this);
                                 <thead>
                                 <tr>
                                     <th style="width: 5%">#</th>
-                                    <th style="width: 50%"><?= Yii::t('wallet', 'Product'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('wallet', 'Count'); ?></th>
+                                    <th style="width: 40%"><?= Yii::t('wallet', 'Product'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Producer'); ?></th>
+                                    <th style="width: 10%"><?= Yii::t('wallet', 'Count'); ?></th>
                                     <th style="width: 15%"><?= Yii::t('wallet', 'Unit Price'); ?></th>
                                     <th style="width: 15%"><?= Yii::t('wallet', 'Total Price'); ?></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>

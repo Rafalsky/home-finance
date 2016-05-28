@@ -11,9 +11,6 @@
 
 namespace common\models\base;
 
-use \common\models\Product;
-use \common\models\Receipt;
-
 /**
  * This is the base-model class for table "product_price".
  *
@@ -118,7 +115,7 @@ abstract class ProductPrice extends BaseModel
      */
     public function getProduct()
     {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
+        return $this->hasOne(\common\models\Product::className(), ['id' => 'product_id']);
     }
 
     /**
@@ -126,6 +123,6 @@ abstract class ProductPrice extends BaseModel
      */
     public function getReceipt()
     {
-        return $this->hasOne(Receipt::className(), ['id' => 'receipt_id']);
+        return $this->hasOne(\common\models\Receipt::className(), ['id' => 'receipt_id']);
     }
 }
