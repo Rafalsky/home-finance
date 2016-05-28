@@ -19,7 +19,11 @@ class ShopController extends DefaultModuleController
 {
     public function actionList()
     {
-        return $this->render('list');
+        $this->view->title = \Yii::t('wallet', 'Shops');
+        $shops = Shop::find()->all();
+        return $this->render('list', [
+            'shops' => $shops
+        ]);
     }
 
     public function actionEdit($id)

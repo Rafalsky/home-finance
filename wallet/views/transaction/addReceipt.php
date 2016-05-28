@@ -111,7 +111,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                 </div>
             </div>
 
-            <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>" class="btn btn-danger">
+            <a href="<?= \Yii::$app->urlManager->createUrl('/transaction/list'); ?>" class="btn btn-danger">
                 <?= \Yii::t('wallet', 'Back'); ?>
             </a>
             <button type="submit"

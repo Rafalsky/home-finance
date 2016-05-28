@@ -43,7 +43,7 @@ use \yii\bootstrap\ActiveForm;
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success pull-right">
-                        <?= \Yii::t('wallet', $model->isNewRecord ? 'Add Shop' : 'Edit Shop'); ?>
+                        <?= $model->isNewRecord ? \Yii::t('wallet', 'Add Shop') : \Yii::t('wallet', 'Edit Shop'); ?>
                     </button>
                 </div>
 

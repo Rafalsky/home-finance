@@ -19,7 +19,7 @@ class TransactionController extends DefaultModuleController
     public function actionList()
     {
         $this->view->title = \Yii::t('wallet', 'List of transactions');
-        $receipts = Receipt::find()->all();
+        $receipts = Receipt::getMineReceipts();
         return $this->render('list', [
             'receipts' => $receipts
         ]);
@@ -27,7 +27,7 @@ class TransactionController extends DefaultModuleController
 
     public function actionAddReceipt()
     {
-        $this->view->title =  \Yii::t('wallet', 'Add new receipt');
+        $this->view->title = \Yii::t('wallet', 'Add new receipt');
         $model = new Receipt();
         $model = $this->updateWithPostRequest($model);
         return $this->render('addReceipt', [
@@ -41,5 +41,11 @@ class TransactionController extends DefaultModuleController
             return $this->renderPartial('_productTableRow', ['number' => $number]);
         }
         throw new NotFoundHttpException;
+    }
+
+    protected function afterSave()
+    {
+        $this->redirect('list');
+        \Yii::$app->end();
     }
 }

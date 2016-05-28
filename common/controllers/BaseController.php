@@ -21,10 +21,21 @@ abstract class BaseController extends Controller
         if (\Yii::$app->request->isPost && $attributes = \Yii::$app->request->post($model->getShortClassName())) {
             $model->attributes = $attributes;
             if ($model->save()) {
-                \Yii::$app->session->addFlash('success', $this->getSuccessMessage());
+                \Yii::$app->session->addFlash('alert', [
+                    'body' => $this->getSuccessMessage(),
+                    'options' => [
+                        'class' => 'alert-success'
+                    ]
+                ]);
                 $this->afterSave();
             } else {
-                \Yii::$app->session->addFlash('success', $this->getFailedMessage());
+                die(var_dump($model->errors));
+                \Yii::$app->session->addFlash('alert', [
+                    'body' => $this->getFailedMessage(),
+                    'options' => [
+                        'class' => 'alert-error'
+                    ]
+                ]);
             }
         }
         return $model;

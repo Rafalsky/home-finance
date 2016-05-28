@@ -20,6 +20,11 @@ class Wallet extends BaseWallet
 {
     const SCENARIO_CREATE = 'create';
 
+    public static function current()
+    {
+        return self::find()->where(['user_id' => User::current()->id])->one();
+    }
+
     /**
      * @inheritdoc
      */

@@ -33,7 +33,7 @@ use \common\models\Receipt;
 
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title"><?= \Yii::t('wallet', 'Transakcje'); ?></h3>
+        <h3 class="box-title"><?= \Yii::t('wallet', 'Transactions'); ?></h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -72,8 +72,8 @@ use \common\models\Receipt;
             <div class="row">
                 <div class="col-sm-7">
                     <div class="m-b-30">
-                        <a href="<?= Yii::$app->urlManager->createUrl(['/transaction/add-receipt']); ?>" class="btn btn-primary waves-effect waves-light">
-                            <?= \Yii::t('wallet', 'Add'); ?> <i class="fa fa-plus"></i>
+                        <a href="<?= Yii::$app->urlManager->createUrl(['/transaction/add-receipt']); ?>" class="btn btn-success waves-effect waves-light">
+                            <?= \Yii::t('wallet', 'New Transaction'); ?>
                         </a>
                     </div>
                 </div>
