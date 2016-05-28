@@ -26,6 +26,7 @@ wallet\assets\transactions\receipt\Form::register($this);
     ]); ?>
     <div class="row">
         <div class="col-lg-8">
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Details'); ?></h3>
@@ -33,7 +34,27 @@ wallet\assets\transactions\receipt\Form::register($this);
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'shop_id')->label($receipt->getAttributeLabel('shop'))->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('wallet', 'Select shop')]); ?>
+                            <div class="col-lg-3">
+                                <?= $form->field($receipt, 'shop_id', ['template' => "{label}"])->label($receipt->getAttributeLabel('shop')); ?>
+                            </div>
+                            <div class="col-lg-7">
+                                <?= $form->field($receipt, 'shop_id', ['template' => "{input}"])->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('wallet', 'Select shop')]); ?>
+                            </div>
+                            <div class="col-lg-1">
+                                <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>"
+                                   class="btn btn-success">
+                                    <?= \Yii::t('wallet', 'Add new shop'); ?>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+
+                        </div>
+                        <div class="col-lg-9">
+                            <?= $form->field($receipt, 'shop_id', ['template' => "{error}"])->error(); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -50,27 +71,6 @@ wallet\assets\transactions\receipt\Form::register($this);
                     </div>
                 </div>  <!-- End panel-body -->
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
-                </div>
-                <div class="panel-body">
-                    <img src="/img/image-placeholder.jpg" alt="" style="width: 100%">
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <?= $form->field($receipt, 'file')->fileInput(); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?= \Yii::t('wallet', 'Products'); ?></h3>
@@ -103,8 +103,31 @@ wallet\assets\transactions\receipt\Form::register($this);
                         <div class="row" style="border-radius: 0;">
                             <div class="col-md-3 col-md-offset-9">
                                 <hr>
-                                <h3 class="text-right"><span id="totalPrice"><?= $receipt->getTotalPrice(); ?></span>&nbsp;zł</h3>
+                                <h3 class="text-right"><span id="totalPrice"><?= $receipt->getTotalPrice(); ?></span>&nbsp;zł
+                                </h3>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>" class="btn btn-danger">
+                <?= \Yii::t('wallet', 'Back'); ?>
+            </a>
+            <button type="submit"
+                    class="btn-submit btn btn-success pull-right"><?= \Yii::t('wallet', 'Update'); ?></button>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
+                </div>
+                <div class="panel-body">
+                    <img src="/img/image-placeholder.jpg" alt="" style="width: 100%">
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <?= $form->field($receipt, 'file')->fileInput(); ?>
                         </div>
                     </div>
                 </div>
@@ -113,10 +136,6 @@ wallet\assets\transactions\receipt\Form::register($this);
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>" class="btn btn-danger">
-                <?= \Yii::t('wallet', 'Back'); ?>
-            </a>
-            <button type="submit" class="btn-submit btn btn-success pull-right"><?= \Yii::t('wallet', 'Update'); ?></button>
         </div>
     </div>
     <?php ActiveForm::end(); ?>

@@ -11,18 +11,18 @@
 
 namespace wallet\controllers;
 
+use common\controllers\AuthController;
 use \common\models\User;
-use yii\web\Controller;
 
-abstract class DefaultModuleController extends Controller
+abstract class DefaultModuleController extends AuthController
 {
     public function beforeAction($action)
     {
-        if (parent::beforeAction($action) && $this->isWalletRequired() && !User::current()->hasWallet()) {
-            $this->redirect(['/manage/first']);
-            \Yii::$app->end();
+        if (!parent::beforeAction($action)) {
+            return false;
         }
-        return parent::beforeAction($action);
+        $this->checkThatUserHasWallet();
+        return true;
     }
 
     // protected
@@ -30,5 +30,15 @@ abstract class DefaultModuleController extends Controller
     protected function isWalletRequired()
     {
         return true;
+    }
+
+    // private
+
+    private function checkThatUserHasWallet()
+    {
+        if ($this->isWalletRequired() && !User::current()->hasWallet()) {
+            $this->redirect(['/manage/first']);
+            \Yii::$app->end();
+        }
     }
 }

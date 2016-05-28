@@ -20,6 +20,11 @@ use yii\helpers\ArrayHelper;
 class Receipt extends BaseReceipt
 {
     public $file;
+
+    public static function getMineReceipts()
+    {
+        return User::find()->where(['user_id' => User::current()->id])->one();
+    }
     
     public function getTotalPrice()
     {

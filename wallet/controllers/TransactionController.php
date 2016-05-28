@@ -19,7 +19,10 @@ class TransactionController extends DefaultModuleController
     public function actionList()
     {
         $this->view->title = \Yii::t('wallet', 'List of transactions');
-        return $this->render('list');
+        $receipts = Receipt::find()->all();
+        return $this->render('list', [
+            'receipts' => $receipts
+        ]);
     }
 
     public function actionAddReceipt()

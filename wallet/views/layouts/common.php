@@ -287,6 +287,14 @@ $bundle = WalletAsset::register($this);
                 <?= $content ?>
             </section><!-- /.content -->
         </aside><!-- /.right-side -->
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 0.0.1
+            </div>
+            <strong>Copyright © 2015-<?= date('Y'); ?> <a href="http://rafalsky.com">Rafalsky</a></strong>. All rights
+            reserved.
+        </footer>
     </div><!-- ./wrapper -->
 
 <?php $this->endContent(); ?>

@@ -13,9 +13,5 @@
  */
 ?>
 <?php $this->beginContent('@wallet/views/layouts/common.php'); ?>
-    <div class="box">
-        <div class="box-body">
-            <?= $content ?>
-        </div>
-    </div>
+    <?= $content ?>
 <?php $this->endContent(); ?>
