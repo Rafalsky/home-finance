@@ -1,5 +1,5 @@
 <?php /** @var $receiptProduct ReceiptProduct */ ?>
-<tr>
+<tr class="product-record">
     <td class="product-id"><?= $number; ?></td>
     <td>
         <div class="input-group" style="width: 100%">

@@ -9,7 +9,7 @@
 
 $receiptTable = $('table#receipt-table');
 $receiptTable.on('change', 'input.product-name', function() {
-  if ((parseInt($(this).closest('tr').find('td.product-id').html()) + 1) != $receiptTable.find('tr').length) {
+  if ((parseInt($(this).closest('tr').find('td.product-id').html())) != $receiptTable.find('tr.product-record').length) {
     return;
   }
   $.ajax({
