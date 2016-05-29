@@ -1,6 +1,6 @@
 <?php /** @var $receiptProduct ReceiptProduct */ ?>
 <tr>
-    <td><?= $number; ?></td>
+    <td class="product-id"><?= $number; ?></td>
     <td>
         <div class="input-group" style="width: 100%">
             <input
