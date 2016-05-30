@@ -148,7 +148,7 @@ $bundle = WalletAsset::register($this);
                                 ],
                                 [
                                     'label' => \Yii::t('wallet', 'Add'),
-                                    'url' => ['/shop/add'],
+                                    'url' => ['/shop/new'],
                                     'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                             ]

@@ -41,7 +41,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                                 <?= $form->field($receipt, 'shop_id', ['template' => "{input}"])->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('wallet', 'Select shop')]); ?>
                             </div>
                             <div class="col-lg-1">
-                                <a href="<?= \Yii::$app->urlManager->createUrl('/transactions/list'); ?>"
+                                <a href="<?= \Yii::$app->urlManager->createUrl('/shop/new'); ?>"
                                    class="btn btn-success">
                                     <?= \Yii::t('wallet', 'Add new shop'); ?>
                                 </a>
