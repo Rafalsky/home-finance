@@ -89,7 +89,6 @@ class Receipt extends BaseReceipt
             }
             $productModel = Product::findOrCreate(['shop_id' => $this->shop_id, 'name' => $product['name']]);
             if (!$productModel->save()) {
-                die(var_dump($productModel->errors));
                 throw new Exception(\Yii::t('backend', 'Cannot save product model'));
             }
             ProductPrice::updateIfRequired($productModel->id, $product['price']);

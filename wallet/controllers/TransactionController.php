@@ -13,6 +13,7 @@ namespace wallet\controllers;
 
 use common\models\Product;
 use common\models\Receipt;
+use common\models\ReceiptProduct;
 use yii\web\NotFoundHttpException;
 
 class TransactionController extends DefaultModuleController
@@ -66,6 +67,7 @@ class TransactionController extends DefaultModuleController
 
     private function saveProducts(Receipt $model)
     {
+        ReceiptProduct::deleteAll(['receipt_id' => $model->id]);
         if ($products = $this->getModelAttributesFromPost((new Product()))) {
             $model->saveProducts($products);
         }
@@ -75,7 +77,6 @@ class TransactionController extends DefaultModuleController
     {
         $model = Receipt::findById($id);
         if (!$model) {
-            die('jestm');
             throw new NotFoundHttpException();
         }
         return $model;
