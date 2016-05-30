@@ -17,10 +17,10 @@ class EditableTable extends BaseAssetBundle
     ];
 
     public $js = [
-        'js/navigationTable.min.js'
+        'js/editableTable.min.js'
     ];
 
     public $css = [
-        'css/navigationTable.min.css'
+        'css/editableTable.min.css'
     ];
 }

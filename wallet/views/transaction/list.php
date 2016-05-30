@@ -16,23 +16,6 @@ use \wallet\assets\EditableTable;
 EditableTable::register($this);
 ?>
 
-<div class="row">
-    <div class="col-lg-12">
-        <table id="receipts-list-table" class="table table-bordered table-striped navigation-table">
-            <thead>
-
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-    </div>
-</div>
-
-
 <div class="box">
     <div class="box-header">
         <h3 class="box-title"><?= \Yii::t('wallet', 'Transactions'); ?></h3>
@@ -46,7 +29,7 @@ EditableTable::register($this);
             <div class="row">
                 <div class="col-sm-12">
                     <?php if($receipts) : ?>
-                        <table id="example2" class="table table-bordered table-hover dataTable navigation-table" role="grid" aria-describedby="example2_info">
+                        <table id="example2" class="table table-bordered table-hover dataTable editable-table" role="grid" aria-describedby="example2_info">
                             <thead>
                             <tr>
                                 <th><?= \Yii::t('wallet', 'ID'); ?></th>
