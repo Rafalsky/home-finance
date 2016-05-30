@@ -43,7 +43,7 @@ wallet\assets\transactions\receipt\Form::register($this);
                             <div class="col-lg-1">
                                 <a href="<?= \Yii::$app->urlManager->createUrl('/shop/new'); ?>"
                                    class="btn btn-success">
-                                    <?= \Yii::t('wallet', 'Add new shop'); ?>
+                                    <?= \Yii::t('wallet', 'New shop'); ?>
                                 </a>
                             </div>
 

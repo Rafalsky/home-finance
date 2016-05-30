@@ -22,6 +22,8 @@ return [
     'Boxed backend layout' => '',
     'Cache entry has been successfully deleted' => '',
     'Cache has been successfully flushed' => '',
+    'Cannot save product model' => '',
+    'Cannot save {modelName} model' => '',
     'Carousel Widgets' => '',
     'Carousel slide was successfully saved' => '',
     'Clear' => '',
