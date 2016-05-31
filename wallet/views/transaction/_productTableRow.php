@@ -63,7 +63,7 @@
         </div>
     </td>
     <td>
-        <div class="remove-row">
+        <div class="remove-row clickable">
             <i class="glyphicon glyphicon-remove red"></i>
         </div>
     </td>

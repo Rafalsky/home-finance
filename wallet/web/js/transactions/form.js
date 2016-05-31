@@ -31,3 +31,18 @@ $receiptTable.on('change', 'input.product-total-price', function() {
   });
   $('#totalPrice').html(parseFloat(Math.round(sum * 100) / 100).toFixed(2));
 });
+
+$receiptTable.on('click', '.remove-row', function() {
+  if ($receiptTable.find('tbody tr').length == 1) {
+    return;
+  }
+  $tr = $(this).closest('tr');
+  var removedId = parseInt($tr.find('td.product-id').html());
+  $tr.remove();
+  $receiptTable.find('td.product-id').each(function() {
+    $id = parseInt($(this).html());
+    if ($id > removedId) {
+       $(this).text($id - 1);
+    }
+  });
+});

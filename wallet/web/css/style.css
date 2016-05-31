@@ -29,3 +29,6 @@ body .table {
   word-break: break-all;
 }
 /*# sourceMappingURL=style.map *//*# sourceMappingURL=style.map */
+.clickable {
+  cursor: pointer;
+}
