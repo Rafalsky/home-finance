@@ -25,7 +25,8 @@ use common\models\Shop;
  * @property string $date
  * @property integer $is_live
  * @property string $comment
- * @property string $image
+ * @property string $image_base_url
+ * @property string $image_path
  * @property string $created_at
  * @property string $updated_at
  *
@@ -69,14 +70,8 @@ abstract class Receipt extends BaseModel
             [['shop_id', 'user_id', 'wallet_id', 'is_live'], 'integer'],
             [['date', 'created_at', 'updated_at'], 'safe'],
             [['comment'], 'string'],
-            [['image'], 'string', 'max' => 255],
-            [
-                ['shop_id'],
-                'exist',
-                'skipOnError' => true,
-                'targetClass' => Shop::className(),
-                'targetAttribute' => ['shop_id' => 'id']
-            ]
+            [['image_base_url', 'image_path'], 'string', 'max' => 1024],
+            [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shop::className(), 'targetAttribute' => ['shop_id' => 'id']],
         ];
     }
 
@@ -93,7 +88,8 @@ abstract class Receipt extends BaseModel
             'date' => \Yii::t('common', 'Date'),
             'is_live' => \Yii::t('common', 'Is Live'),
             'comment' => \Yii::t('common', 'Comment'),
-            'image' => \Yii::t('common', 'Image'),
+            'image_base_url' => \Yii::t('common', 'Image Base Url'),
+            'image_path' => \Yii::t('common', 'Image Path'),
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
         ];
@@ -114,7 +110,8 @@ abstract class Receipt extends BaseModel
                 'date' => \Yii::t('common', 'Date'),
                 'is_live' => \Yii::t('common', 'Is Live'),
                 'comment' => \Yii::t('common', 'Comment'),
-                'image' => \Yii::t('common', 'Image'),
+                'image_base_url' => \Yii::t('common', 'Image Base Url'),
+                'image_path' => \Yii::t('common', 'Image Path'),
                 'created_at' => \Yii::t('common', 'Created At'),
                 'updated_at' => \Yii::t('common', 'Updated At'),
             ]

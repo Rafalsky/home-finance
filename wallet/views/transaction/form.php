@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  */
 
+use trntv\filekit\widget\Upload;
 use yii\bootstrap\ActiveForm;
 use yii\jui\DatePicker;
 
@@ -125,13 +126,13 @@ wallet\assets\transactions\receipt\Form::register($this);
                     <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
                 </div>
                 <div class="panel-body">
-                    <img src="/img/image-placeholder.jpg" alt="" style="width: 100%">
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <?= $form->field($receipt, 'file')->fileInput(); ?>
-                        </div>
-                    </div>
+                    <?= $form->field($receipt, 'image', ['template' => '<div class="col-lg-12">{input}</div>'])->widget(
+                        Upload::className(),
+                        [
+                            'url' => ['/transaction/upload'],
+                            'maxFileSize' => 5000000, // 5 MiB
+                        ]);
+                    ?>
                 </div>
             </div>
         </div>

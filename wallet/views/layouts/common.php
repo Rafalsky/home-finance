@@ -59,7 +59,7 @@ $bundle = WalletAsset::register($this);
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header light-blue">
-                                    <img src="<?= Yii::$app->user->identity->userProfile->getAvatar($this->assetManager->getAssetUrl($bundle, 'img/anonymous.jpg')) ?>" class="img-circle" alt="User Image" />
+                                    <img src="<?= \Yii::$app->user->identity->userProfile->getAvatar($this->assetManager->getAssetUrl($bundle, 'img/anonymous.jpg')) ?>" class="img-circle" alt="<?= \Yii::t('wallet', 'User Image'); ?>"/>
                                     <p>
                                         <?= \Yii::$app->user->identity->username; ?>
                                         <small>
@@ -94,7 +94,7 @@ $bundle = WalletAsset::register($this);
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="<?= \Yii::$app->user->identity->userProfile->getAvatar($this->assetManager->getAssetUrl($bundle, 'img/anonymous.jpg')) ?>" class="img-circle" />
+                        <img src="<?= \Yii::$app->user->identity->userProfile->getAvatar($this->assetManager->getAssetUrl($bundle, 'img/anonymous.jpg')) ?>" class="img-circle"  alt="<?= \Yii::t('wallet', 'User Image'); ?>"/>
                     </div>
                     <div class="pull-left info">
                         <p>

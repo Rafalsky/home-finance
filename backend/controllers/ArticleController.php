@@ -45,7 +45,7 @@ class ArticleController extends Controller
         $searchModel = new ArticleSearch();
         $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
         $dataProvider->sort = [
-            'defaultOrder'=>['published_at'=>SORT_DESC]
+            'defaultOrder' => ['published_at' => SORT_DESC]
         ];
         return $this->render('index', [
             'searchModel' => $searchModel,

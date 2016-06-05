@@ -40,16 +40,16 @@ class FileStorageController extends Controller
     {
         return [
             'upload' => [
-                'class' => 'trntv\filekit\actions\UploadAction',
+                'class' => \trntv\filekit\actions\UploadAction::class,
                 'deleteRoute' => 'upload-delete'
             ],
             'upload-delete' => [
-                'class' => 'trntv\filekit\actions\DeleteAction'
+                'class' => \trntv\filekit\actions\DeleteAction::class
             ],
             'upload-imperavi' => [
-                'class' => 'trntv\filekit\actions\UploadAction',
+                'class' => \trntv\filekit\actions\UploadAction::class,
                 'fileparam' => 'file',
-                'responseUrlParam'=> 'filelink',
+                'responseUrlParam' => 'filelink',
                 'multiple' => false,
                 'disableCsrf' => true
             ]
@@ -66,7 +66,7 @@ class FileStorageController extends Controller
         $searchModel = new FileStorageItemSearch();
         $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
         $dataProvider->sort = [
-            'defaultOrder'=>['created_at'=>SORT_DESC]
+            'defaultOrder' => ['created_at' => SORT_DESC]
         ];
         $components = ArrayHelper::map(
             FileStorageItem::find()->select('component')->distinct()->all(),

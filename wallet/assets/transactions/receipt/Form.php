@@ -20,6 +20,10 @@ class Form extends BaseAssetBundle
         AppAsset::class
     ];
 
+    public $css = [
+        'css/transactions/form.min.css'
+    ];
+
     public $js = [
         'js/transactions/form.min.js'
     ];

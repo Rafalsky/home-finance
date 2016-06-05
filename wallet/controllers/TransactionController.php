@@ -18,6 +18,19 @@ use yii\web\NotFoundHttpException;
 
 class TransactionController extends DefaultModuleController
 {
+    public function actions()
+    {
+        return [
+            'upload' => [
+                'class' => \trntv\filekit\actions\UploadAction::class,
+                'deleteRoute' => 'upload-delete'
+            ],
+            'upload-delete' => [
+                'class' => \trntv\filekit\actions\DeleteAction::class
+            ]
+        ];
+    }
+
     public function actionList()
     {
         $this->view->title = \Yii::t('wallet', 'List of transactions');
