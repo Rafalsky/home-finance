@@ -12,16 +12,14 @@
 use yii\db\Migration;
 use \yii\db\mysql\Schema;
 
-class m160105_202804_add_company_table extends Migration
+class m160213_194549_add_category_table extends Migration
 {
     public function up()
     {
-        $this->createTable('{{%company}}', [
+        $this->createTable('{{%category}}', [
             'id' => Schema::TYPE_PK,
             'name' => Schema::TYPE_STRING,
-            'logo' => Schema::TYPE_STRING,
-            'about' => Schema::TYPE_STRING,
-            'nationality' => Schema::TYPE_INTEGER,
+            'type' => Schema::TYPE_INTEGER,
             'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
             'updated_at' => Schema::TYPE_DATETIME,
         ]);
@@ -29,6 +27,6 @@ class m160105_202804_add_company_table extends Migration
 
     public function down()
     {
-        $this->dropTable('{{%company}}');
+        $this->dropTable('{{%category}}');
     }
 }

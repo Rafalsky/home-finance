@@ -23,18 +23,18 @@ class m160108_214500_add_receipt_table extends Migration
             'wallet_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             'date' => Schema::TYPE_DATETIME . ' NOT NULL',
             'is_live' => Schema::TYPE_BOOLEAN . ' NOT NULL DEFAULT 0',
-            'comment' => Schema::TYPE_TEXT,
+            'notes' => Schema::TYPE_TEXT,
             'image_base_url' => 'VARCHAR(1024)',
             'image_path' => 'VARCHAR(1024)',
             'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
             'updated_at' => Schema::TYPE_DATETIME
         ]);
-        $this->addForeignKey('fk_receipt_shop', 'receipt', 'shop_id', 'shop', 'id', 'cascade', 'cascade');
+        $this->addForeignKey('fk_receipt_shop', '{{%receipt}}', 'shop_id', '{{%shop}}', 'id', 'cascade', 'cascade');
     }
 
     public function safeDown()
     {
-        $this->dropForeignKey('fk_receipt_shop', 'receipt');
+        $this->dropForeignKey('fk_receipt_shop', '{{%receipt}}');
         $this->dropTable('{{%receipt}}');
     }
 }
