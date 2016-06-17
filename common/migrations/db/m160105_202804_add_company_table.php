@@ -10,20 +10,19 @@
  */
 
 use yii\db\Migration;
-use \yii\db\mysql\Schema;
 
 class m160105_202804_add_company_table extends Migration
 {
     public function up()
     {
         $this->createTable('{{%company}}', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'logo' => Schema::TYPE_STRING,
-            'about' => Schema::TYPE_STRING,
-            'nationality' => Schema::TYPE_INTEGER,
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME,
+            'id' => $this->primaryKey(),
+            'name' => $this->string(255),
+            'logo' => $this->string(255),
+            'about' => $this->string(255),
+            'nationality' => $this->integer(11),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime(),
         ]);
     }
 

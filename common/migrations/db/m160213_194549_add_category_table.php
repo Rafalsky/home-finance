@@ -10,18 +10,17 @@
  */
 
 use yii\db\Migration;
-use \yii\db\mysql\Schema;
 
 class m160213_194549_add_category_table extends Migration
 {
     public function up()
     {
         $this->createTable('{{%category}}', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'type' => Schema::TYPE_INTEGER,
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME,
+            'id' => $this->primaryKey(),
+            'name' => $this->string(255),
+            'type' => $this->integer(11),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime(),
         ]);
     }
 

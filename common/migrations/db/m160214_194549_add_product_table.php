@@ -10,24 +10,23 @@
  */
 
 use yii\db\Migration;
-use \yii\db\mysql\Schema;
 
 class m160214_194549_add_product_table extends Migration
 {
     public function safeUp()
     {
         $this->createTable('{{%product}}', [
-            'id' => Schema::TYPE_PK,
-            'shop_id' => Schema::TYPE_INTEGER,
-            'company_id' => Schema::TYPE_INTEGER,
-            'category_id' => Schema::TYPE_INTEGER,
-            'unit' => Schema::TYPE_INTEGER,
-            'name' => Schema::TYPE_STRING,
-            'image_base_url' => 'VARCHAR(1024)',
-            'image_path' => 'VARCHAR(1024)',
-            'description' => Schema::TYPE_TEXT,
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME,
+            'id' => $this->primaryKey(),
+            'shop_id' => $this->integer(11),
+            'company_id' => $this->integer(11),
+            'category_id' => $this->integer(11),
+            'unit' => $this->integer(11),
+            'name' => $this->string(255),
+            'image_base_url' => $this->string(1024),
+            'image_path' => $this->string(1024),
+            'description' => $this->text(),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime(),
         ]);
         $this->addForeignKey('fk_product_price_shop', '{{%product}}', 'shop_id', '{{%shop}}', 'id', 'SET NULL', 'CASCADE');
         $this->addForeignKey('fk_product_price_company', '{{%product}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');

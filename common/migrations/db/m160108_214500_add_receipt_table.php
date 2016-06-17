@@ -10,24 +10,23 @@
  */
 
 use yii\db\Migration;
-use \yii\db\mysql\Schema;
 
 class m160108_214500_add_receipt_table extends Migration
 {
     public function safeUp()
     {
         $this->createTable('{{%receipt}}', [
-            'id' => Schema::TYPE_PK,
-            'shop_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'wallet_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'date' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'is_live' => Schema::TYPE_BOOLEAN . ' NOT NULL DEFAULT 0',
-            'notes' => Schema::TYPE_TEXT,
-            'image_base_url' => 'VARCHAR(1024)',
-            'image_path' => 'VARCHAR(1024)',
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME
+            'id' => $this->primaryKey(),
+            'shop_id' => $this->integer(11)->notNull(),
+            'user_id' => $this->integer(11)->notNull(),
+            'wallet_id' => $this->integer(11)->notNull(),
+            'date' => $this->dateTime()->notNull(),
+            'is_live' => $this->boolean()->notNull()->defaultValue(false),
+            'notes' => $this->text(),
+            'image_base_url' => $this->string(1024),
+            'image_path' => $this->string(1024),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime()
         ]);
         $this->addForeignKey('fk_receipt_shop', '{{%receipt}}', 'shop_id', '{{%shop}}', 'id', 'cascade', 'cascade');
     }

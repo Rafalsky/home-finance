@@ -10,19 +10,18 @@
  */
 
 use yii\db\Migration;
-use yii\db\mysql\Schema;
 
 class m160107_221900_add_wallet_table extends Migration
 {
     public function up()
     {
         $this->createTable('{{%wallet}}', [
-            'id' => Schema::TYPE_PK,
-            'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'name' => Schema::TYPE_STRING . ' NOT NULL',
-            'currency' => 'CHAR(3)',
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME
+            'id' => $this->primaryKey(),
+            'user_id' => $this->integer(11)->notNull(),
+            'name' => $this->string(255)->notNull(),
+            'currency' => $this->char(3),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime()
         ]);
         $this->addForeignKey('fk_wallet_user', '{{%wallet}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
     }

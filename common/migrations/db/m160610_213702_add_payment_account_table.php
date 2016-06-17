@@ -10,18 +10,17 @@
  */
 
 use yii\db\Migration;
-use yii\db\mysql\Schema;
 
 class m160610_213702_add_payment_account_table extends Migration
 {
     public function up()
     {
         $this->createTable('{{%payment_account}}', [
-            'id' => Schema::TYPE_INTEGER,
-            'wallet_id' => Schema::TYPE_INTEGER,
-            'name' => Schema::TYPE_STRING,
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME
+            'id' => $this->primaryKey(),
+            'wallet_id' => $this->integer(11),
+            'name' => $this->string(255),
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime()
         ]);
         $this->addForeignKey('fk_payment_account_wallet', '{{%payment_account}}', 'wallet_id', '{{%wallet}}', 'id', 'CASCADE', 'CASCADE');
     }

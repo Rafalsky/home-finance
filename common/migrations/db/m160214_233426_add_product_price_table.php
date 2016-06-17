@@ -10,19 +10,18 @@
  */
 
 use yii\db\Migration;
-use \yii\db\mysql\Schema;
 
 class m160214_233426_add_product_price_table extends Migration
 {
     public function safeUp()
     {
         $this->createTable('{{%product_price}}', [
-            'id' => Schema::TYPE_PK,
-            'product_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'receipt_id' => Schema::TYPE_INTEGER,
+            'id' => $this->primaryKey(),
+            'product_id' => $this->integer(11)->notNull(),
+            'receipt_id' => $this->integer(11),
             'price' => 'DECIMAL(10, 2)',
-            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated_at' => Schema::TYPE_DATETIME
+            'created_at' => $this->dateTime()->notNull(),
+            'updated_at' => $this->dateTime()
         ]);
         $this->addForeignKey('fk_product_price_product', '{{%product_price}}', 'product_id', '{{%product}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey('fk_product_price_receipt', '{{%product_price}}', 'receipt_id', '{{%receipt}}', 'id', 'CASCADE', 'CASCADE');
