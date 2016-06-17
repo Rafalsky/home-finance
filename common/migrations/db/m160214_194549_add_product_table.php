@@ -20,7 +20,7 @@ class m160214_194549_add_product_table extends Migration
             'shop_id' => $this->integer(11),
             'company_id' => $this->integer(11),
             'category_id' => $this->integer(11),
-            'unit' => $this->integer(11),
+            'product_unit_id' => $this->integer(11),
             'name' => $this->string(255),
             'image_base_url' => $this->string(1024),
             'image_path' => $this->string(1024),
@@ -30,10 +30,12 @@ class m160214_194549_add_product_table extends Migration
         ]);
         $this->addForeignKey('fk_product_price_shop', '{{%product}}', 'shop_id', '{{%shop}}', 'id', 'SET NULL', 'CASCADE');
         $this->addForeignKey('fk_product_price_company', '{{%product}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');
+        $this->addForeignKey('fk_product_product_unit', '{{%product}}', 'product_unit_id', '{{%product_unit}}', 'id', 'SET NULL', 'CASCADE');
     }
 
     public function safeDown()
     {
+        $this->dropForeignKey('fk_product_product_unit', '{{%product}}');
         $this->dropForeignKey('fk_product_price_shop', '{{%product}}');
         $this->dropForeignKey('fk_product_price_shop', '{{%product}}');
         $this->dropTable('{{%product}}');
