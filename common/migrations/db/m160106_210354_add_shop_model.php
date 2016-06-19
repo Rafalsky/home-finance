@@ -17,6 +17,7 @@ class m160106_210354_add_shop_model extends Migration
     {
         $this->createTable('{{%shop}}', [
             'id' => $this->primaryKey(),
+            'hash' => $this->string(23)->notNull(),
             'company_id' => $this->integer(11),
             'name' => $this->string(255)->notNull(),
             'address' => $this->string(255),
@@ -25,12 +26,14 @@ class m160106_210354_add_shop_model extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
         ]);
+        $this->createIndex('shop_hash', '{{%shop}}', ['hash'], true);
         $this->addForeignKey('fk_shop_company', '{{%shop}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');
     }
 
     public function safeDown()
     {
         $this->dropForeignKey('fk_shop_company', '{{%shop}}');
+        $this->dropIndex('shop_hash', '{{%shop}}');
         $this->dropTable('{{%shop}}');
     }
 }

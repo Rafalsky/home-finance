@@ -17,6 +17,7 @@ class m160105_202804_add_company_table extends Migration
     {
         $this->createTable('{{%company}}', [
             'id' => $this->primaryKey(),
+            'hash' => $this->string(23)->notNull(),
             'name' => $this->string(255),
             'logo' => $this->string(255),
             'about' => $this->string(255),
@@ -24,10 +25,12 @@ class m160105_202804_add_company_table extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
         ]);
+        $this->createIndex('company_hash', '{{%company}}', ['hash'], true);
     }
 
     public function down()
     {
+        $this->dropIndex('company_hash', '{{%company}}');
         $this->dropTable('{{%company}}');
     }
 }

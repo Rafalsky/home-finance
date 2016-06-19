@@ -19,7 +19,7 @@ class m160214_194601_add_receipt_product_table extends Migration
             'id' => $this->primaryKey(),
             'receipt_id' => $this->integer(11)->notNull(),
             'product_id' => $this->integer(11)->notNull(),
-            'count' => 'FLOAT(7,4)',
+            'count' => 'FLOAT(14,4)',
             'total_price' => 'DECIMAL(10, 2)',
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()

@@ -17,6 +17,7 @@ class m160214_194549_add_product_table extends Migration
     {
         $this->createTable('{{%product}}', [
             'id' => $this->primaryKey(),
+            'hash' => $this->string(23)->notNull(),
             'shop_id' => $this->integer(11),
             'company_id' => $this->integer(11),
             'category_id' => $this->integer(11),
@@ -27,7 +28,9 @@ class m160214_194549_add_product_table extends Migration
             'description' => $this->text(),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
+            'details' => 'JSON'
         ]);
+        $this->createIndex('product_hash', '{{%product}}', ['hash'], true);
         $this->addForeignKey('fk_product_price_shop', '{{%product}}', 'shop_id', '{{%shop}}', 'id', 'SET NULL', 'CASCADE');
         $this->addForeignKey('fk_product_price_company', '{{%product}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');
         $this->addForeignKey('fk_product_product_unit', '{{%product}}', 'product_unit_id', '{{%product_unit}}', 'id', 'SET NULL', 'CASCADE');
@@ -38,6 +41,7 @@ class m160214_194549_add_product_table extends Migration
         $this->dropForeignKey('fk_product_product_unit', '{{%product}}');
         $this->dropForeignKey('fk_product_price_shop', '{{%product}}');
         $this->dropForeignKey('fk_product_price_shop', '{{%product}}');
+        $this->dropIndex('product_hash', '{{%product}}');
         $this->dropTable('{{%product}}');
     }
 }

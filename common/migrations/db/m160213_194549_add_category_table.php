@@ -17,15 +17,18 @@ class m160213_194549_add_category_table extends Migration
     {
         $this->createTable('{{%category}}', [
             'id' => $this->primaryKey(),
+            'hash' => $this->string(23)->notNull(),
             'name' => $this->string(255),
             'type' => $this->integer(11),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
         ]);
+        $this->createIndex('category_hash', '{{%category}}', ['hash'], true);
     }
 
     public function down()
     {
+        $this->dropIndex('category_hash', '{{%category}}');
         $this->dropTable('{{%category}}');
     }
 }

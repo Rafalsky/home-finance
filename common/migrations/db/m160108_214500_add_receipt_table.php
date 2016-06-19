@@ -17,6 +17,7 @@ class m160108_214500_add_receipt_table extends Migration
     {
         $this->createTable('{{%receipt}}', [
             'id' => $this->primaryKey(),
+            'hash' => $this->string(23)->notNull(),
             'shop_id' => $this->integer(11)->notNull(),
             'user_id' => $this->integer(11)->notNull(),
             'wallet_id' => $this->integer(11)->notNull(),
@@ -28,12 +29,14 @@ class m160108_214500_add_receipt_table extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
         ]);
+        $this->createIndex('receipt_hash', '{{%receipt}}', ['hash'], true);
         $this->addForeignKey('fk_receipt_shop', '{{%receipt}}', 'shop_id', '{{%shop}}', 'id', 'cascade', 'cascade');
     }
 
     public function safeDown()
     {
         $this->dropForeignKey('fk_receipt_shop', '{{%receipt}}');
+        $this->dropIndex('receipt_hash', '{{%receipt}}');
         $this->dropTable('{{%receipt}}');
     }
 }
