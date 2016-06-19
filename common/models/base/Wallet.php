@@ -1,9 +1,9 @@
 <?php
 
 /*
-* This file is part of the HomeFinanceV2 project.
+*  This file is part of the HomeFinanceV2 project.
 *
-* (c) Rafalsky.com <http://github.com/Rafalsky/>
+*  (c) Rafalsky.com <http://github.com/Rafalsky/>
 *
 * For the full copyright and license information, please view the LICENSE
 * file that was distributed with this source code.
@@ -12,18 +12,21 @@
 namespace common\models\base;
 
 /**
- * This is the base-model class for table "wallet".
+ * This is the base-model class for table "{{%wallet}}".
  *
  * @property integer $id
+ * @property string $hash
  * @property integer $user_id
  * @property string $name
+ * @property string $currency
  * @property string $created_at
  * @property string $updated_at
  *
- * @property \common\models\User $user
- * @property string $aliasModel
+ * @property PaymentAccount[] $paymentAccounts
+ * @property User $user
+ * @property WalletCategory[] $walletCategories
  */
-abstract class Wallet extends TimestampedModel
+abstract class Wallet extends HashedModel
 {
     /**
      * @inheritdoc
@@ -34,37 +37,19 @@ abstract class Wallet extends TimestampedModel
     }
 
     /**
-     * Alias name of table for crud viewsLists all Area models.
-     * Change the alias name manual if needed later
-     * @param bool $plural
-     * @return string
-     */
-    public function getAliasModel($plural = false)
-    {
-        if ($plural) {
-            return \Yii::t('common', 'Wallets');
-        } else {
-            return \Yii::t('common', 'Wallet');
-        }
-    }
-
-    /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['user_id', 'name', 'created_at'], 'required'],
+            [['hash', 'user_id', 'name', 'created_at'], 'required'],
             [['user_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
+            [['hash'], 'string', 'max' => 23],
             [['name'], 'string', 'max' => 255],
-            [
-                ['user_id'],
-                'exist',
-                'skipOnError' => true,
-                'targetClass' => User::className(),
-                'targetAttribute' => ['user_id' => 'id']
-            ]
+            [['currency'], 'string', 'max' => 3],
+            [['hash'], 'unique'],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -75,28 +60,21 @@ abstract class Wallet extends TimestampedModel
     {
         return [
             'id' => \Yii::t('common', 'ID'),
+            'hash' => \Yii::t('common', 'Hash'),
             'user_id' => \Yii::t('common', 'User ID'),
             'name' => \Yii::t('common', 'Name'),
+            'currency' => \Yii::t('common', 'Currency'),
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
         ];
     }
 
     /**
-     * @inheritdoc
+     * @return \yii\db\ActiveQuery
      */
-    public function attributeHints()
+    public function getPaymentAccounts()
     {
-        return array_merge(
-            parent::attributeHints(),
-            [
-                'id' => \Yii::t('common', 'ID'),
-                'user_id' => \Yii::t('common', 'User Id'),
-                'name' => \Yii::t('common', 'Name'),
-                'created_at' => \Yii::t('common', 'Created At'),
-                'updated_at' => \Yii::t('common', 'Updated At'),
-            ]
-        );
+        return $this->hasMany(PaymentAccount::className(), ['wallet_id' => 'id']);
     }
 
     /**
@@ -104,6 +82,14 @@ abstract class Wallet extends TimestampedModel
      */
     public function getUser()
     {
-        return $this->hasOne(\common\models\User::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getWalletCategories()
+    {
+        return $this->hasMany(WalletCategory::className(), ['wallet_id' => 'id']);
     }
 }

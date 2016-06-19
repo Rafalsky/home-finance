@@ -13,8 +13,8 @@ namespace common\models\base;
 use yii\db\Expression;
 
 /**
- * @property string created_at
- * @property string updated_at
+ * @property string $created_at
+ * @property string $updated_at
  */
 abstract class TimestampedModel extends BaseModel
 {

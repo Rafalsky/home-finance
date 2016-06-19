@@ -1,31 +1,40 @@
 <?php
 
 /*
- * This file is part of the HomeFinanceV2 project.
- *
- * (c) Rafalsky.com <http://github.com/Rafalsky/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+*  This file is part of the HomeFinanceV2 project.
+*
+*  (c) Rafalsky.com <http://github.com/Rafalsky/>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace common\models\base;
 
 /**
- * This is the base-model class for table "product".
+ * This is the base-model class for table "{{%product}}".
  *
  * @property integer $id
+ * @property string $hash
  * @property integer $shop_id
+ * @property integer $company_id
+ * @property integer $category_id
+ * @property integer $product_unit_id
  * @property string $name
+ * @property string $image_base_url
+ * @property string $image_path
+ * @property string $description
  * @property string $created_at
  * @property string $updated_at
+ * @property string $details
  *
- * @property \common\models\Shop $shop
- * @property \common\models\ProductPrice[] $productPrices
- * @property \common\models\ReceiptProduct[] $receiptProducts
- * @property string $aliasModel
+ * @property Company $company
+ * @property Shop $shop
+ * @property ProductUnit $productUnit
+ * @property ProductPrice[] $productPrices
+ * @property ReceiptProduct[] $receiptProducts
  */
-abstract class Product extends BaseModel
+abstract class Product extends HashedModel
 {
     /**
      * @inheritdoc
@@ -36,37 +45,22 @@ abstract class Product extends BaseModel
     }
 
     /**
-     * Alias name of table for crud viewsLists all Area models.
-     * Change the alias name manual if needed later
-     * @param bool $plural
-     * @return string
-     */
-    public function getAliasModel($plural = false)
-    {
-        if ($plural) {
-            return \Yii::t('common', 'Products');
-        } else {
-            return \Yii::t('common', 'Product');
-        }
-    }
-
-    /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['shop_id'], 'integer'],
-            [['created_at'], 'required'],
+            [['hash', 'created_at'], 'required'],
+            [['shop_id', 'company_id', 'category_id', 'product_unit_id'], 'integer'],
+            [['description', 'details'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
+            [['hash'], 'string', 'max' => 23],
             [['name'], 'string', 'max' => 255],
-            [
-                ['shop_id'],
-                'exist',
-                'skipOnError' => true,
-                'targetClass' => \common\models\Shop::className(),
-                'targetAttribute' => ['shop_id' => 'id']
-            ]
+            [['image_base_url', 'image_path'], 'string', 'max' => 1024],
+            [['hash'], 'unique'],
+            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => Company::className(), 'targetAttribute' => ['company_id' => 'id']],
+            [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shop::className(), 'targetAttribute' => ['shop_id' => 'id']],
+            [['product_unit_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductUnit::className(), 'targetAttribute' => ['product_unit_id' => 'id']],
         ];
     }
 
@@ -77,28 +71,27 @@ abstract class Product extends BaseModel
     {
         return [
             'id' => \Yii::t('common', 'ID'),
+            'hash' => \Yii::t('common', 'Hash'),
             'shop_id' => \Yii::t('common', 'Shop ID'),
+            'company_id' => \Yii::t('common', 'Company ID'),
+            'category_id' => \Yii::t('common', 'Category ID'),
+            'product_unit_id' => \Yii::t('common', 'Product Unit ID'),
             'name' => \Yii::t('common', 'Name'),
+            'image_base_url' => \Yii::t('common', 'Image Base Url'),
+            'image_path' => \Yii::t('common', 'Image Path'),
+            'description' => \Yii::t('common', 'Description'),
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
+            'details' => \Yii::t('common', 'Details'),
         ];
     }
 
     /**
-     * @inheritdoc
+     * @return \yii\db\ActiveQuery
      */
-    public function attributeHints()
+    public function getCompany()
     {
-        return array_merge(
-            parent::attributeHints(),
-            [
-                'id' => \Yii::t('common', 'ID'),
-                'shop_id' => \Yii::t('common', 'Shop Id'),
-                'name' => \Yii::t('common', 'Name'),
-                'created_at' => \Yii::t('common', 'Created At'),
-                'updated_at' => \Yii::t('common', 'Updated At'),
-            ]
-        );
+        return $this->hasOne(Company::className(), ['id' => 'company_id']);
     }
 
     /**
@@ -106,7 +99,15 @@ abstract class Product extends BaseModel
      */
     public function getShop()
     {
-        return $this->hasOne(\common\models\Shop::className(), ['id' => 'shop_id']);
+        return $this->hasOne(Shop::className(), ['id' => 'shop_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProductUnit()
+    {
+        return $this->hasOne(ProductUnit::className(), ['id' => 'product_unit_id']);
     }
 
     /**
@@ -114,7 +115,7 @@ abstract class Product extends BaseModel
      */
     public function getProductPrices()
     {
-        return $this->hasMany(\common\models\ProductPrice::className(), ['product_id' => 'id']);
+        return $this->hasMany(ProductPrice::className(), ['product_id' => 'id']);
     }
 
     /**
@@ -122,6 +123,6 @@ abstract class Product extends BaseModel
      */
     public function getReceiptProducts()
     {
-        return $this->hasMany(\common\models\ReceiptProduct::className(), ['product_id' => 'id']);
+        return $this->hasMany(ReceiptProduct::className(), ['product_id' => 'id']);
     }
 }

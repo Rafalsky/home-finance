@@ -1,23 +1,21 @@
 <?php
 
 /*
- * This file is part of the HomeFinanceV2 project.
- *
- * (c) Rafalsky.com <http://github.com/Rafalsky/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+*  This file is part of the HomeFinanceV2 project.
+*
+*  (c) Rafalsky.com <http://github.com/Rafalsky/>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace common\models\base;
 
-use common\models\Company;
-use common\models\Product;
-
 /**
- * This is the base-model class for table "shop".
+ * This is the base-model class for table "{{%shop}}".
  *
  * @property integer $id
+ * @property string $hash
  * @property integer $company_id
  * @property string $name
  * @property string $address
@@ -26,12 +24,11 @@ use common\models\Product;
  * @property string $created_at
  * @property string $updated_at
  *
- * @property \common\models\Product[] $products
- * @property \common\models\Receipt[] $receipts
- * @property \common\models\Company $company
- * @property string $aliasModel
+ * @property Product[] $products
+ * @property Receipt[] $receipts
+ * @property Company $company
  */
-abstract class Shop extends TimestampedModel
+abstract class Shop extends HashedModel
 {
     /**
      * @inheritdoc
@@ -42,38 +39,19 @@ abstract class Shop extends TimestampedModel
     }
 
     /**
-     * Alias name of table for crud viewsLists all Area models.
-     * Change the alias name manual if needed later
-     * @param bool $plural
-     * @return string
-     */
-    public function getAliasModel($plural = false)
-    {
-        if ($plural) {
-            return \Yii::t('common', 'Shops');
-        } else {
-            return \Yii::t('common', 'Shop');
-        }
-    }
-
-    /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
+            [['hash', 'name', 'created_at'], 'required'],
             [['company_id'], 'integer'],
-            [['name', 'created_at'], 'required'],
             [['comment'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
+            [['hash'], 'string', 'max' => 23],
             [['name', 'address', 'city'], 'string', 'max' => 255],
-            [
-                ['company_id'],
-                'exist',
-                'skipOnError' => true,
-                'targetClass' => Company::className(),
-                'targetAttribute' => ['company_id' => 'id']
-            ]
+            [['hash'], 'unique'],
+            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => Company::className(), 'targetAttribute' => ['company_id' => 'id']],
         ];
     }
 
@@ -84,6 +62,7 @@ abstract class Shop extends TimestampedModel
     {
         return [
             'id' => \Yii::t('common', 'ID'),
+            'hash' => \Yii::t('common', 'Hash'),
             'company_id' => \Yii::t('common', 'Company ID'),
             'name' => \Yii::t('common', 'Name'),
             'address' => \Yii::t('common', 'Address'),
@@ -92,26 +71,6 @@ abstract class Shop extends TimestampedModel
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
         ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeHints()
-    {
-        return array_merge(
-            parent::attributeHints(),
-            [
-                'id' => \Yii::t('common', 'ID'),
-                'company_id' => \Yii::t('common', 'Company Id'),
-                'name' => \Yii::t('common', 'Name'),
-                'address' => \Yii::t('common', 'Address'),
-                'city' => \Yii::t('common', 'City'),
-                'comment' => \Yii::t('common', 'Comment'),
-                'created_at' => \Yii::t('common', 'Created At'),
-                'updated_at' => \Yii::t('common', 'Updated At'),
-            ]
-        );
     }
 
     /**

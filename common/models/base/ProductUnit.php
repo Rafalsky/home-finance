@@ -12,28 +12,27 @@
 namespace common\models\base;
 
 /**
- * This is the base-model class for table "{{%company}}".
+ * This is the base-model class for table "{{%product_unit}}".
  *
  * @property integer $id
  * @property string $hash
  * @property string $name
- * @property string $logo
- * @property string $about
- * @property integer $nationality
+ * @property integer $wallet_id
+ * @property integer $is_live
  * @property string $created_at
  * @property string $updated_at
+ * @property string $translations
  *
  * @property Product[] $products
- * @property Shop[] $shops
  */
-abstract class Company extends HashedModel
+abstract class ProductUnit extends HashedModel
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%company}}';
+        return '{{%product_unit}}';
     }
 
     /**
@@ -43,10 +42,11 @@ abstract class Company extends HashedModel
     {
         return [
             [['hash', 'created_at'], 'required'],
-            [['nationality'], 'integer'],
+            [['wallet_id', 'is_live'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
+            [['translations'], 'string'],
             [['hash'], 'string', 'max' => 23],
-            [['name', 'logo', 'about'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 255],
             [['hash'], 'unique'],
         ];
     }
@@ -60,11 +60,11 @@ abstract class Company extends HashedModel
             'id' => \Yii::t('common', 'ID'),
             'hash' => \Yii::t('common', 'Hash'),
             'name' => \Yii::t('common', 'Name'),
-            'logo' => \Yii::t('common', 'Logo'),
-            'about' => \Yii::t('common', 'About'),
-            'nationality' => \Yii::t('common', 'Nationality'),
+            'wallet_id' => \Yii::t('common', 'Wallet ID'),
+            'is_live' => \Yii::t('common', 'Is Live'),
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
+            'translations' => \Yii::t('common', 'Translations'),
         ];
     }
 
@@ -73,14 +73,6 @@ abstract class Company extends HashedModel
      */
     public function getProducts()
     {
-        return $this->hasMany(Product::className(), ['company_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getShops()
-    {
-        return $this->hasMany(Shop::className(), ['company_id' => 'id']);
+        return $this->hasMany(Product::className(), ['product_unit_id' => 'id']);
     }
 }

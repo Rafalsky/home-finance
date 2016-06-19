@@ -12,28 +12,25 @@
 namespace common\models\base;
 
 /**
- * This is the base-model class for table "{{%company}}".
+ * This is the base-model class for table "{{%category}}".
  *
  * @property integer $id
  * @property string $hash
  * @property string $name
- * @property string $logo
- * @property string $about
- * @property integer $nationality
+ * @property integer $type
  * @property string $created_at
  * @property string $updated_at
  *
- * @property Product[] $products
- * @property Shop[] $shops
+ * @property WalletCategory[] $walletCategories
  */
-abstract class Company extends HashedModel
+abstract class Category extends HashedModel
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%company}}';
+        return '{{%category}}';
     }
 
     /**
@@ -43,10 +40,10 @@ abstract class Company extends HashedModel
     {
         return [
             [['hash', 'created_at'], 'required'],
-            [['nationality'], 'integer'],
+            [['type'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['hash'], 'string', 'max' => 23],
-            [['name', 'logo', 'about'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 255],
             [['hash'], 'unique'],
         ];
     }
@@ -60,9 +57,7 @@ abstract class Company extends HashedModel
             'id' => \Yii::t('common', 'ID'),
             'hash' => \Yii::t('common', 'Hash'),
             'name' => \Yii::t('common', 'Name'),
-            'logo' => \Yii::t('common', 'Logo'),
-            'about' => \Yii::t('common', 'About'),
-            'nationality' => \Yii::t('common', 'Nationality'),
+            'type' => \Yii::t('common', 'Type'),
             'created_at' => \Yii::t('common', 'Created At'),
             'updated_at' => \Yii::t('common', 'Updated At'),
         ];
@@ -71,16 +66,8 @@ abstract class Company extends HashedModel
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProducts()
+    public function getWalletCategories()
     {
-        return $this->hasMany(Product::className(), ['company_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getShops()
-    {
-        return $this->hasMany(Shop::className(), ['company_id' => 'id']);
+        return $this->hasMany(WalletCategory::className(), ['category_id' => 'id']);
     }
 }

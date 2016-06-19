@@ -63,7 +63,7 @@ class Receipt extends BaseReceipt
         return ArrayHelper::merge(parent::rules(), [
             [['shop_id', 'date'], 'required'],
             [['shop_id', 'is_live'], 'integer'],
-            [['comment'], 'string'],
+            [['notes'], 'string'],
             [['image'], 'safe'],
             [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shop::className(), 'targetAttribute' => ['shop_id' => 'id']],
             [['date'], 'date', 'format' => 'php:Y-m-d']
