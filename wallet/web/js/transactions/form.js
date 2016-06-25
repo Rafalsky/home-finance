@@ -20,6 +20,7 @@ $receiptTable.on('change', 'input.product-name', function() {
     },
     success: function(data) {
       $('table#receipt-table input.product-name').last().closest('tr').after(data);
+      setSelectize();
     }
   });
 });
@@ -46,3 +47,10 @@ $receiptTable.on('click', '.remove-row', function() {
     }
   });
 });
+
+function setSelectize()
+{
+  $('select.selectize').selectize({create: true});
+}
+
+setSelectize();

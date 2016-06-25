@@ -160,13 +160,13 @@ $bundle = WalletAsset::register($this);
                             'options' => ['class' => 'treeview'],
                             'items' => [
                                 [
-                                    'label' => \Yii::t('wallet', 'Receipts List'),
+                                    'label' => \Yii::t('wallet', 'List'),
                                     'url' => ['/transaction/list'],
                                     'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
-                                    'label' => \Yii::t('wallet', 'Add Receipt'),
-                                    'url' => ['/transaction/add-receipt'],
+                                    'label' => \Yii::t('wallet', 'New Receipt'),
+                                    'url' => ['/transaction/new-receipt'],
                                     'icon' => '<i class="fa fa-angle-double-right"></i>'
                                 ],
                                 [
@@ -253,6 +253,37 @@ $bundle = WalletAsset::register($this);
                                 ],
                             ]
                         ],
+                        [
+                            'label' => \Yii::t('wallet', 'Categories'),
+                            'url' => '#',
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'options' => ['class' => 'treeview'],
+                            'items' => [
+                                [
+                                    'label' => \Yii::t('wallet', 'List'),
+                                    'url' => ['/category'],
+                                    'icon' => '<i class="fa fa-edit"></i>',
+                                ],
+                            ]
+                        ],
+                        [
+                            'label' => \Yii::t('wallet', 'Settings'),
+                            'url' => '#',
+                            'icon' => '<i class="fa fa-edit"></i>',
+                            'otpions' => ['class' => 'treeview'],
+                            'items' => [
+                                [
+                                    'label' => \Yii::t('wallet', 'Wallet settings'),
+                                    'url' => ['/settings/wallet'],
+                                    'icon' => '<i class="fa fa-edit"></i>',
+                                ],
+                                [
+                                    'label' => \Yii::t('wallet', 'Account settings'),
+                                    'url' => ['/settings/account'],
+                                    'icon' => '<i class="fa fa-edit"></i>',
+                                ]
+                            ]
+                        ]
                     ]
                 ]) ?>
             </section>

@@ -38,7 +38,7 @@ $this->params['body-class'] = array_key_exists('body-class', $this->params) ?
 <?= Html::beginTag('body', [
     'class' => implode(' ', [
         ArrayHelper::getValue($this->params, 'body-class'),
-        \Yii::$app->keyStorage->get('wallet.theme-skin', 'skin-blue'),
+        \Yii::$app->keyStorage->get('wallet.theme-skin', 'skin-green'),
         \Yii::$app->keyStorage->get('wallet.layout-fixed') ? 'fixed' : null,
         \Yii::$app->keyStorage->get('wallet.layout-boxed') ? 'layout-boxed' : null,
         \Yii::$app->keyStorage->get('wallet.layout-collapsed-sidebar') ? 'sidebar-collapse' : null,

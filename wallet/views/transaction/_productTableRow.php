@@ -1,4 +1,4 @@
-<?php /** @var $receiptProduct ReceiptProduct */ ?>
+<?php /** @var $receiptProduct \common\models\ReceiptProduct */ ?>
 <tr class="product-record">
     <td class="product-id"><?= $number; ?></td>
     <td>
@@ -16,8 +16,11 @@
     </td>
     <td>
         <div class="input-group" style="width: 100%">
-            <input type="text" class="form-control product-count">
+            <input type="text" class="form-control product-count" name="Product[<?= $number ?>][producent]">
         </div>
+    </td>
+    <td class="selectize">
+        <?= \yii\bootstrap\Html::dropDownList("Product[$number][category]", isset($receiptProduct) ? $receiptProduct->product->category_id : '', \common\models\Category::getReceiptCategories(), ['class' => 'selectize']) ?>
     </td>
     <td>
         <div class="spinner">
@@ -32,6 +35,11 @@
                     <?php endif; ?>
                 >
             </div>
+        </div>
+    </td>
+    <td class="selectize">
+        <div class="input-group" style="width: 100%">
+            <?= \yii\bootstrap\Html::dropDownList("Product[$number][unit]", isset($receiptProduct) ? $receiptProduct->product->category_id : '', \wallet\models\Unit::getAll(), ['prompt' => \Yii::t('wallet', 'Select unit'), 'class' => 'selectize']) ?>
         </div>
     </td>
     <td>

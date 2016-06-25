@@ -40,9 +40,9 @@ class TransactionController extends DefaultModuleController
         ]);
     }
 
-    public function actionAddReceipt()
+    public function actionNewReceipt()
     {
-        $this->view->title = \Yii::t('wallet', 'Add new receipt');
+        $this->view->title = \Yii::t('wallet', 'New receipt');
         $model = new Receipt();
         $model = $this->updateWithPostRequest($model);
         return $this->render('form', [
@@ -50,9 +50,9 @@ class TransactionController extends DefaultModuleController
         ]);
     }
 
-    public function actionReceipt($id)
+    public function actionReceipt($hash)
     {
-        $model = $this->findReceipt($id);
+        $model = $this->findReceipt($hash);
         $model = $this->updateWithPostRequest($model);
         return $this->render('form', [
             'receipt' => $model
@@ -86,9 +86,9 @@ class TransactionController extends DefaultModuleController
         }
     }
 
-    private function findReceipt($id)
+    private function findReceipt($hash)
     {
-        $model = Receipt::findById($id);
+        $model = Receipt::findByHash($hash);
         if (!$model) {
             throw new NotFoundHttpException();
         }

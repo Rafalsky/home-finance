@@ -32,7 +32,7 @@ EditableTable::register($this);
                         <table id="example2" class="table table-bordered table-hover dataTable editable-table" role="grid" aria-describedby="example2_info">
                             <thead>
                             <tr>
-                                <th><?= \Yii::t('wallet', 'ID'); ?></th>
+                                <th><?= \Yii::t('wallet', 'Type'); ?></th>
                                 <th><?= \Yii::t('wallet', 'Shop'); ?></th>
                                 <th><?= \Yii::t('wallet', 'Date'); ?></th>
                                 <th><?= \Yii::t('wallet', 'Total Price'); ?></th>
@@ -55,10 +55,13 @@ EditableTable::register($this);
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-lg-12">
                     <div class="m-b-30">
-                        <a href="<?= Yii::$app->urlManager->createUrl(['/transaction/add-receipt']); ?>" class="btn btn-success waves-effect waves-light">
-                            <?= \Yii::t('wallet', 'New Transaction'); ?>
+                        <a href="<?= Yii::$app->urlManager->createUrl(['/transaction/new-receipt']); ?>" class="btn btn-danger waves-effect waves-light">
+                            <?= \Yii::t('wallet', 'New Receipt'); ?>
+                        </a>
+                        <a href="<?= Yii::$app->urlManager->createUrl(['/transaction/new-income']); ?>" class="btn btn-success waves-effect waves-light pull-right">
+                            <?= \Yii::t('wallet', 'New Income'); ?>
                         </a>
                     </div>
                 </div>

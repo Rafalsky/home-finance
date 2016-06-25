@@ -13,7 +13,7 @@ use yii\bootstrap\ActiveForm;
 use yii\jui\DatePicker;
 
 /** @var common\models\Receipt $receipt */
-wallet\assets\transactions\receipt\Form::register($this);
+wallet\assets\transactions\receipt\FormAsset::register($this);
 ?>
 <div id="edit-receipt">
     <?php /** @var ActiveForm $form */ ?>
@@ -67,11 +67,32 @@ wallet\assets\transactions\receipt\Form::register($this);
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <?= $form->field($receipt, 'comment')->textarea(['placeholder' => \Yii::t('wallet', 'Comments')]); ?>
+                            <?= $form->field($receipt, 'notes')->textarea(['placeholder' => \Yii::t('wallet', 'Notes')]); ?>
                         </div>
                     </div>
                 </div>  <!-- End panel-body -->
             </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
+                </div>
+                <div class="panel-body">
+                    <?= $form->field($receipt, 'image', ['template' => '<div class="col-lg-12">{input}</div>'])->widget(
+                        Upload::className(),
+                        [
+                            'url' => ['/transaction/upload'],
+                            'maxFileSize' => 5000000, // 5 MiB
+                        ]);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?= \Yii::t('wallet', 'Products'); ?></h3>
@@ -86,10 +107,12 @@ wallet\assets\transactions\receipt\Form::register($this);
                                 <thead>
                                 <tr>
                                     <th style="width: 5%">#</th>
-                                    <th style="width: 40%"><?= Yii::t('wallet', 'Product'); ?></th>
+                                    <th style="width: 25%"><?= Yii::t('wallet', 'Product name'); ?></th>
                                     <th style="width: 15%"><?= Yii::t('wallet', 'Producer'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Category'); ?></th>
                                     <th style="width: 10%"><?= Yii::t('wallet', 'Count'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('wallet', 'Unit Price'); ?></th>
+                                    <th style="width: 10%"><?= Yii::t('wallet', 'Unit'); ?></th>
+                                    <th style="width: 10%"><?= Yii::t('wallet', 'Unit Price'); ?></th>
                                     <th style="width: 15%"><?= Yii::t('wallet', 'Total Price'); ?></th>
                                     <th></th>
                                 </tr>
@@ -113,32 +136,13 @@ wallet\assets\transactions\receipt\Form::register($this);
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="col-lg-12">
             <a href="<?= \Yii::$app->urlManager->createUrl('/transaction/list'); ?>" class="btn btn-danger">
                 <?= \Yii::t('wallet', 'Back'); ?>
             </a>
             <button type="submit"
                     class="btn-submit btn btn-success pull-right"><?= \Yii::t('wallet', 'Update'); ?></button>
-        </div>
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?= \Yii::t('wallet', 'Receipt Image'); ?></h3>
-                </div>
-                <div class="panel-body">
-                    <?= $form->field($receipt, 'image', ['template' => '<div class="col-lg-12">{input}</div>'])->widget(
-                        Upload::className(),
-                        [
-                            'url' => ['/transaction/upload'],
-                            'maxFileSize' => 5000000, // 5 MiB
-                        ]);
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
         </div>
     </div>
     <?php ActiveForm::end(); ?>

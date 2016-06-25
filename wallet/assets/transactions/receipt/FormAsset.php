@@ -13,11 +13,13 @@ namespace wallet\assets\transactions\receipt;
 
 use wallet\assets\AppAsset;
 use wallet\assets\BaseAssetBundle;
+use wallet\assets\SelectiveAsset;
 
-class Form extends BaseAssetBundle
+class FormAsset extends BaseAssetBundle
 {
     public $depends = [
-        AppAsset::class
+        AppAsset::class,
+        SelectiveAsset::class
     ];
 
     public $css = [

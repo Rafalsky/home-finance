@@ -48,9 +48,9 @@ class CompanyController extends DefaultModuleController
         return parent::updateWithPostRequest($model);
     }
 
-    protected function afterSave()
+    protected function afterSave($model)
     {
-        parent::afterSave();
+        parent::afterSave($model);
         return $this->redirect('list');
     }
 
