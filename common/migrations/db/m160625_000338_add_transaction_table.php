@@ -11,7 +11,7 @@ class m160625_000338_add_transaction_table extends Migration
             'type' => $this->integer(4)->notNull(),
             'wallet_id' => $this->integer(11)->notNull(),
             'receipt_id' => $this->integer(11),
-            'price', // amount? not null
+            'price' => 'DECIMAL(10, 2)',
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
         ]);
