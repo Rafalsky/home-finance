@@ -24,11 +24,6 @@ class Receipt extends BaseReceipt
 {
     public $image;
 
-    public static function findById($id)
-    {
-        return self::find()->where(['id' => $id])->one();
-    }
-
     public static function getMineReceipts()
     {
         return self::find()->where(['user_id' => User::current()->id])->all();

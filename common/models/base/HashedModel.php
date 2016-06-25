@@ -17,6 +17,11 @@ namespace common\models\base;
 
 abstract class HashedModel extends TimestampedModel
 {
+    public static function findByHash($hash)
+    {
+        static::find()->where(['hash' => $hash])->one();
+    }
+
     public function beforeValidate()
     {
         if ($this->isNewRecord) {
