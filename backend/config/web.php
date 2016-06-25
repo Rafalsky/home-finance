@@ -99,7 +99,15 @@ if (YII_ENV_DEV) {
             'crud' => [
                 'class' => \yii\gii\generators\crud\Generator::class,
                 'templates' => [
-                    'home-finance' => Yii::getAlias('@backend/views/_gii/templates')
+                    'home-finance' => Yii::getAlias('@backend/views/_gii/crud')
+                ],
+                'template' => 'home-finance',
+                'messageCategory' => 'backend'
+            ],
+            'model' => [
+                'class' => \backend\modules\gii\models\Generator::class,
+                'templates' => [
+                    'home-finance' => \Yii::getAlias('@backend/modules/gii/views/model')
                 ],
                 'template' => 'home-finance',
                 'messageCategory' => 'backend'
