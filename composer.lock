@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "762f429e1fc22ea704c962a7c80aa97d",
-    "content-hash": "3f2c1a17a11bd3171061d83a30d59851",
+    "hash": "8023847980ae5171d8693f27361668a4",
+    "content-hash": "614d85cc9057a138e98ddc1bed444b3f",
     "packages": [
         {
             "name": "asofter/yii2-imperavi-redactor",
@@ -138,16 +138,16 @@
         },
         {
             "name": "bower-asset/blueimp-file-upload",
-            "version": "9.12.3",
+            "version": "9.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blueimp/jQuery-File-Upload.git",
-                "reference": "c72c93c3c005bbd0c849c2e35d01daaf7d23ee51"
+                "reference": "b9e144b735ab95a598b975bdc8375e14a2e76157"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/c72c93c3c005bbd0c849c2e35d01daaf7d23ee51",
-                "reference": "c72c93c3c005bbd0c849c2e35d01daaf7d23ee51",
+                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/b9e144b735ab95a598b975bdc8375e14a2e76157",
+                "reference": "b9e144b735ab95a598b975bdc8375e14a2e76157",
                 "shasum": ""
             },
             "require": {
@@ -442,19 +442,44 @@
         },
         {
             "name": "bower-asset/jquery-slimscroll",
-            "version": "v1.3.7",
+            "version": "v1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rochal/jQuery-slimScroll.git",
-                "reference": "00d27e3541d9cb4ada6f41b06cd67bef62d9d2b3"
+                "reference": "cf39d364e777ef95574c30c42d3b85cb2bf325d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rochal/jQuery-slimScroll/zipball/00d27e3541d9cb4ada6f41b06cd67bef62d9d2b3",
-                "reference": "00d27e3541d9cb4ada6f41b06cd67bef62d9d2b3",
+                "url": "https://api.github.com/repos/rochal/jQuery-slimScroll/zipball/cf39d364e777ef95574c30c42d3b85cb2bf325d3",
+                "reference": "cf39d364e777ef95574c30c42d3b85cb2bf325d3",
                 "shasum": ""
             },
-            "type": "bower-asset-library"
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery.slimscroll.js",
+                    "jquery.slimscroll.min.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "description": "slimScroll is a small jQuery plugin that transforms any div into a scrollable area. slimScroll doesn't occupy any visual space as it only appears on a user initiated mouse-over.",
+            "keywords": [
+                "ecosystem:jquery",
+                "jquery-plugin",
+                "scroll",
+                "scrollable",
+                "scrollbar",
+                "scroller",
+                "scrolling",
+                "slimscroll",
+                "ui"
+            ]
         },
         {
             "name": "bower-asset/jquery-ui",
@@ -525,6 +550,44 @@
                 "jquery",
                 "mask",
                 "plugins"
+            ]
+        },
+        {
+            "name": "bower-asset/microplugin",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brianreavis/microplugin.js.git",
+                "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brianreavis/microplugin.js/zipball/d8671e6cc769938648f8735610534427cdeeaf67",
+                "reference": "d8671e6cc769938648f8735610534427cdeeaf67",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "src/microplugin.js"
+                ],
+                "bower-asset-ignore": [
+                    "Makefile",
+                    "test",
+                    ".travis.yml",
+                    ".npmignore.yml"
+                ]
+            },
+            "license": [
+                "Apache License, Version 2.0"
+            ],
+            "description": "A lightweight plugin / dependency system for javascript libraries.",
+            "keywords": [
+                "architecture",
+                "dependencies",
+                "extensibility",
+                "plugins",
+                "require"
             ]
         },
         {
@@ -624,6 +687,110 @@
                     "package.json"
                 ]
             }
+        },
+        {
+            "name": "bower-asset/selectize",
+            "version": "v0.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brianreavis/selectize.js.git",
+                "reference": "3dc07d40047cd98de8a8f8beacca06a73970139d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brianreavis/selectize.js/zipball/3dc07d40047cd98de8a8f8beacca06a73970139d",
+                "reference": "3dc07d40047cd98de8a8f8beacca06a73970139d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.0",
+                "bower-asset/microplugin": "dev-0.0.x|0.0.x",
+                "bower-asset/sifter": "dev-0.4.x|0.4.x"
+            },
+            "require-dev": {
+                "bower-asset/bootstrap-2": "2",
+                "bower-asset/bootstrap-3.2": "3.2"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/selectize.css",
+                    "dist/js/selectize.js"
+                ],
+                "bower-asset-ignore": [
+                    "Makefile",
+                    "Gruntfile.js",
+                    "examples",
+                    "node_modules",
+                    "bower_components",
+                    "docs",
+                    "src",
+                    "test",
+                    ".travis.yml",
+                    "testem.json",
+                    "selectize.jquery.json",
+                    "*.sh",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "Apache License, Version 2.0"
+            ],
+            "description": "Selectize is a jQuery-based custom <select> UI control. Useful for tagging, contact lists, country selectors, etc.",
+            "keywords": [
+                "autocomplete",
+                "control",
+                "form",
+                "input",
+                "select",
+                "tag",
+                "tagging",
+                "ui"
+            ]
+        },
+        {
+            "name": "bower-asset/sifter",
+            "version": "v0.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brianreavis/sifter.js.git",
+                "reference": "facff802f388feba9bc4c649fe5acd3ad53d84e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brianreavis/sifter.js/zipball/facff802f388feba9bc4c649fe5acd3ad53d84e9",
+                "reference": "facff802f388feba9bc4c649fe5acd3ad53d84e9",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "sifter.js"
+                ],
+                "bower-asset-ignore": [
+                    "Makefile",
+                    "test",
+                    "lib",
+                    "bin",
+                    "benchmark",
+                    "node_modules",
+                    ".travis.yml"
+                ]
+            },
+            "license": [
+                "Apache License, Version 2.0"
+            ],
+            "description": "A library for textually searching arrays and hashes of objects by property (or multiple properties). Designed specifically for autocomplete.",
+            "keywords": [
+                "autocomplete",
+                "data",
+                "filter",
+                "match",
+                "results",
+                "search",
+                "sift",
+                "sort"
+            ]
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -947,16 +1114,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.22",
+            "version": "1.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "bd73a91703969a2d20ab4bfbf971d6c2cbe36612"
+                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/bd73a91703969a2d20ab4bfbf971d6c2cbe36612",
-                "reference": "bd73a91703969a2d20ab4bfbf971d6c2cbe36612",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9aca859a303fdca30370f42b8c611d9cf0dedf4b",
+                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b",
                 "shasum": ""
             },
             "require": {
@@ -1026,7 +1193,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-04-28 06:53:12"
+            "time": "2016-06-03 19:11:39"
         },
         {
             "name": "league/glide",
@@ -1294,16 +1461,16 @@
         },
         {
             "name": "studio-42/elfinder",
-            "version": "2.1.11",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "9654d86b28d7b49f2cd6807742335581e7dfd4e7"
+                "reference": "249ef036eaacd1a5d31a6b1516e1c183afd5ff8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/9654d86b28d7b49f2cd6807742335581e7dfd4e7",
-                "reference": "9654d86b28d7b49f2cd6807742335581e7dfd4e7",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/249ef036eaacd1a5d31a6b1516e1c183afd5ff8e",
+                "reference": "249ef036eaacd1a5d31a6b1516e1c183afd5ff8e",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1515,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2016-04-11 08:37:42"
+            "time": "2016-05-30 13:46:36"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1405,16 +1572,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.0.6",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "a06d10888a45afd97534506afb058ec38d9ba35b"
+                "reference": "26786e21ee0344f99629215ead5f0d6f18cdc267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/a06d10888a45afd97534506afb058ec38d9ba35b",
-                "reference": "a06d10888a45afd97534506afb058ec38d9ba35b",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/26786e21ee0344f99629215ead5f0d6f18cdc267",
+                "reference": "26786e21ee0344f99629215ead5f0d6f18cdc267",
                 "shasum": ""
             },
             "require": {
@@ -1431,7 +1598,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1458,20 +1625,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-30 10:41:14"
+            "time": "2016-06-06 15:08:54"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.0.6",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc"
+                "reference": "f5b7563f67779c6d3d5370e23448e707c858df3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/807dde98589f9b2b00624dca326740380d78dbbc",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/f5b7563f67779c6d3d5370e23448e707c858df3e",
+                "reference": "f5b7563f67779c6d3d5370e23448e707c858df3e",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1658,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1518,20 +1685,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-05 06:56:13"
+            "time": "2016-06-06 11:42:41"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.0.6",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "18b24bc32d2495ae79d76e777368786a6536fe31"
+                "reference": "5fa10139fe520561e313cc2a6cea1e44a71f36ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/18b24bc32d2495ae79d76e777368786a6536fe31",
-                "reference": "18b24bc32d2495ae79d76e777368786a6536fe31",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/5fa10139fe520561e313cc2a6cea1e44a71f36ce",
+                "reference": "5fa10139fe520561e313cc2a6cea1e44a71f36ce",
                 "shasum": ""
             },
             "require": {
@@ -1544,7 +1711,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1571,20 +1738,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:09:53"
+            "time": "2016-06-14 11:18:07"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.0.6",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "6a5010978edf0a9646342232531e53bfc7abbcd3"
+                "reference": "2a501e4263dbd0a08569e4589bfa297b578d0ecc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/6a5010978edf0a9646342232531e53bfc7abbcd3",
-                "reference": "6a5010978edf0a9646342232531e53bfc7abbcd3",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/2a501e4263dbd0a08569e4589bfa297b578d0ecc",
+                "reference": "2a501e4263dbd0a08569e4589bfa297b578d0ecc",
                 "shasum": ""
             },
             "require": {
@@ -1626,7 +1793,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1653,7 +1820,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-09 22:13:13"
+            "time": "2016-06-15 05:59:04"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1716,16 +1883,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.0.6",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb"
+                "reference": "6350e63ed9c232da50e00f00a7e0330f066387a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
-                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6350e63ed9c232da50e00f00a7e0330f066387a2",
+                "reference": "6350e63ed9c232da50e00f00a7e0330f066387a2",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1901,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1761,7 +1928,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-14 15:30:28"
+            "time": "2016-06-06 11:42:41"
         },
         {
             "name": "trntv/cheatsheet",
@@ -2076,16 +2243,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.2.1",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "63f37b9395e8041cd4313129c08ece896d06ca8e"
+                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/63f37b9395e8041cd4313129c08ece896d06ca8e",
-                "reference": "63f37b9395e8041cd4313129c08ece896d06ca8e",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/9ca5644c536654e9509b9d257f53c58630eb2a6a",
+                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a",
                 "shasum": ""
             },
             "require": {
@@ -2097,7 +2264,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -2122,7 +2289,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-04-15 10:48:49"
+            "time": "2016-06-14 14:14:52"
         },
         {
             "name": "yiisoft/yii2",
@@ -2494,16 +2661,16 @@
         },
         {
             "name": "crysalead/kahlan",
-            "version": "2.5.3",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/crysalead/kahlan.git",
-                "reference": "71d40ea01d98b6afa019384942f7d27810c9ea48"
+                "reference": "0f5deb7faa3a7a324bf0dc0186190ea18bc1eff3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crysalead/kahlan/zipball/71d40ea01d98b6afa019384942f7d27810c9ea48",
-                "reference": "71d40ea01d98b6afa019384942f7d27810c9ea48",
+                "url": "https://api.github.com/repos/crysalead/kahlan/zipball/0f5deb7faa3a7a324bf0dc0186190ea18bc1eff3",
+                "reference": "0f5deb7faa3a7a324bf0dc0186190ea18bc1eff3",
                 "shasum": ""
             },
             "require": {
@@ -2541,7 +2708,7 @@
                 "testing",
                 "unit test"
             ],
-            "time": "2016-05-10 16:20:10"
+            "time": "2016-06-15 15:07:49"
         },
         {
             "name": "fzaninotto/faker",
@@ -2664,16 +2831,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
+                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1bcdf03b068a530ac1962ce671dead356eeba43b",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
+                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
                 "shasum": ""
             },
             "require": {
@@ -2738,7 +2905,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-04-03 22:58:34"
+            "time": "2016-05-30 22:24:32"
         },
         {
             "name": "yiisoft/yii2-debug",

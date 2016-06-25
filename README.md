@@ -14,6 +14,10 @@
 ### Code Sniffer
 
 ## Installation
+### Requirements
+MySQL > 5.7
+
+PHP > 5.5
 ### Run migrations
 
 Please run the following commands to run all required migrations in proper way:
