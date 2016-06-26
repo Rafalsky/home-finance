@@ -19,7 +19,7 @@ abstract class HashedModel extends TimestampedModel
 {
     public static function findByHash($hash)
     {
-        static::find()->where(['hash' => $hash])->one();
+        return static::find()->where('hash = :hash', [':hash' => $hash])->one();
     }
 
     public function beforeValidate()

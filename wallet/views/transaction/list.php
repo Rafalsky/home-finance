@@ -22,7 +22,7 @@ EditableTable::register($this);
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row">
+        <div id="transaction_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row">
                 <div class="col-sm-6"></div>
                 <div class="col-sm-6"></div>
             </div>
@@ -40,7 +40,7 @@ EditableTable::register($this);
                             </thead>
                             <tbody>
                                 <?php foreach ($receipts as $receipt) : ?>
-                                    <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/transaction/receipt', 'id' => $receipt->id]); ?>">
+                                    <tr class="gradeX" data-url="<?= \Yii::$app->urlManager->createUrl(['/transaction/receipt', 'hash' => $receipt->hash]); ?>">
                                         <td><?= $receipt->id; ?></td>
                                         <td><?= $receipt->shop->name; ?></td>
                                         <td><?= $receipt->date; ?></td>

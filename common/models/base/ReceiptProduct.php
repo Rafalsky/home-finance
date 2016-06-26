@@ -71,7 +71,7 @@ abstract class ReceiptProduct extends \common\models\base\TimestampedModel
      */
     public function getProduct()
     {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
+        return $this->hasOne(\common\models\Product::className(), ['id' => 'product_id']);
     }
 
     /**
@@ -79,6 +79,6 @@ abstract class ReceiptProduct extends \common\models\base\TimestampedModel
      */
     public function getReceipt()
     {
-        return $this->hasOne(Receipt::className(), ['id' => 'receipt_id']);
+        return $this->hasOne(\common\models\Receipt::className(), ['id' => 'receipt_id']);
     }
 }

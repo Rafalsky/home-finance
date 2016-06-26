@@ -54,7 +54,7 @@ abstract class Receipt extends HashedModel
             [['hash'], 'string', 'max' => 23],
             [['image_base_url', 'image_path'], 'string', 'max' => 1024],
             [['hash'], 'unique'],
-            [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shop::className(), 'targetAttribute' => ['shop_id' => 'id']],
+            [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\Shop::className(), 'targetAttribute' => ['shop_id' => 'id']],
         ];
     }
 
@@ -84,7 +84,7 @@ abstract class Receipt extends HashedModel
      */
     public function getProductPrices()
     {
-        return $this->hasMany(ProductPrice::className(), ['receipt_id' => 'id']);
+        return $this->hasMany(\common\models\ProductPrice::className(), ['receipt_id' => 'id']);
     }
 
     /**
@@ -92,7 +92,7 @@ abstract class Receipt extends HashedModel
      */
     public function getShop()
     {
-        return $this->hasOne(Shop::className(), ['id' => 'shop_id']);
+        return $this->hasOne(\common\models\Shop::className(), ['id' => 'shop_id']);
     }
 
     /**
@@ -100,6 +100,6 @@ abstract class Receipt extends HashedModel
      */
     public function getReceiptProducts()
     {
-        return $this->hasMany(ReceiptProduct::className(), ['receipt_id' => 'id']);
+        return $this->hasMany(\common\models\ReceiptProduct::className(), ['receipt_id' => 'id']);
     }
 }
