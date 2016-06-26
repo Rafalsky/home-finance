@@ -87,7 +87,7 @@ class Receipt extends BaseReceipt
             $receiptProduct = new ReceiptProduct();
             $receiptProduct->receipt_id = $this->id;
             $receiptProduct->product_id = $productModel->id;
-            $receiptProduct->count = $product['count'];
+            $receiptProduct->count = (float) str_replace(',', '.', $product['count']);
             $receiptProduct->total_price = (float) str_replace(',', '.', $product['totalPrice']);
             if (!$receiptProduct->save()) {
                 throw new Exception(\Yii::t('backend', 'Cannot save {modelName} model', ['{modelName}' => get_class($receiptProduct)]));
