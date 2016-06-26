@@ -15,6 +15,11 @@ class m160107_221900_add_wallet_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%wallet}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -23,7 +28,7 @@ class m160107_221900_add_wallet_table extends Migration
             'currency' => $this->char(3),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
-        ]);
+        ], $tableOptions);
         $this->createIndex('wallet_hash', '{{%wallet}}', ['hash'], true);
         $this->addForeignKey('fk_wallet_user', '{{%wallet}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
     }

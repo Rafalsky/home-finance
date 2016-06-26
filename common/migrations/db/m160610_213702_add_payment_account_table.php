@@ -15,6 +15,11 @@ class m160610_213702_add_payment_account_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%payment_account}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -22,7 +27,7 @@ class m160610_213702_add_payment_account_table extends Migration
             'name' => $this->string(255),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
-        ]);
+        ], $tableOptions);
         $this->createIndex('$payment_account_hash', '{{%payment_account}}', ['hash'], true);
         $this->addForeignKey('fk_payment_account_wallet', '{{%payment_account}}', 'wallet_id', '{{%wallet}}', 'id', 'CASCADE', 'CASCADE');
     }

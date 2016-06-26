@@ -15,6 +15,11 @@ class m160108_214500_add_receipt_table extends Migration
 {
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%receipt}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -28,7 +33,7 @@ class m160108_214500_add_receipt_table extends Migration
             'image_path' => $this->string(1024),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
-        ]);
+        ], $tableOptions);
         $this->createIndex('receipt_hash', '{{%receipt}}', ['hash'], true);
         $this->addForeignKey('fk_receipt_shop', '{{%receipt}}', 'shop_id', '{{%shop}}', 'id', 'cascade', 'cascade');
     }

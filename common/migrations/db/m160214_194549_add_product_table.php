@@ -15,6 +15,11 @@ class m160214_194549_add_product_table extends Migration
 {
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%product}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -29,7 +34,7 @@ class m160214_194549_add_product_table extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
             'details' => 'JSON'
-        ]);
+        ], $tableOptions);
         $this->createIndex('product_hash', '{{%product}}', ['hash'], true);
         $this->addForeignKey('fk_product_price_shop', '{{%product}}', 'shop_id', '{{%shop}}', 'id', 'SET NULL', 'CASCADE');
         $this->addForeignKey('fk_product_price_company', '{{%product}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');

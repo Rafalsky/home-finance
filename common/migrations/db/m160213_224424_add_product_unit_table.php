@@ -6,6 +6,10 @@ class m160213_224424_add_product_unit_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
         $this->createTable('{{%product_unit}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -15,7 +19,7 @@ class m160213_224424_add_product_unit_table extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
             'translations' => 'JSON'
-        ]);
+        ], $tableOptions);
         $this->createIndex('product_unit_hash', '{{%product_unit}}', ['hash'], true);
         $this->batchInsert(
             '{{%product_unit}}',

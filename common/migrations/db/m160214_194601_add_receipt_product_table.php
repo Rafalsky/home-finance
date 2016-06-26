@@ -15,6 +15,11 @@ class m160214_194601_add_receipt_product_table extends Migration
 {
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%receipt_product}}', [
             'id' => $this->primaryKey(),
             'receipt_id' => $this->integer(11)->notNull(),
@@ -23,7 +28,7 @@ class m160214_194601_add_receipt_product_table extends Migration
             'total_price' => 'DECIMAL(10, 2)',
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
-        ]);
+        ], $tableOptions);
         $this->addForeignKey('fk_receipt_product_receipt', '{{%receipt_product}}', 'receipt_id', '{{%receipt}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey('fk_receipt_product_product', '{{%receipt_product}}', 'product_id', '{{%product}}', 'id', 'CASCADE', 'CASCADE');
     }

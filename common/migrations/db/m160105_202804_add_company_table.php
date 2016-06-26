@@ -15,6 +15,11 @@ class m160105_202804_add_company_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%company}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -24,7 +29,7 @@ class m160105_202804_add_company_table extends Migration
             'nationality' => $this->integer(11),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
-        ]);
+        ], $tableOptions);
         $this->createIndex('company_hash', '{{%company}}', ['hash'], true);
     }
 

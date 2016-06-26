@@ -15,6 +15,11 @@ class m160106_210354_add_shop_model extends Migration
 {
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%shop}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -25,7 +30,7 @@ class m160106_210354_add_shop_model extends Migration
             'comment' => $this->text(),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime()
-        ]);
+        ], $tableOptions);
         $this->createIndex('shop_hash', '{{%shop}}', ['hash'], true);
         $this->addForeignKey('fk_shop_company', '{{%shop}}', 'company_id', '{{%company}}', 'id', 'SET NULL', 'CASCADE');
     }

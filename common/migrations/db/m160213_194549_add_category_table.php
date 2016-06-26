@@ -15,6 +15,11 @@ class m160213_194549_add_category_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('{{%category}}', [
             'id' => $this->primaryKey(),
             'hash' => $this->string(23)->notNull(),
@@ -22,7 +27,7 @@ class m160213_194549_add_category_table extends Migration
             'type' => $this->integer(11),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
-        ]);
+        ], $tableOptions);
         $this->createIndex('category_hash', '{{%category}}', ['hash'], true);
     }
 
