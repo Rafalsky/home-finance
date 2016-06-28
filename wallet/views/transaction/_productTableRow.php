@@ -39,7 +39,7 @@
     </td>
     <td class="selectize">
         <div class="input-group" style="width: 100%">
-            <?= \yii\bootstrap\Html::dropDownList("Product[$number][unit]", isset($receiptProduct) ? $receiptProduct->product->category_id : '', \wallet\models\Unit::getAll(), ['prompt' => \Yii::t('wallet', 'Select unit'), 'class' => 'selectize']) ?>
+            <?= \yii\bootstrap\Html::dropDownList("Product[$number][unit]", isset($receiptProduct) ? $receiptProduct->product->product_unit_id : '', \common\models\ProductUnit::getAll(), ['prompt' => \Yii::t('wallet', 'Select unit'), 'class' => 'selectize']) ?>
         </div>
     </td>
     <td>
@@ -50,7 +50,7 @@
                 name="Product[<?= $number; ?>][price]"
                 class="form-control product-price"
                 <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
-                    value="<?= $receiptProduct->total_price / $receiptProduct->count; ?>"
+                    value="<?= $receiptProduct->count ? $receiptProduct->total_price / $receiptProduct->count : 0; ?>"
                 <?php endif; ?>
             >
             <span class="input-group-addon">zł</span>
