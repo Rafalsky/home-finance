@@ -80,7 +80,7 @@ class Receipt extends BaseReceipt
                 continue;
             }
             $productModel = Product::findOrCreate(['shop_id' => $this->shop_id, 'name' => $product['name']]);
-            $productModel->product_unit_id = $product['unit'] ?: 1;
+            $productModel->product_unit_id = is_int($product['unit']) ? $product['unit'] : 1;
             if (!$productModel->save()) {
                 throw new Exception(\Yii::t('backend', 'Cannot save product model'));
             }
