@@ -24,6 +24,15 @@ $receiptTable.on('change', 'input.product-name', function() {
     }
   });
 });
+$receiptTable.on('change', 'input.product-count, input.product-price', function() {
+  var $count = $(this).closest('tr').find('input.product-count').val();
+  var $price = $(this).closest('tr').find('input.product-price').val();
+  console.log($count);
+  console.log($price);
+  if ($count && $price) {
+    $(this).closest('tr').find('input.product-total-price').val(+$count + +$price).trigger('change');
+  }
+});
 $receiptTable.on('change', 'input.product-total-price', function() {
   var sum = 0;
   $('input.product-total-price').each(function() {

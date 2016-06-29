@@ -36,7 +36,7 @@ wallet\assets\transactions\receipt\FormAsset::register($this);
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-3">
-                                <?= $form->field($receipt, 'shop_id', ['template' => "{label}"])->label($receipt->getAttributeLabel('shop')); ?>
+                                <?= $form->field($receipt, 'shop_id', ['template' => "{label}"])->label(\Yii::t('wallet', $receipt->getAttributeLabel('shop'))); ?>
                             </div>
                             <div class="col-lg-7">
                                 <?= $form->field($receipt, 'shop_id', ['template' => "{input}"])->dropDownList(common\models\Shop::getAllAvailable(), ['prompt' => \Yii::t('wallet', 'Select shop')]); ?>
@@ -107,13 +107,12 @@ wallet\assets\transactions\receipt\FormAsset::register($this);
                                 <thead>
                                 <tr>
                                     <th style="width: 5%">#</th>
-                                    <th style="width: 25%"><?= Yii::t('wallet', 'Product name'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('wallet', 'Producer'); ?></th>
+                                    <th style="width: 35%"><?= Yii::t('wallet', 'Product name'); ?></th>
                                     <th style="width: 15%"><?= Yii::t('wallet', 'Category'); ?></th>
+                                    <th style="width: 15%"><?= Yii::t('wallet', 'Unit'); ?></th>
                                     <th style="width: 10%"><?= Yii::t('wallet', 'Count'); ?></th>
-                                    <th style="width: 10%"><?= Yii::t('wallet', 'Unit'); ?></th>
                                     <th style="width: 10%"><?= Yii::t('wallet', 'Unit Price'); ?></th>
-                                    <th style="width: 15%"><?= Yii::t('wallet', 'Total Price'); ?></th>
+                                    <th style="width: 10%"><?= Yii::t('wallet', 'Total Price'); ?></th>
                                     <th></th>
                                 </tr>
                                 </thead>

@@ -14,13 +14,13 @@
             >
         </div>
     </td>
-    <td>
-        <div class="input-group" style="width: 100%">
-            <input type="text" class="form-control product-count" name="Product[<?= $number ?>][producent]">
-        </div>
-    </td>
     <td class="selectize">
         <?= \yii\bootstrap\Html::dropDownList("Product[$number][category]", isset($receiptProduct) ? $receiptProduct->product->category_id : '', \common\models\Category::getReceiptCategories(), ['class' => 'selectize']) ?>
+    </td>
+    <td class="selectize">
+        <div class="input-group" style="width: 100%">
+            <?= \yii\bootstrap\Html::dropDownList("Product[$number][unit]", isset($receiptProduct) ? $receiptProduct->product->product_unit_id : '', \common\models\ProductUnit::getAll(), ['prompt' => \Yii::t('wallet', 'Select unit'), 'class' => 'selectize']) ?>
+        </div>
     </td>
     <td>
         <div class="spinner">
@@ -35,11 +35,6 @@
                     <?php endif; ?>
                 >
             </div>
-        </div>
-    </td>
-    <td class="selectize">
-        <div class="input-group" style="width: 100%">
-            <?= \yii\bootstrap\Html::dropDownList("Product[$number][unit]", isset($receiptProduct) ? $receiptProduct->product->product_unit_id : '', \common\models\ProductUnit::getAll(), ['prompt' => \Yii::t('wallet', 'Select unit'), 'class' => 'selectize']) ?>
         </div>
     </td>
     <td>
@@ -63,6 +58,7 @@
                 id="product-total-price-<?= $number; ?>"
                 name="Product[<?= $number; ?>][totalPrice]"
                 class="form-control product-total-price"
+                disabled="disabled"
                 <?php if (isset($receiptProduct) && is_object($receiptProduct)): ?>
                     value="<?= $receiptProduct->total_price; ?>"
                 <?php endif; ?>
